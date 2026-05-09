@@ -1,0 +1,156 @@
+# =============================================================================
+# update-badges — fetch live stats from the VSCode Marketplace API every 6h
+# and write them to .github/badges/*.json on the orphan `badges` branch, so
+# shields.io's `endpoint` badge can render version + download count without
+# depending on third-party services (vsmarketplacebadges.dev, etc.) that come
+# and go.
+#
+# Branch architecture
+#   The workflow file itself lives on `main` (so cron and workflow_dispatch
+#   triggers fire from the default branch), but every read/write happens on
+#   the orphan `badges` branch, which is unprotected and dedicated to badge
+#   JSONs. This split sidesteps `main`'s branch protection rules, which would
+#   otherwise reject the bot's commit ("Required status check 'CI passed' is
+#   expected").
+#
+# How it works
+#   1. Every 6 hours, the job checks out the `badges` branch.
+#   2. It POSTs to Microsoft's public extensionquery API.
+#   3. It parses the response with jq and extracts:
+#       - the latest version number
+#       - the download count
+#   4. It writes two small JSON files in `.github/badges/` matching the
+#      shields.io endpoint badge schema.
+#   5. It commits and pushes the files to `badges` only if values changed
+#      (no noisy diffs).
+#
+# README usage
+#   [![Marketplace](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/jzbakh/antigravity-arn-skin/badges/.github/badges/marketplace-version.json)](https://marketplace.visualstudio.com/items?itemName=jzbakh.antigravity-arn-skin)
+#   [![Downloads](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/jzbakh/antigravity-arn-skin/badges/.github/badges/marketplace-installs.json)](https://marketplace.visualstudio.com/items?itemName=jzbakh.antigravity-arn-skin)
+# =============================================================================
+
+name: update-badges
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'   # every 6 hours
+  workflow_dispatch:         # allow manual trigger from the Actions tab
+  release:
+    types: [published]       # also refresh right after a new release
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-badges
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      # Check out the orphan `badges` branch instead of `main`. The workflow
+      # itself lives on `main` (so the cron and workflow_dispatch triggers fire
+      # from there), but every read/write happens on the `badges` branch which
+      # is unprotected and dedicated to the badge JSON files.
+      - uses: actions/checkout@v5
+        with:
+          ref: badges
+
+      - name: Fetch Marketplace stats
+        id: stats
+        run: |
+          set -euo pipefail
+          mkdir -p .github/badges
+
+          RESPONSE=$(curl -sS -X POST \
+            -H "Content-Type: application/json" \
+            -H "Accept: application/json;api-version=3.0-preview.1" \
+            -d '{"flags":914,"filters":[{"criteria":[{"filterType":7,"value":"jzbakh.antigravity-arn-skin"}]}]}' \
+            "https://marketplace.visualstudio.com/_apis/public/gallery/extensionquery")
+
+          if [ -z "$RESPONSE" ]; then
+            echo "::error::Empty response from Marketplace API"
+            exit 1
+          fi
+
+          # Debug: dump the response so we know what we are parsing.
+          echo "::group::API response (truncated to 4000 chars)"
+          echo "$RESPONSE" | head -c 4000
+          echo ""
+          echo "::endgroup::"
+
+          # Defensive jq queries — any segment of the path may be null/missing
+          # when the extension is not indexed yet on the Marketplace.
+          VERSION=$(echo "$RESPONSE" | jq -r '
+            (.results // [])[0] // {}
+            | (.extensions // [])[0] // {}
+            | (.versions // [])[0] // {}
+            | (.version // "unknown")
+          ')
+          # Read `downloadCount` (raw downloads) rather than `install` (unique
+          # installs). The shields.io label is "Downloads" so the value must
+          # match — Microsoft exposes both metrics on every extension.
+          DOWNLOADS=$(echo "$RESPONSE" | jq -r '
+            (.results // [])[0] // {}
+            | (.extensions // [])[0] // {}
+            | (.statistics // [])
+            | map(select(.statisticName == "downloadCount"))
+            | (first // {value: 0})
+            | (.value // 0)
+            | floor
+          ')
+
+          echo "Marketplace version  : $VERSION"
+          echo "Marketplace downloads: $DOWNLOADS"
+
+          # If the API returned nothing useful (extension still in review or
+          # propagation delay on a fresh publish), keep whatever badge data we
+          # already have on disk and exit cleanly.
+          if [ "$VERSION" = "unknown" ] && [ "$DOWNLOADS" = "0" ]; then
+            echo "::warning::Marketplace API returned no data for the extension (likely not yet indexed). Keeping the existing badge files."
+            exit 0
+          fi
+
+          # Friendly count: 1234 → "1.2k", 1234567 → "1.2M"
+          format_count() {
+            local n="$1"
+            if   [ "$n" -ge 1000000 ]; then awk -v n="$n" 'BEGIN { printf "%.1fM", n/1000000 }'
+            elif [ "$n" -ge 1000 ];    then awk -v n="$n" 'BEGIN { printf "%.1fk", n/1000 }'
+            else echo "$n"
+            fi
+          }
+          DOWNLOADS_DISPLAY=$(format_count "$DOWNLOADS")
+
+          cat > .github/badges/marketplace-version.json <<EOF
+          {
+            "schemaVersion": 1,
+            "label": "VS Marketplace",
+            "message": "v${VERSION}",
+            "color": "blue",
+            "namedLogo": "visualstudiocode"
+          }
+          EOF
+
+          cat > .github/badges/marketplace-installs.json <<EOF
+          {
+            "schemaVersion": 1,
+            "label": "Downloads",
+            "message": "${DOWNLOADS_DISPLAY}",
+            "color": "success",
+            "namedLogo": "visualstudiocode"
+          }
+          EOF
+
+      - name: Commit badges only if they changed
+        run: |
+          set -euo pipefail
+          git config --global user.name  'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add .github/badges/
+          if git diff --quiet --staged; then
+            echo "Badges unchanged, nothing to commit."
+          else
+            git commit -m "chore(badges): refresh VSCode Marketplace stats"
+            git push
+          fi
