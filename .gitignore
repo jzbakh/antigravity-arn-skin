@@ -1,0 +1,14 @@
+**/vsix/
+*.vsix
+
+# Test harness — local artefacts that should not be committed.
+test/node_modules/
+test/.vscode-test/
+test/coverage/
+test/.nyc_output/
+
+# Local visual-test fixtures opened to eyeball syntax highlighting against
+# the seven themes. Kept on disk for convenience but never committed.
+/example.*
+/sample.*
+/scratch.*

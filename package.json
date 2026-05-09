@@ -1,0 +1,104 @@
+{
+  "name": "antigravity-arn-skin",
+  "displayName": "ARN-Skin",
+  "description": "Explore 7 space-themed skins + customization to enhance your IDE.",
+  "version": "1.0.0",
+  "publisher": "jzbakh",
+  "license": "GPL-3.0-or-later",
+  "engines": {
+    "vscode": "^1.95.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "theme",
+    "themes",
+    "dark",
+    "light",
+    "space",
+    "antigravity",
+    "vscode",
+    "cursor",
+    "windsurf",
+    "skin",
+    "ARN"
+  ],
+  "author": "jason-zbakh",
+  "icon": "./media/ARN-Skin.png",
+  "galleryBanner": {
+    "color": "#080c14",
+    "theme": "dark"
+  },
+  "homepage": "https://github.com/jzbakh/antigravity-arn-skin#readme",
+  "bugs": {
+    "url": "https://github.com/jzbakh/antigravity-arn-skin/issues"
+  },
+  "qna": "https://github.com/jzbakh/antigravity-arn-skin/issues",
+  "sponsor": {
+    "url": "https://www.buymeacoffee.com/ARN_Inside"
+  },
+  "contributes": {
+    "themes": [
+      {
+        "label": "Arn · Spaceport — Tungsten Grid",
+        "uiTheme": "vs-dark",
+        "path": "./themes/arn-spaceport.json"
+      },
+      {
+        "label": "Arn · Nebula — Amethyst Void",
+        "uiTheme": "vs-dark",
+        "path": "./themes/arn-nebula.json"
+      },
+      {
+        "label": "Arn · Neptune — Glacial Navy",
+        "uiTheme": "vs-dark",
+        "path": "./themes/arn-neptune.json"
+      },
+      {
+        "label": "Arn · Uranus — Glacial Teal",
+        "uiTheme": "vs-dark",
+        "path": "./themes/arn-uranus.json"
+      },
+      {
+        "label": "Arn · Io — Acid Haze",
+        "uiTheme": "vs-dark",
+        "path": "./themes/arn-io.json"
+      },
+      {
+        "label": "Arn · Jupiter — Amber Light",
+        "uiTheme": "vs",
+        "path": "./themes/arn-jupiter.json"
+      },
+      {
+        "label": "Arn · Mars — Amber Storm",
+        "uiTheme": "vs-dark",
+        "path": "./themes/arn-mars.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "arn.manageSkin",
+        "title": "Manage Theme Colors",
+        "category": "ARN Skin"
+      }
+    ],
+    "jsonValidation": [
+      {
+        "fileMatch": "advanced-*.jsonc",
+        "url": "./schemas/arn-advanced.schema.json"
+      }
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jzbakh/antigravity-arn-skin.git"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.95.0"
+  },
+  "main": "./extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ]
+}

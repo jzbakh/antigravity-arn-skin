@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ARN-Skin — Premium Spatial Themes</title>
+<!-- Preload 0xProto font files to prevent FOUT (Flash of Unstyled Text) at scroll/zoom -->
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fontsource/0xproto@latest/files/0xproto-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fontsource/0xproto@latest/files/0xproto-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+
+  /* 0xProto served directly via @font-face from the fontsource CDN.
+     font-display: block → wait for the font before painting text (3s timeout).
+     Avoids FOUT/FOIT (unstyled-text flash) which can cause perceived
+     colour shifts depending on the scroll / zoom position. */
+  @font-face {
+    font-family: '0xProto';
+    font-weight: 400;
+    font-style: normal;
+    font-display: block;
+    src: url('https://cdn.jsdelivr.net/npm/@fontsource/0xproto@latest/files/0xproto-latin-400-normal.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: '0xProto';
+    font-weight: 700;
+    font-style: normal;
+    font-display: block;
+    src: url('https://cdn.jsdelivr.net/npm/@fontsource/0xproto@latest/files/0xproto-latin-700-normal.woff2') format('woff2');
+  }
+
+  :root {
+    --page-bg: #0c0d10;
+    --page-fg: #e6e8ea;
+    --muted: #9aa0a6;
+    --border: rgba(255,255,255,0.10);
+    --card: rgba(255,255,255,0.04);
+    --accent: #c0ff00;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background-color: var(--page-bg);
+    background-image:
+      linear-gradient(180deg, rgba(12,13,16,0.55) 0%, rgba(12,13,16,0.72) 100%),
+      url('../media/Background.png');
+    background-size: cover, cover;
+    background-position: center, center;
+    background-repeat: no-repeat, no-repeat;
+    background-attachment: fixed, fixed;
+    color: var(--page-fg);
+    font-family: -apple-system, "Segoe UI", system-ui, sans-serif;
+    line-height: 1.6;
+    font-size: 15px;
+    /* Fix sub-pixel rendering — stabilises font rendering at any zoom and during scroll. */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: geometricPrecision;
+  }
+  a { color: #8ec5ff; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  code { background: rgba(255,255,255,0.07); padding: 0.1em 0.4em; border-radius: 0.2em; font-size: 0.92em; font-family: "0xProto", "JetBrains Mono", Consolas, monospace; }
+  h1, h2, h3 { letter-spacing: -0.01em; }
+
+
+  /* Smooth scroll. Snap removed: with proximity snap a partial scroll would
+     pull the page back to .cover, which broke the down-arrow click target. */
+  html { scroll-behavior: smooth; }
+
+  /* Cover — transparent so the body's fixed starry bg shows through seamlessly,
+     just adds the green atmospheric glow at the top. */
+  .cover {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: radial-gradient(ellipse at top, rgba(192,255,0,0.10), transparent 60%);
+    padding: 4rem 2rem;
+    position: relative;
+  }
+  /* Logo with multi-color animated glow cycling through the 7 theme signatures.
+     Each color holds for ~14% of the cycle, with smooth transitions between.
+     Two stacked drop-shadows create a soft halo + sharp inner glow effect. */
+  .cover img.logo {
+    width: 180px; height: 180px;
+    margin-bottom: 1.8rem;
+    position: relative;
+    z-index: 1;
+    animation: logo-glow 21s ease-in-out infinite;
+  }
+  @keyframes logo-glow {
+    0%   { filter: drop-shadow(0 0 28px rgba(232,212,76,0.60))  drop-shadow(0 0 8px rgba(232,212,76,0.45))  drop-shadow(0 2px 8px rgba(0,0,0,0.5)); }  /* spaceport gold */
+    14%  { filter: drop-shadow(0 0 28px rgba(62,216,192,0.60))  drop-shadow(0 0 8px rgba(62,216,192,0.45))  drop-shadow(0 2px 8px rgba(0,0,0,0.5)); }  /* uranus teal */
+    28%  { filter: drop-shadow(0 0 28px rgba(79,180,255,0.60))  drop-shadow(0 0 8px rgba(79,180,255,0.45))  drop-shadow(0 2px 8px rgba(0,0,0,0.5)); }  /* neptune blue */
+    42%  { filter: drop-shadow(0 0 28px rgba(254,0,239,0.60))   drop-shadow(0 0 8px rgba(254,0,239,0.45))   drop-shadow(0 2px 8px rgba(0,0,0,0.5)); }  /* nebula magenta */
+    57%  { filter: drop-shadow(0 0 28px rgba(255,106,61,0.60))  drop-shadow(0 0 8px rgba(255,106,61,0.45))  drop-shadow(0 2px 8px rgba(0,0,0,0.5)); }  /* mars red-orange */
+    71%  { filter: drop-shadow(0 0 28px rgba(127,251,0,0.60))   drop-shadow(0 0 8px rgba(127,251,0,0.45))   drop-shadow(0 2px 8px rgba(0,0,0,0.5)); }  /* io lime */
+    85%  { filter: drop-shadow(0 0 28px rgba(216,28,0,0.60))    drop-shadow(0 0 8px rgba(216,28,0,0.45))    drop-shadow(0 2px 8px rgba(0,0,0,0.5)); }  /* jupiter amber-red */
+    100% { filter: drop-shadow(0 0 28px rgba(232,212,76,0.60))  drop-shadow(0 0 8px rgba(232,212,76,0.45))  drop-shadow(0 2px 8px rgba(0,0,0,0.5)); }  /* loop back to spaceport */
+  }
+  .cover h1 {
+    font-size: clamp(3rem, 7vw, 5rem);
+    margin: 0;
+    font-weight: 800;
+    color: #ffffff;
+    text-shadow: 0 2px 16px rgba(0,0,0,0.6);
+    position: relative;
+    z-index: 1;
+  }
+  .cover .subtitle {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-top: 1.2rem;
+    max-width: 760px;
+    text-shadow: 0 1px 12px rgba(0,0,0,0.7);
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+  }
+  .cover .cta {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.05rem;
+    margin-top: 2rem;
+    text-shadow: 0 1px 8px rgba(0,0,0,0.6);
+    position: relative;
+    z-index: 1;
+  }
+  .cover a.arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.25);
+    background: rgba(0,0,0,0.3);
+    backdrop-filter: blur(4px);
+    margin-top: 2.5rem;
+    color: rgba(255,255,255,0.9);
+    text-decoration: none;
+    animation: bounce 2s infinite;
+    font-size: 1.5rem;
+    transition: border-color 0.2s, color 0.2s, background 0.2s, transform 0.2s;
+    position: relative;
+    z-index: 1;
+  }
+  .cover a.arrow:hover {
+    border-color: rgba(192,255,0,0.6);
+    color: var(--accent);
+    background: rgba(192,255,0,0.12);
+    text-decoration: none;
+    transform: translateY(2px);
+  }
+  @keyframes bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(8px); } }
+
+  /* Vertical theme menu */
+  .menu-section {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 4rem 2rem 6rem;
+  }
+  .menu-section h2 { font-size: 1.4rem; color: var(--muted); margin: 0 0 2rem 0; text-align: center; font-weight: 500; }
+
+  .theme-list { display: flex; flex-direction: column; gap: 1rem; }
+  .theme-row {
+    display: grid;
+    grid-template-columns: 128px 1fr 32px;
+    gap: 1.5rem;
+    align-items: center;
+    padding: 1.2rem 1.5rem;
+    background: #0c0d10;
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    color: inherit;
+    text-decoration: none;
+    transition: transform 0.15s, border-color 0.15s, background 0.15s;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+  }
+  .theme-row:hover {
+    transform: translateX(4px);
+    border-color: rgba(192,255,0,0.4);
+    background: #14161a;
+    text-decoration: none;
+  }
+  .theme-row img { width: 128px; height: 128px; object-fit: contain; }
+  .row-meta { line-height: 1.5; }
+  .row-name { font-size: 1.4rem; font-weight: 700; margin-bottom: 0.1rem; }
+  .row-tagline { color: var(--accent); font-size: 0.85rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.4rem; }
+  .row-desc { color: var(--muted); font-size: 0.92rem; max-width: 580px; }
+  .row-swatches { margin-top: 0.6rem; display: flex; gap: 0.5rem; align-items: center; font-family: "0xProto", "JetBrains Mono", Consolas, monospace; font-size: 0.78rem; color: var(--muted); }
+  .row-swatches .dot { width: 14px; height: 14px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.18); display: inline-block; }
+  .row-swatches .hex { margin-right: 0.6rem; }
+  .row-arrow { font-size: 1.4rem; color: var(--muted); }
+  .theme-row:hover .row-arrow { color: var(--accent); }
+
+  footer { text-align: center; padding: 2rem; color: var(--muted); font-size: 0.85rem; border-top: 1px solid var(--border); }
+</style>
+</head>
+<body>
+
+<section class="cover">
+  <img class="logo" src="../media/ARN-Skin.png" alt="ARN-Skin">
+  <h1>ARN-Skin</h1>
+  <p class="subtitle">7 premium spatial themes + customization for Antigravity IDE, VSCode, Cursor, VSCodium and all forks.</p>
+  <p class="cta">Show the demo syntax for all themes</p>
+  <a class="arrow" href="#menu" onclick="event.preventDefault(); document.getElementById('menu').scrollIntoView({behavior:'smooth', block:'start'});" aria-label="Scroll to theme menu">↓</a>
+</section>
+
+<section class="menu-section" id="menu">
+  <h2>Pick a theme to explore its palette and language samples</h2>
+  <div class="theme-list">
+    
+    <a class="theme-row" href="theme-arn-spaceport.html">
+      <img src="../media/spaceport.png" alt="Spaceport">
+      <div class="row-meta">
+        <div class="row-name">Spaceport</div>
+        <div class="row-tagline">Tungsten Grid</div>
+        <div class="row-desc">A neutral steel-gray base with warm gold accents — the master theme of the pack, calibrated for long coding sessions.</div>
+        <div class="row-swatches">
+          <span class="dot" style="background:#121416" title="background"></span>
+          <span class="hex">#121416</span>
+          <span class="dot" style="background:#e8d44c" title="signature"></span>
+          <span class="hex">#e8d44c</span>
+        </div>
+      </div>
+      <div class="row-arrow">→</div>
+    </a>
+    <a class="theme-row" href="theme-arn-uranus.html">
+      <img src="../media/uranus.png" alt="Uranus">
+      <div class="row-meta">
+        <div class="row-name">Uranus</div>
+        <div class="row-tagline">Glacial Teal</div>
+        <div class="row-desc">A cold turquoise palette over a deep indigo background — clean, frosty, and perfectly distinct.</div>
+        <div class="row-swatches">
+          <span class="dot" style="background:#0a1218" title="background"></span>
+          <span class="hex">#0a1218</span>
+          <span class="dot" style="background:#3ed8c0" title="signature"></span>
+          <span class="hex">#3ed8c0</span>
+        </div>
+      </div>
+      <div class="row-arrow">→</div>
+    </a>
+    <a class="theme-row" href="theme-arn-neptune.html">
+      <img src="../media/neptune.png" alt="Neptune">
+      <div class="row-meta">
+        <div class="row-name">Neptune</div>
+        <div class="row-tagline">Glacial Navy</div>
+        <div class="row-desc">A saturated electric blue signature on near-black navy — strong contrast and cold luminosity.</div>
+        <div class="row-swatches">
+          <span class="dot" style="background:#050B1C" title="background"></span>
+          <span class="hex">#050B1C</span>
+          <span class="dot" style="background:#4FB4FF" title="signature"></span>
+          <span class="hex">#4FB4FF</span>
+        </div>
+      </div>
+      <div class="row-arrow">→</div>
+    </a>
+    <a class="theme-row" href="theme-arn-nebula.html">
+      <img src="../media/nebula.png" alt="Nebula">
+      <div class="row-meta">
+        <div class="row-name">Nebula</div>
+        <div class="row-tagline">Amethyst Void</div>
+        <div class="row-desc">A vivid magenta-pink burst over twilight purple — neon nebula vibes for night-coding sessions.</div>
+        <div class="row-swatches">
+          <span class="dot" style="background:#100D18" title="background"></span>
+          <span class="hex">#100D18</span>
+          <span class="dot" style="background:#ff2e88" title="signature"></span>
+          <span class="hex">#ff2e88</span>
+        </div>
+      </div>
+      <div class="row-arrow">→</div>
+    </a>
+    <a class="theme-row" href="theme-arn-mars.html">
+      <img src="../media/mars.png" alt="Mars">
+      <div class="row-meta">
+        <div class="row-name">Mars</div>
+        <div class="row-tagline">Amber Storm</div>
+        <div class="row-desc">A fiery orange-red signature on deep chocolate — warm, dramatic, with high color diversity.</div>
+        <div class="row-swatches">
+          <span class="dot" style="background:#0a0604" title="background"></span>
+          <span class="hex">#0a0604</span>
+          <span class="dot" style="background:#ff6a3d" title="signature"></span>
+          <span class="hex">#ff6a3d</span>
+        </div>
+      </div>
+      <div class="row-arrow">→</div>
+    </a>
+    <a class="theme-row" href="theme-arn-io.html">
+      <img src="../media/io.png" alt="Io">
+      <div class="row-meta">
+        <div class="row-name">Io</div>
+        <div class="row-tagline">Acid Haze</div>
+        <div class="row-desc">Toxic neon lime over dark olive — the most saturated dark theme, organic and aggressive.</div>
+        <div class="row-swatches">
+          <span class="dot" style="background:#0e100a" title="background"></span>
+          <span class="hex">#0e100a</span>
+          <span class="dot" style="background:#7ffb00" title="signature"></span>
+          <span class="hex">#7ffb00</span>
+        </div>
+      </div>
+      <div class="row-arrow">→</div>
+    </a>
+    <a class="theme-row" href="theme-arn-jupiter.html">
+      <img src="../media/jupiter.png" alt="Jupiter">
+      <div class="row-meta">
+        <div class="row-name">Jupiter</div>
+        <div class="row-tagline">Amber Light</div>
+        <div class="row-desc">The only LIGHT theme in the pack — deep amber tones on a cream background, calibrated for daylight coding.</div>
+        <div class="row-swatches">
+          <span class="dot" style="background:#fdfbf5" title="background"></span>
+          <span class="hex">#fdfbf5</span>
+          <span class="dot" style="background:#d81c00" title="signature"></span>
+          <span class="hex">#d81c00</span>
+        </div>
+      </div>
+      <div class="row-arrow">→</div>
+    </a>
+  </div>
+</section>
+
+<footer>
+  ARN-Skin — <a href="https://github.com/jzbakh/antigravity-arn-skin">https://github.com/jzbakh/antigravity-arn-skin</a>
+</footer>
+
+</body>
+</html>

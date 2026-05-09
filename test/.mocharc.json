@@ -1,0 +1,7 @@
+{
+    "require": ["./unit/vscode-stub.js"],
+    "spec": "unit/**/*.test.js",
+    "timeout": 5000,
+    "reporter": "spec",
+    "ui": "bdd"
+}

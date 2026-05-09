@@ -1,0 +1,18 @@
+{
+  "name": "arn-skin-tests",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Test harness for arn-skin (isolated from extension manifest — these devDependencies never ship to end users).",
+  "scripts": {
+    "test": "npm run test:unit && npm run test:integration",
+    "test:unit": "mocha",
+    "test:unit:coverage": "c8 --reporter=text --reporter=lcov mocha",
+    "test:integration": "vscode-test"
+  },
+  "devDependencies": {
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "mocha": "^10.7.3",
+    "c8": "^10.1.2"
+  }
+}

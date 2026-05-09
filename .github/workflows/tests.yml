@@ -1,0 +1,193 @@
+# =============================================================================
+# CI — runs on every push to main/master, every pull request, and on a weekly
+# schedule (Mondays 08:00 UTC) for the VSCode Insiders coverage.
+#
+# Pipeline (each stage gates the next; if one fails the rest is skipped):
+#   1) validate           — fast structural checks (JSON, manifest, schemas)
+#   2) unit               — 328 pure-helper Mocha tests on Linux / macOS / Windows
+#   3) integration-stable — 116 vscode-test integration tests on the 3 OSes,
+#                           against the latest VSCode stable
+#   4) integration-insiders — same 116 tests against VSCode Insiders, but only
+#                             on the weekly cron and on workflow_dispatch
+#                             (keeps PR CI minutes reasonable)
+# =============================================================================
+
+name: tests
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 8 * * 1'
+
+# Cancel an in-flight run for the same branch / PR when a newer commit
+# arrives — saves CI minutes during rapid iteration.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  # ---------------------------------------------------------------------------
+  # Stage 1 — fast structural validation. Fails the whole pipeline early on
+  # obvious problems (corrupt JSON, missing manifest fields, bad schema).
+  # ---------------------------------------------------------------------------
+  validate:
+    name: Validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate package.json is parseable JSON
+        run: node -e "JSON.parse(require('fs').readFileSync('package.json','utf8'))"
+
+      - name: Validate every theme JSONC file
+        run: node scripts/check-themes-jsonc.js
+
+      - name: Validate the advanced-customization JSON Schema
+        run: node -e "JSON.parse(require('fs').readFileSync('schemas/arn-advanced.schema.json','utf8'))"
+
+      - name: Sanity-check the manifest's required fields
+        run: |
+          node -e "
+            const pkg = JSON.parse(require('fs').readFileSync('package.json','utf8'));
+            const required = ['name','displayName','description','version','publisher','engines','contributes','main','license'];
+            const missing = required.filter(k => !pkg[k]);
+            if (missing.length) {
+              console.error('package.json is missing required fields: ' + missing.join(', '));
+              process.exit(1);
+            }
+            if (!pkg.contributes.themes || pkg.contributes.themes.length !== 7) {
+              console.error('package.json must contribute exactly 7 themes (got ' + (pkg.contributes.themes||[]).length + ')');
+              process.exit(1);
+            }
+          "
+
+  # ---------------------------------------------------------------------------
+  # Stage 2 — pure-helper unit tests. No editor, no network, ~1s on every OS.
+  # ---------------------------------------------------------------------------
+  unit:
+    name: Unit (${{ matrix.os }})
+    needs: validate
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    defaults:
+      run:
+        shell: bash
+        working-directory: test
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: test/package-lock.json
+      - name: Install test deps
+        run: npm ci
+      - name: Run unit tests
+        run: npm run test:unit
+
+  # ---------------------------------------------------------------------------
+  # Stage 3 — integration tests against the latest VSCode stable.
+  # ---------------------------------------------------------------------------
+  integration-stable:
+    name: Integration · stable (${{ matrix.os }})
+    needs: unit
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    env:
+      VSCODE_VERSION: stable
+    defaults:
+      run:
+        shell: bash
+        working-directory: test
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: test/package-lock.json
+      - name: Install test deps
+        run: npm ci
+      - name: Run integration tests (Linux, under xvfb)
+        if: runner.os == 'Linux'
+        run: xvfb-run -a npm run test:integration
+      - name: Run integration tests (Windows / macOS)
+        if: runner.os != 'Linux'
+        run: npm run test:integration
+
+  # ---------------------------------------------------------------------------
+  # Stage 4 — integration tests against VSCode Insiders. Catches regressions
+  # in upcoming editor releases before they ship. Runs only on the weekly cron
+  # and on manual dispatch — not on every push or PR, to keep CI minutes
+  # reasonable.
+  # ---------------------------------------------------------------------------
+  integration-insiders:
+    name: Integration · insiders (${{ matrix.os }})
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    needs: unit
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    env:
+      VSCODE_VERSION: insiders
+    defaults:
+      run:
+        shell: bash
+        working-directory: test
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: test/package-lock.json
+      - name: Install test deps
+        run: npm ci
+      - name: Run integration tests (Linux, under xvfb)
+        if: runner.os == 'Linux'
+        run: xvfb-run -a npm run test:integration
+      - name: Run integration tests (Windows / macOS)
+        if: runner.os != 'Linux'
+        run: npm run test:integration
+
+  # ---------------------------------------------------------------------------
+  # Aggregate gate — a single status check the maintainer can require in the
+  # branch protection settings instead of selecting every matrix job by name.
+  # Passes only when every required stage above has passed (or, in the
+  # "skipped because not on cron" case for insiders, was legitimately skipped).
+  # ---------------------------------------------------------------------------
+  ci-passed:
+    name: CI passed
+    if: always()
+    needs: [validate, unit, integration-stable]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Confirm every required stage succeeded
+        run: |
+          if [ "${{ needs.validate.result }}" != "success" ]; then
+            echo "Validate stage did not succeed: ${{ needs.validate.result }}"
+            exit 1
+          fi
+          if [ "${{ needs.unit.result }}" != "success" ]; then
+            echo "Unit stage did not succeed: ${{ needs.unit.result }}"
+            exit 1
+          fi
+          if [ "${{ needs.integration-stable.result }}" != "success" ]; then
+            echo "Integration · stable stage did not succeed: ${{ needs.integration-stable.result }}"
+            exit 1
+          fi
+          echo "All required stages passed."

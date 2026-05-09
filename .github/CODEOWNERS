@@ -1,0 +1,4 @@
+# CODEOWNERS — auto-request review from the maintainer on every PR.
+# Documentation: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+*       @jzbakh

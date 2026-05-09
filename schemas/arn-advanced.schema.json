@@ -1,0 +1,4473 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ARN Skin — Advanced Customization",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "colors": {
+      "type": "object",
+      "description": "UI colors (workbench.colorCustomizations) — every key from the ARN themes is enumerated below for IntelliSense; additional keys remain accepted via additionalProperties.",
+      "properties": {
+        "activityBar.activeBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: activityBar.activeBackground"
+        },
+        "activityBar.activeBorder": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: activityBar.activeBorder"
+        },
+        "activityBar.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: activityBar.background"
+        },
+        "activityBar.border": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: activityBar.border"
+        },
+        "activityBar.dropBorder": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: activityBar.dropBorder"
+        },
+        "activityBar.foreground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: activityBar.foreground"
+        },
+        "activityBar.inactiveForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: activityBar.inactiveForeground"
+        },
+        "activityBarBadge.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: activityBarBadge.background"
+        },
+        "activityBarBadge.foreground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: activityBarBadge.foreground"
+        },
+        "activityBarTop.activeBorder": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: activityBarTop.activeBorder"
+        },
+        "activityBarTop.foreground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: activityBarTop.foreground"
+        },
+        "activityBarTop.inactiveForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: activityBarTop.inactiveForeground"
+        },
+        "badge.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: badge.background"
+        },
+        "badge.foreground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: badge.foreground"
+        },
+        "breadcrumb.activeSelectionForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: breadcrumb.activeSelectionForeground"
+        },
+        "breadcrumb.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: breadcrumb.background"
+        },
+        "breadcrumb.focusForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: breadcrumb.focusForeground"
+        },
+        "breadcrumb.foreground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: breadcrumb.foreground"
+        },
+        "breadcrumbPicker.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: breadcrumbPicker.background"
+        },
+        "button.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: button.background"
+        },
+        "button.border": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: button.border"
+        },
+        "button.foreground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: button.foreground"
+        },
+        "button.hoverBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: button.hoverBackground"
+        },
+        "button.secondaryBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: button.secondaryBackground"
+        },
+        "button.secondaryForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: button.secondaryForeground"
+        },
+        "button.secondaryHoverBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: button.secondaryHoverBackground"
+        },
+        "button.separator": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: button.separator"
+        },
+        "charts.blue": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: charts.blue"
+        },
+        "charts.foreground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: charts.foreground"
+        },
+        "charts.green": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: charts.green"
+        },
+        "charts.lines": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: charts.lines"
+        },
+        "charts.orange": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: charts.orange"
+        },
+        "charts.purple": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: charts.purple"
+        },
+        "charts.red": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: charts.red"
+        },
+        "charts.yellow": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: charts.yellow"
+        },
+        "chat.avatarBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: chat.avatarBackground"
+        },
+        "chat.avatarForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: chat.avatarForeground"
+        },
+        "chat.editedFileForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: chat.editedFileForeground"
+        },
+        "chat.linesAddedForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: chat.linesAddedForeground"
+        },
+        "chat.linesRemovedForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: chat.linesRemovedForeground"
+        },
+        "chat.requestBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: chat.requestBackground"
+        },
+        "chat.requestBorder": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: chat.requestBorder"
+        },
+        "chat.requestBubbleBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: chat.requestBubbleBackground"
+        },
+        "chat.requestBubbleHoverBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: chat.requestBubbleHoverBackground"
+        },
+        "chat.requestCodeBorder": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: chat.requestCodeBorder"
+        },
+        "chat.slashCommandBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: chat.slashCommandBackground"
+        },
+        "chat.slashCommandForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: chat.slashCommandForeground"
+        },
+        "checkbox.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: checkbox.background"
+        },
+        "checkbox.border": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: checkbox.border"
+        },
+        "checkbox.foreground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: checkbox.foreground"
+        },
+        "checkbox.selectBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: checkbox.selectBackground"
+        },
+        "checkbox.selectBorder": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: checkbox.selectBorder"
+        },
+        "commandCenter.activeBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: commandCenter.activeBackground"
+        },
+        "commandCenter.activeBorder": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: commandCenter.activeBorder"
+        },
+        "commandCenter.activeForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: commandCenter.activeForeground"
+        },
+        "commandCenter.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: commandCenter.background"
+        },
+        "commandCenter.border": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: commandCenter.border"
+        },
+        "commandCenter.foreground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: commandCenter.foreground"
+        },
+        "commandCenter.inactiveBorder": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: commandCenter.inactiveBorder"
+        },
+        "commandCenter.inactiveForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: commandCenter.inactiveForeground"
+        },
+        "contrastActiveBorder": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: contrastActiveBorder"
+        },
+        "contrastBorder": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: contrastBorder"
+        },
+        "debugConsole.errorForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: debugConsole.errorForeground"
+        },
+        "debugConsole.infoForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: debugConsole.infoForeground"
+        },
+        "debugConsole.sourceForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: debugConsole.sourceForeground"
+        },
+        "debugConsole.warningForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: debugConsole.warningForeground"
+        },
+        "debugConsoleInputIcon.foreground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: debugConsoleInputIcon.foreground"
+        },
+        "debugExceptionWidget.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: debugExceptionWidget.background"
+        },
+        "debugExceptionWidget.border": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: debugExceptionWidget.border"
+        },
+        "debugIcon.breakpointDisabledForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: debugIcon.breakpointDisabledForeground"
+        },
+        "debugIcon.breakpointForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: debugIcon.breakpointForeground"
+        },
+        "debugIcon.breakpointUnverifiedForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: debugIcon.breakpointUnverifiedForeground"
+        },
+        "debugIcon.continueForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: debugIcon.continueForeground"
+        },
+        "debugIcon.disconnectForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: debugIcon.disconnectForeground"
+        },
+        "debugIcon.pauseForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: debugIcon.pauseForeground"
+        },
+        "debugIcon.restartForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: debugIcon.restartForeground"
+        },
+        "debugIcon.startForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: debugIcon.startForeground"
+        },
+        "debugIcon.stepIntoForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: debugIcon.stepIntoForeground"
+        },
+        "debugIcon.stepOutForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: debugIcon.stepOutForeground"
+        },
+        "debugIcon.stepOverForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: debugIcon.stepOverForeground"
+        },
+        "debugIcon.stopForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: debugIcon.stopForeground"
+        },
+        "debugTokenExpression.boolean": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: debugTokenExpression.boolean"
+        },
+        "debugTokenExpression.error": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: debugTokenExpression.error"
+        },
+        "debugTokenExpression.name": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: debugTokenExpression.name"
+        },
+        "debugTokenExpression.number": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: debugTokenExpression.number"
+        },
+        "debugTokenExpression.string": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: debugTokenExpression.string"
+        },
+        "debugTokenExpression.value": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: debugTokenExpression.value"
+        },
+        "debugToolBar.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: debugToolBar.background"
+        },
+        "debugToolBar.border": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: debugToolBar.border"
+        },
+        "descriptionForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: descriptionForeground"
+        },
+        "diffEditor.border": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: diffEditor.border"
+        },
+        "diffEditor.diagonalFill": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: diffEditor.diagonalFill"
+        },
+        "diffEditor.insertedLineBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: diffEditor.insertedLineBackground"
+        },
+        "diffEditor.insertedTextBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: diffEditor.insertedTextBackground"
+        },
+        "diffEditor.removedLineBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: diffEditor.removedLineBackground"
+        },
+        "diffEditor.removedTextBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: diffEditor.removedTextBackground"
+        },
+        "diffEditorGutter.insertedLineBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: diffEditorGutter.insertedLineBackground"
+        },
+        "diffEditorGutter.removedLineBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: diffEditorGutter.removedLineBackground"
+        },
+        "diffEditorOverview.insertedForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: diffEditorOverview.insertedForeground"
+        },
+        "diffEditorOverview.removedForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: diffEditorOverview.removedForeground"
+        },
+        "disabledForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: disabledForeground"
+        },
+        "dropdown.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: dropdown.background"
+        },
+        "dropdown.border": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: dropdown.border"
+        },
+        "dropdown.foreground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: dropdown.foreground"
+        },
+        "dropdown.listBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: dropdown.listBackground"
+        },
+        "editor.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editor.background"
+        },
+        "editor.findMatchBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editor.findMatchBackground"
+        },
+        "editor.findMatchBorder": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editor.findMatchBorder"
+        },
+        "editor.findMatchHighlightBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editor.findMatchHighlightBackground"
+        },
+        "editor.findRangeHighlightBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editor.findRangeHighlightBackground"
+        },
+        "editor.focusedStackFrameHighlightBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editor.focusedStackFrameHighlightBackground"
+        },
+        "editor.foreground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editor.foreground"
+        },
+        "editor.hoverHighlightBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editor.hoverHighlightBackground"
+        },
+        "editor.inactiveSelectionBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editor.inactiveSelectionBackground"
+        },
+        "editor.lineHighlightBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editor.lineHighlightBackground"
+        },
+        "editor.lineHighlightBorder": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editor.lineHighlightBorder"
+        },
+        "editor.rangeHighlightBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editor.rangeHighlightBackground"
+        },
+        "editor.selectionBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editor.selectionBackground"
+        },
+        "editor.selectionHighlightBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editor.selectionHighlightBackground"
+        },
+        "editor.snippetFinalTabstopHighlightBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editor.snippetFinalTabstopHighlightBackground"
+        },
+        "editor.snippetTabstopHighlightBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editor.snippetTabstopHighlightBackground"
+        },
+        "editor.stackFrameHighlightBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editor.stackFrameHighlightBackground"
+        },
+        "editor.wordHighlightBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editor.wordHighlightBackground"
+        },
+        "editor.wordHighlightStrongBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editor.wordHighlightStrongBackground"
+        },
+        "editorBracketHighlight.foreground1": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorBracketHighlight.foreground1"
+        },
+        "editorBracketHighlight.foreground2": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorBracketHighlight.foreground2"
+        },
+        "editorBracketHighlight.foreground3": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorBracketHighlight.foreground3"
+        },
+        "editorBracketHighlight.foreground4": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorBracketHighlight.foreground4"
+        },
+        "editorBracketHighlight.foreground5": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorBracketHighlight.foreground5"
+        },
+        "editorBracketHighlight.foreground6": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorBracketHighlight.foreground6"
+        },
+        "editorBracketHighlight.unexpectedBracket.foreground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorBracketHighlight.unexpectedBracket.foreground"
+        },
+        "editorBracketMatch.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorBracketMatch.background"
+        },
+        "editorBracketMatch.border": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorBracketMatch.border"
+        },
+        "editorBracketPairGuide.activeBackground1": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorBracketPairGuide.activeBackground1"
+        },
+        "editorBracketPairGuide.activeBackground2": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorBracketPairGuide.activeBackground2"
+        },
+        "editorBracketPairGuide.activeBackground3": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorBracketPairGuide.activeBackground3"
+        },
+        "editorBracketPairGuide.background1": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorBracketPairGuide.background1"
+        },
+        "editorBracketPairGuide.background2": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorBracketPairGuide.background2"
+        },
+        "editorBracketPairGuide.background3": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorBracketPairGuide.background3"
+        },
+        "editorCodeLens.foreground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorCodeLens.foreground"
+        },
+        "editorCursor.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorCursor.background"
+        },
+        "editorCursor.foreground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorCursor.foreground"
+        },
+        "editorError.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorError.background"
+        },
+        "editorError.border": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorError.border"
+        },
+        "editorError.foreground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorError.foreground"
+        },
+        "editorGhostText.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorGhostText.background"
+        },
+        "editorGhostText.border": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorGhostText.border"
+        },
+        "editorGhostText.foreground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorGhostText.foreground"
+        },
+        "editorGroup.border": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorGroup.border"
+        },
+        "editorGroup.dropBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorGroup.dropBackground"
+        },
+        "editorGroup.focusedEmptyBorder": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorGroup.focusedEmptyBorder"
+        },
+        "editorGroupHeader.border": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorGroupHeader.border"
+        },
+        "editorGroupHeader.noTabsBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorGroupHeader.noTabsBackground"
+        },
+        "editorGroupHeader.tabsBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorGroupHeader.tabsBackground"
+        },
+        "editorHint.border": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorHint.border"
+        },
+        "editorHint.foreground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorHint.foreground"
+        },
+        "editorHoverWidget.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorHoverWidget.background"
+        },
+        "editorHoverWidget.border": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorHoverWidget.border"
+        },
+        "editorHoverWidget.foreground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorHoverWidget.foreground"
+        },
+        "editorHoverWidget.statusBarBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorHoverWidget.statusBarBackground"
+        },
+        "editorIndentGuide.activeBackground1": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorIndentGuide.activeBackground1"
+        },
+        "editorIndentGuide.background1": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorIndentGuide.background1"
+        },
+        "editorInfo.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorInfo.background"
+        },
+        "editorInfo.border": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorInfo.border"
+        },
+        "editorInfo.foreground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorInfo.foreground"
+        },
+        "editorInlayHint.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorInlayHint.background"
+        },
+        "editorInlayHint.foreground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorInlayHint.foreground"
+        },
+        "editorInlayHint.parameterBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorInlayHint.parameterBackground"
+        },
+        "editorInlayHint.parameterForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorInlayHint.parameterForeground"
+        },
+        "editorInlayHint.typeBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorInlayHint.typeBackground"
+        },
+        "editorInlayHint.typeForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorInlayHint.typeForeground"
+        },
+        "editorLineNumber.activeForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorLineNumber.activeForeground"
+        },
+        "editorLineNumber.foreground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorLineNumber.foreground"
+        },
+        "editorLink.activeForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorLink.activeForeground"
+        },
+        "editorMarkerNavigation.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorMarkerNavigation.background"
+        },
+        "editorMarkerNavigationError.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorMarkerNavigationError.background"
+        },
+        "editorMarkerNavigationInfo.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorMarkerNavigationInfo.background"
+        },
+        "editorMarkerNavigationWarning.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorMarkerNavigationWarning.background"
+        },
+        "editorOverviewRuler.addedForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorOverviewRuler.addedForeground"
+        },
+        "editorOverviewRuler.border": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorOverviewRuler.border"
+        },
+        "editorOverviewRuler.deletedForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorOverviewRuler.deletedForeground"
+        },
+        "editorOverviewRuler.errorForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorOverviewRuler.errorForeground"
+        },
+        "editorOverviewRuler.findMatchForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorOverviewRuler.findMatchForeground"
+        },
+        "editorOverviewRuler.infoForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorOverviewRuler.infoForeground"
+        },
+        "editorOverviewRuler.modifiedForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorOverviewRuler.modifiedForeground"
+        },
+        "editorOverviewRuler.selectionHighlightForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorOverviewRuler.selectionHighlightForeground"
+        },
+        "editorOverviewRuler.warningForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorOverviewRuler.warningForeground"
+        },
+        "editorOverviewRuler.wordHighlightForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorOverviewRuler.wordHighlightForeground"
+        },
+        "editorOverviewRuler.wordHighlightStrongForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorOverviewRuler.wordHighlightStrongForeground"
+        },
+        "editorRuler.foreground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorRuler.foreground"
+        },
+        "editorStickyScroll.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorStickyScroll.background"
+        },
+        "editorStickyScroll.shadow": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorStickyScroll.shadow"
+        },
+        "editorStickyScrollHover.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorStickyScrollHover.background"
+        },
+        "editorSuggestWidget.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorSuggestWidget.background"
+        },
+        "editorSuggestWidget.border": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorSuggestWidget.border"
+        },
+        "editorSuggestWidget.focusHighlightForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorSuggestWidget.focusHighlightForeground"
+        },
+        "editorSuggestWidget.foreground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorSuggestWidget.foreground"
+        },
+        "editorSuggestWidget.highlightForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorSuggestWidget.highlightForeground"
+        },
+        "editorSuggestWidget.selectedBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorSuggestWidget.selectedBackground"
+        },
+        "editorSuggestWidget.selectedForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorSuggestWidget.selectedForeground"
+        },
+        "editorSuggestWidgetStatus.foreground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorSuggestWidgetStatus.foreground"
+        },
+        "editorWarning.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorWarning.background"
+        },
+        "editorWarning.border": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorWarning.border"
+        },
+        "editorWarning.foreground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorWarning.foreground"
+        },
+        "editorWhitespace.foreground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorWhitespace.foreground"
+        },
+        "editorWidget.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorWidget.background"
+        },
+        "editorWidget.border": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorWidget.border"
+        },
+        "editorWidget.foreground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorWidget.foreground"
+        },
+        "editorWidget.resizeBorder": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: editorWidget.resizeBorder"
+        },
+        "errorForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: errorForeground"
+        },
+        "errorLens.errorBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: errorLens.errorBackground"
+        },
+        "errorLens.errorForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: errorLens.errorForeground"
+        },
+        "errorLens.errorMessageBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: errorLens.errorMessageBackground"
+        },
+        "errorLens.hintBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: errorLens.hintBackground"
+        },
+        "errorLens.hintForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: errorLens.hintForeground"
+        },
+        "errorLens.hintMessageBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: errorLens.hintMessageBackground"
+        },
+        "errorLens.infoBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: errorLens.infoBackground"
+        },
+        "errorLens.infoForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: errorLens.infoForeground"
+        },
+        "errorLens.infoMessageBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: errorLens.infoMessageBackground"
+        },
+        "errorLens.warningBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: errorLens.warningBackground"
+        },
+        "errorLens.warningForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: errorLens.warningForeground"
+        },
+        "errorLens.warningMessageBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: errorLens.warningMessageBackground"
+        },
+        "extensionBadge.remoteBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: extensionBadge.remoteBackground"
+        },
+        "extensionBadge.remoteForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: extensionBadge.remoteForeground"
+        },
+        "extensionButton.prominentBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: extensionButton.prominentBackground"
+        },
+        "extensionButton.prominentForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: extensionButton.prominentForeground"
+        },
+        "extensionButton.prominentHoverBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: extensionButton.prominentHoverBackground"
+        },
+        "focusBorder": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: focusBorder"
+        },
+        "foreground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: foreground"
+        },
+        "gitDecoration.addedResourceForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: gitDecoration.addedResourceForeground"
+        },
+        "gitDecoration.conflictingResourceForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: gitDecoration.conflictingResourceForeground"
+        },
+        "gitDecoration.deletedResourceForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: gitDecoration.deletedResourceForeground"
+        },
+        "gitDecoration.ignoredResourceForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: gitDecoration.ignoredResourceForeground"
+        },
+        "gitDecoration.modifiedResourceForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: gitDecoration.modifiedResourceForeground"
+        },
+        "gitDecoration.renamedResourceForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: gitDecoration.renamedResourceForeground"
+        },
+        "gitDecoration.stageDeletedResourceForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: gitDecoration.stageDeletedResourceForeground"
+        },
+        "gitDecoration.stageModifiedResourceForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: gitDecoration.stageModifiedResourceForeground"
+        },
+        "gitDecoration.submoduleResourceForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: gitDecoration.submoduleResourceForeground"
+        },
+        "gitDecoration.untrackedResourceForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: gitDecoration.untrackedResourceForeground"
+        },
+        "gitlens.gutterBackgroundColor": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: gitlens.gutterBackgroundColor"
+        },
+        "gitlens.gutterForegroundColor": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: gitlens.gutterForegroundColor"
+        },
+        "gitlens.gutterUncommittedForegroundColor": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: gitlens.gutterUncommittedForegroundColor"
+        },
+        "gitlens.lineHighlightBackgroundColor": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: gitlens.lineHighlightBackgroundColor"
+        },
+        "gitlens.lineHighlightOverviewRulerColor": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: gitlens.lineHighlightOverviewRulerColor"
+        },
+        "gitlens.trailingLineForegroundColor": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: gitlens.trailingLineForegroundColor"
+        },
+        "icon.foreground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: icon.foreground"
+        },
+        "inlineChat.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: inlineChat.background"
+        },
+        "inlineChat.border": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: inlineChat.border"
+        },
+        "inlineChat.shadow": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: inlineChat.shadow"
+        },
+        "inlineChatDiff.inserted": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: inlineChatDiff.inserted"
+        },
+        "inlineChatDiff.removed": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: inlineChatDiff.removed"
+        },
+        "inlineChatInput.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: inlineChatInput.background"
+        },
+        "inlineChatInput.border": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: inlineChatInput.border"
+        },
+        "inlineChatInput.focusBorder": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: inlineChatInput.focusBorder"
+        },
+        "inlineChatInput.placeholderForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: inlineChatInput.placeholderForeground"
+        },
+        "input.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: input.background"
+        },
+        "input.border": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: input.border"
+        },
+        "input.foreground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: input.foreground"
+        },
+        "input.placeholderForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: input.placeholderForeground"
+        },
+        "inputOption.activeBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: inputOption.activeBackground"
+        },
+        "inputOption.activeBorder": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: inputOption.activeBorder"
+        },
+        "inputOption.activeForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: inputOption.activeForeground"
+        },
+        "inputOption.hoverBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: inputOption.hoverBackground"
+        },
+        "inputValidation.errorBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: inputValidation.errorBackground"
+        },
+        "inputValidation.errorBorder": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: inputValidation.errorBorder"
+        },
+        "inputValidation.errorForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: inputValidation.errorForeground"
+        },
+        "inputValidation.infoBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: inputValidation.infoBackground"
+        },
+        "inputValidation.infoBorder": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: inputValidation.infoBorder"
+        },
+        "inputValidation.infoForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: inputValidation.infoForeground"
+        },
+        "inputValidation.warningBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: inputValidation.warningBackground"
+        },
+        "inputValidation.warningBorder": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: inputValidation.warningBorder"
+        },
+        "inputValidation.warningForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: inputValidation.warningForeground"
+        },
+        "keybindingLabel.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: keybindingLabel.background"
+        },
+        "keybindingLabel.border": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: keybindingLabel.border"
+        },
+        "keybindingLabel.bottomBorder": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: keybindingLabel.bottomBorder"
+        },
+        "keybindingLabel.foreground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: keybindingLabel.foreground"
+        },
+        "list.activeSelectionBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: list.activeSelectionBackground"
+        },
+        "list.activeSelectionForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: list.activeSelectionForeground"
+        },
+        "list.activeSelectionIconForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: list.activeSelectionIconForeground"
+        },
+        "list.deemphasizedForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: list.deemphasizedForeground"
+        },
+        "list.dropBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: list.dropBackground"
+        },
+        "list.errorForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: list.errorForeground"
+        },
+        "list.filterMatchBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: list.filterMatchBackground"
+        },
+        "list.filterMatchBorder": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: list.filterMatchBorder"
+        },
+        "list.focusBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: list.focusBackground"
+        },
+        "list.focusForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: list.focusForeground"
+        },
+        "list.focusHighlightForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: list.focusHighlightForeground"
+        },
+        "list.focusOutline": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: list.focusOutline"
+        },
+        "list.highlightForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: list.highlightForeground"
+        },
+        "list.hoverBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: list.hoverBackground"
+        },
+        "list.hoverForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: list.hoverForeground"
+        },
+        "list.inactiveSelectionBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: list.inactiveSelectionBackground"
+        },
+        "list.inactiveSelectionForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: list.inactiveSelectionForeground"
+        },
+        "list.inactiveSelectionIconForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: list.inactiveSelectionIconForeground"
+        },
+        "list.invalidItemForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: list.invalidItemForeground"
+        },
+        "list.warningForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: list.warningForeground"
+        },
+        "menu.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: menu.background"
+        },
+        "menu.border": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: menu.border"
+        },
+        "menu.foreground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: menu.foreground"
+        },
+        "menu.selectionBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: menu.selectionBackground"
+        },
+        "menu.selectionBorder": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: menu.selectionBorder"
+        },
+        "menu.selectionForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: menu.selectionForeground"
+        },
+        "menu.separatorBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: menu.separatorBackground"
+        },
+        "menubar.selectionBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: menubar.selectionBackground"
+        },
+        "menubar.selectionBorder": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: menubar.selectionBorder"
+        },
+        "menubar.selectionForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: menubar.selectionForeground"
+        },
+        "merge.commonContentBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: merge.commonContentBackground"
+        },
+        "merge.commonHeaderBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: merge.commonHeaderBackground"
+        },
+        "merge.currentContentBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: merge.currentContentBackground"
+        },
+        "merge.currentHeaderBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: merge.currentHeaderBackground"
+        },
+        "merge.incomingContentBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: merge.incomingContentBackground"
+        },
+        "merge.incomingHeaderBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: merge.incomingHeaderBackground"
+        },
+        "mergeEditor.change.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: mergeEditor.change.background"
+        },
+        "mergeEditor.change.word.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: mergeEditor.change.word.background"
+        },
+        "minimap.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: minimap.background"
+        },
+        "minimap.errorHighlight": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: minimap.errorHighlight"
+        },
+        "minimap.findMatchHighlight": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: minimap.findMatchHighlight"
+        },
+        "minimap.foregroundOpacity": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: minimap.foregroundOpacity"
+        },
+        "minimap.selectionHighlight": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: minimap.selectionHighlight"
+        },
+        "minimap.selectionOccurrenceHighlight": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: minimap.selectionOccurrenceHighlight"
+        },
+        "minimap.warningHighlight": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: minimap.warningHighlight"
+        },
+        "minimapGutter.addedBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: minimapGutter.addedBackground"
+        },
+        "minimapGutter.deletedBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: minimapGutter.deletedBackground"
+        },
+        "minimapGutter.modifiedBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: minimapGutter.modifiedBackground"
+        },
+        "minimapSlider.activeBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: minimapSlider.activeBackground"
+        },
+        "minimapSlider.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: minimapSlider.background"
+        },
+        "minimapSlider.hoverBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: minimapSlider.hoverBackground"
+        },
+        "notificationCenter.border": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: notificationCenter.border"
+        },
+        "notificationCenterHeader.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: notificationCenterHeader.background"
+        },
+        "notificationCenterHeader.foreground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: notificationCenterHeader.foreground"
+        },
+        "notificationLink.foreground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: notificationLink.foreground"
+        },
+        "notificationToast.border": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: notificationToast.border"
+        },
+        "notifications.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: notifications.background"
+        },
+        "notifications.border": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: notifications.border"
+        },
+        "notifications.foreground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: notifications.foreground"
+        },
+        "notificationsErrorIcon.foreground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: notificationsErrorIcon.foreground"
+        },
+        "notificationsInfoIcon.foreground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: notificationsInfoIcon.foreground"
+        },
+        "notificationsWarningIcon.foreground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: notificationsWarningIcon.foreground"
+        },
+        "panel.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: panel.background"
+        },
+        "panel.border": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: panel.border"
+        },
+        "panel.dropBorder": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: panel.dropBorder"
+        },
+        "panelInput.border": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: panelInput.border"
+        },
+        "panelSection.border": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: panelSection.border"
+        },
+        "panelSection.dropBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: panelSection.dropBackground"
+        },
+        "panelSectionHeader.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: panelSectionHeader.background"
+        },
+        "panelSectionHeader.border": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: panelSectionHeader.border"
+        },
+        "panelSectionHeader.foreground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: panelSectionHeader.foreground"
+        },
+        "panelTitle.activeBorder": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: panelTitle.activeBorder"
+        },
+        "panelTitle.activeForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: panelTitle.activeForeground"
+        },
+        "panelTitle.inactiveForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: panelTitle.inactiveForeground"
+        },
+        "peekView.border": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: peekView.border"
+        },
+        "peekViewEditor.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: peekViewEditor.background"
+        },
+        "peekViewEditor.matchHighlightBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: peekViewEditor.matchHighlightBackground"
+        },
+        "peekViewEditor.matchHighlightBorder": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: peekViewEditor.matchHighlightBorder"
+        },
+        "peekViewEditorGutter.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: peekViewEditorGutter.background"
+        },
+        "peekViewResult.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: peekViewResult.background"
+        },
+        "peekViewResult.fileForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: peekViewResult.fileForeground"
+        },
+        "peekViewResult.lineForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: peekViewResult.lineForeground"
+        },
+        "peekViewResult.matchHighlightBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: peekViewResult.matchHighlightBackground"
+        },
+        "peekViewResult.selectionBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: peekViewResult.selectionBackground"
+        },
+        "peekViewResult.selectionForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: peekViewResult.selectionForeground"
+        },
+        "peekViewTitle.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: peekViewTitle.background"
+        },
+        "peekViewTitleDescription.foreground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: peekViewTitleDescription.foreground"
+        },
+        "peekViewTitleLabel.foreground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: peekViewTitleLabel.foreground"
+        },
+        "pickerGroup.border": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: pickerGroup.border"
+        },
+        "pickerGroup.foreground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: pickerGroup.foreground"
+        },
+        "problemsErrorIcon.foreground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: problemsErrorIcon.foreground"
+        },
+        "problemsInfoIcon.foreground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: problemsInfoIcon.foreground"
+        },
+        "problemsWarningIcon.foreground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: problemsWarningIcon.foreground"
+        },
+        "progressBar.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: progressBar.background"
+        },
+        "quickInput.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: quickInput.background"
+        },
+        "quickInput.foreground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: quickInput.foreground"
+        },
+        "quickInputList.focusBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: quickInputList.focusBackground"
+        },
+        "quickInputList.focusForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: quickInputList.focusForeground"
+        },
+        "quickInputList.focusIconForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: quickInputList.focusIconForeground"
+        },
+        "quickInputTitle.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: quickInputTitle.background"
+        },
+        "sash.hoverBorder": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: sash.hoverBorder"
+        },
+        "scrollbar.shadow": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: scrollbar.shadow"
+        },
+        "scrollbarSlider.activeBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: scrollbarSlider.activeBackground"
+        },
+        "scrollbarSlider.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: scrollbarSlider.background"
+        },
+        "scrollbarSlider.hoverBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: scrollbarSlider.hoverBackground"
+        },
+        "selection.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: selection.background"
+        },
+        "settings.checkboxBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: settings.checkboxBackground"
+        },
+        "settings.checkboxBorder": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: settings.checkboxBorder"
+        },
+        "settings.checkboxForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: settings.checkboxForeground"
+        },
+        "settings.dropdownBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: settings.dropdownBackground"
+        },
+        "settings.dropdownBorder": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: settings.dropdownBorder"
+        },
+        "settings.dropdownForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: settings.dropdownForeground"
+        },
+        "settings.dropdownListBorder": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: settings.dropdownListBorder"
+        },
+        "settings.focusedRowBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: settings.focusedRowBackground"
+        },
+        "settings.headerBorder": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: settings.headerBorder"
+        },
+        "settings.headerForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: settings.headerForeground"
+        },
+        "settings.modifiedItemIndicator": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: settings.modifiedItemIndicator"
+        },
+        "settings.numberInputBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: settings.numberInputBackground"
+        },
+        "settings.numberInputBorder": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: settings.numberInputBorder"
+        },
+        "settings.numberInputForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: settings.numberInputForeground"
+        },
+        "settings.rowHoverBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: settings.rowHoverBackground"
+        },
+        "settings.sashBorder": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: settings.sashBorder"
+        },
+        "settings.settingsHeaderHoverForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: settings.settingsHeaderHoverForeground"
+        },
+        "settings.textInputBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: settings.textInputBackground"
+        },
+        "settings.textInputBorder": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: settings.textInputBorder"
+        },
+        "settings.textInputForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: settings.textInputForeground"
+        },
+        "sideBar.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: sideBar.background"
+        },
+        "sideBar.border": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: sideBar.border"
+        },
+        "sideBar.dropBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: sideBar.dropBackground"
+        },
+        "sideBar.foreground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: sideBar.foreground"
+        },
+        "sideBarSectionHeader.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: sideBarSectionHeader.background"
+        },
+        "sideBarSectionHeader.border": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: sideBarSectionHeader.border"
+        },
+        "sideBarSectionHeader.foreground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: sideBarSectionHeader.foreground"
+        },
+        "sideBarTitle.foreground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: sideBarTitle.foreground"
+        },
+        "statusBar.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: statusBar.background"
+        },
+        "statusBar.border": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: statusBar.border"
+        },
+        "statusBar.debuggingBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: statusBar.debuggingBackground"
+        },
+        "statusBar.debuggingBorder": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: statusBar.debuggingBorder"
+        },
+        "statusBar.debuggingForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: statusBar.debuggingForeground"
+        },
+        "statusBar.foreground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: statusBar.foreground"
+        },
+        "statusBar.noFolderBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: statusBar.noFolderBackground"
+        },
+        "statusBar.noFolderForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: statusBar.noFolderForeground"
+        },
+        "statusBarItem.activeBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: statusBarItem.activeBackground"
+        },
+        "statusBarItem.errorBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: statusBarItem.errorBackground"
+        },
+        "statusBarItem.errorForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: statusBarItem.errorForeground"
+        },
+        "statusBarItem.hoverBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: statusBarItem.hoverBackground"
+        },
+        "statusBarItem.prominentBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: statusBarItem.prominentBackground"
+        },
+        "statusBarItem.prominentForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: statusBarItem.prominentForeground"
+        },
+        "statusBarItem.prominentHoverBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: statusBarItem.prominentHoverBackground"
+        },
+        "statusBarItem.remoteBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: statusBarItem.remoteBackground"
+        },
+        "statusBarItem.remoteForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: statusBarItem.remoteForeground"
+        },
+        "statusBarItem.remoteHoverBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: statusBarItem.remoteHoverBackground"
+        },
+        "statusBarItem.warningBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: statusBarItem.warningBackground"
+        },
+        "statusBarItem.warningForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: statusBarItem.warningForeground"
+        },
+        "tab.activeBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: tab.activeBackground"
+        },
+        "tab.activeBorder": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: tab.activeBorder"
+        },
+        "tab.activeBorderTop": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: tab.activeBorderTop"
+        },
+        "tab.activeForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: tab.activeForeground"
+        },
+        "tab.activeModifiedBorder": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: tab.activeModifiedBorder"
+        },
+        "tab.border": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: tab.border"
+        },
+        "tab.hoverBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: tab.hoverBackground"
+        },
+        "tab.hoverBorder": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: tab.hoverBorder"
+        },
+        "tab.hoverForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: tab.hoverForeground"
+        },
+        "tab.inactiveBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: tab.inactiveBackground"
+        },
+        "tab.inactiveForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: tab.inactiveForeground"
+        },
+        "tab.inactiveModifiedBorder": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: tab.inactiveModifiedBorder"
+        },
+        "tab.lastPinnedBorder": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: tab.lastPinnedBorder"
+        },
+        "tab.unfocusedActiveBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: tab.unfocusedActiveBackground"
+        },
+        "tab.unfocusedActiveBorder": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: tab.unfocusedActiveBorder"
+        },
+        "tab.unfocusedActiveBorderTop": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: tab.unfocusedActiveBorderTop"
+        },
+        "tab.unfocusedActiveForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: tab.unfocusedActiveForeground"
+        },
+        "tab.unfocusedHoverBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: tab.unfocusedHoverBackground"
+        },
+        "tab.unfocusedInactiveBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: tab.unfocusedInactiveBackground"
+        },
+        "tab.unfocusedInactiveForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: tab.unfocusedInactiveForeground"
+        },
+        "terminal.ansiBlack": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: terminal.ansiBlack"
+        },
+        "terminal.ansiBlue": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: terminal.ansiBlue"
+        },
+        "terminal.ansiBrightBlack": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: terminal.ansiBrightBlack"
+        },
+        "terminal.ansiBrightBlue": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: terminal.ansiBrightBlue"
+        },
+        "terminal.ansiBrightCyan": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: terminal.ansiBrightCyan"
+        },
+        "terminal.ansiBrightGreen": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: terminal.ansiBrightGreen"
+        },
+        "terminal.ansiBrightMagenta": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: terminal.ansiBrightMagenta"
+        },
+        "terminal.ansiBrightRed": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: terminal.ansiBrightRed"
+        },
+        "terminal.ansiBrightWhite": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: terminal.ansiBrightWhite"
+        },
+        "terminal.ansiBrightYellow": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: terminal.ansiBrightYellow"
+        },
+        "terminal.ansiCyan": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: terminal.ansiCyan"
+        },
+        "terminal.ansiGreen": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: terminal.ansiGreen"
+        },
+        "terminal.ansiMagenta": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: terminal.ansiMagenta"
+        },
+        "terminal.ansiRed": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: terminal.ansiRed"
+        },
+        "terminal.ansiWhite": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: terminal.ansiWhite"
+        },
+        "terminal.ansiYellow": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: terminal.ansiYellow"
+        },
+        "terminal.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: terminal.background"
+        },
+        "terminal.border": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: terminal.border"
+        },
+        "terminal.foreground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: terminal.foreground"
+        },
+        "terminal.inactiveSelectionBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: terminal.inactiveSelectionBackground"
+        },
+        "terminal.selectionBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: terminal.selectionBackground"
+        },
+        "terminalCursor.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: terminalCursor.background"
+        },
+        "terminalCursor.foreground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: terminalCursor.foreground"
+        },
+        "textBlockQuote.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: textBlockQuote.background"
+        },
+        "textBlockQuote.border": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: textBlockQuote.border"
+        },
+        "textCodeBlock.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: textCodeBlock.background"
+        },
+        "textLink.activeForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: textLink.activeForeground"
+        },
+        "textLink.foreground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: textLink.foreground"
+        },
+        "textPreformat.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: textPreformat.background"
+        },
+        "textPreformat.foreground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: textPreformat.foreground"
+        },
+        "textSeparator.foreground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: textSeparator.foreground"
+        },
+        "titleBar.activeBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: titleBar.activeBackground"
+        },
+        "titleBar.activeForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: titleBar.activeForeground"
+        },
+        "titleBar.border": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: titleBar.border"
+        },
+        "titleBar.inactiveBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: titleBar.inactiveBackground"
+        },
+        "titleBar.inactiveForeground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: titleBar.inactiveForeground"
+        },
+        "toolbar.activeBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: toolbar.activeBackground"
+        },
+        "toolbar.hoverBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: toolbar.hoverBackground"
+        },
+        "toolbar.hoverOutline": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: toolbar.hoverOutline"
+        },
+        "tree.inactiveIndentGuidesStroke": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: tree.inactiveIndentGuidesStroke"
+        },
+        "tree.indentGuidesStroke": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: tree.indentGuidesStroke"
+        },
+        "walkThrough.embeddedEditorBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: walkThrough.embeddedEditorBackground"
+        },
+        "welcomePage.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: welcomePage.background"
+        },
+        "welcomePage.progress.background": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: welcomePage.progress.background"
+        },
+        "welcomePage.progress.foreground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: welcomePage.progress.foreground"
+        },
+        "welcomePage.tileBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: welcomePage.tileBackground"
+        },
+        "welcomePage.tileBorder": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: welcomePage.tileBorder"
+        },
+        "welcomePage.tileHoverBackground": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: welcomePage.tileHoverBackground"
+        },
+        "widget.border": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: widget.border"
+        },
+        "widget.shadow": {
+          "type": "string",
+          "format": "color-hex",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "VSCode color token: widget.shadow"
+        }
+      },
+      "additionalProperties": {
+        "type": "string",
+        "format": "color-hex",
+        "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+      }
+    },
+    "semanticTokenColors": {
+      "type": "object",
+      "description": "Semantic token styles — string shorthand is the foreground hex.",
+      "properties": {
+        "builtinType": {
+          "type": "object",
+          "properties": {
+            "foreground": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "background": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "fontStyle": {
+              "type": "string"
+            },
+            "bold": {
+              "type": "boolean"
+            },
+            "italic": {
+              "type": "boolean"
+            },
+            "underline": {
+              "type": "boolean"
+            },
+            "strikethrough": {
+              "type": "boolean"
+            }
+          },
+          "description": "Semantic token: builtinType"
+        },
+        "class": {
+          "type": "object",
+          "properties": {
+            "foreground": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "background": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "fontStyle": {
+              "type": "string"
+            },
+            "bold": {
+              "type": "boolean"
+            },
+            "italic": {
+              "type": "boolean"
+            },
+            "underline": {
+              "type": "boolean"
+            },
+            "strikethrough": {
+              "type": "boolean"
+            }
+          },
+          "description": "Semantic token: class"
+        },
+        "class.declaration": {
+          "type": "object",
+          "properties": {
+            "foreground": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "background": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "fontStyle": {
+              "type": "string"
+            },
+            "bold": {
+              "type": "boolean"
+            },
+            "italic": {
+              "type": "boolean"
+            },
+            "underline": {
+              "type": "boolean"
+            },
+            "strikethrough": {
+              "type": "boolean"
+            }
+          },
+          "description": "Semantic token: class.declaration"
+        },
+        "comment": {
+          "type": "object",
+          "properties": {
+            "foreground": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "background": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "fontStyle": {
+              "type": "string"
+            },
+            "bold": {
+              "type": "boolean"
+            },
+            "italic": {
+              "type": "boolean"
+            },
+            "underline": {
+              "type": "boolean"
+            },
+            "strikethrough": {
+              "type": "boolean"
+            }
+          },
+          "description": "Semantic token: comment"
+        },
+        "decorator": {
+          "type": "object",
+          "properties": {
+            "foreground": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "background": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "fontStyle": {
+              "type": "string"
+            },
+            "bold": {
+              "type": "boolean"
+            },
+            "italic": {
+              "type": "boolean"
+            },
+            "underline": {
+              "type": "boolean"
+            },
+            "strikethrough": {
+              "type": "boolean"
+            }
+          },
+          "description": "Semantic token: decorator"
+        },
+        "enum": {
+          "type": "object",
+          "properties": {
+            "foreground": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "background": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "fontStyle": {
+              "type": "string"
+            },
+            "bold": {
+              "type": "boolean"
+            },
+            "italic": {
+              "type": "boolean"
+            },
+            "underline": {
+              "type": "boolean"
+            },
+            "strikethrough": {
+              "type": "boolean"
+            }
+          },
+          "description": "Semantic token: enum"
+        },
+        "enum.declaration": {
+          "type": "object",
+          "properties": {
+            "foreground": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "background": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "fontStyle": {
+              "type": "string"
+            },
+            "bold": {
+              "type": "boolean"
+            },
+            "italic": {
+              "type": "boolean"
+            },
+            "underline": {
+              "type": "boolean"
+            },
+            "strikethrough": {
+              "type": "boolean"
+            }
+          },
+          "description": "Semantic token: enum.declaration"
+        },
+        "enumMember": {
+          "type": "object",
+          "properties": {
+            "foreground": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "background": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "fontStyle": {
+              "type": "string"
+            },
+            "bold": {
+              "type": "boolean"
+            },
+            "italic": {
+              "type": "boolean"
+            },
+            "underline": {
+              "type": "boolean"
+            },
+            "strikethrough": {
+              "type": "boolean"
+            }
+          },
+          "description": "Semantic token: enumMember"
+        },
+        "event": {
+          "type": "object",
+          "properties": {
+            "foreground": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "background": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "fontStyle": {
+              "type": "string"
+            },
+            "bold": {
+              "type": "boolean"
+            },
+            "italic": {
+              "type": "boolean"
+            },
+            "underline": {
+              "type": "boolean"
+            },
+            "strikethrough": {
+              "type": "boolean"
+            }
+          },
+          "description": "Semantic token: event"
+        },
+        "function": {
+          "type": "object",
+          "properties": {
+            "foreground": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "background": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "fontStyle": {
+              "type": "string"
+            },
+            "bold": {
+              "type": "boolean"
+            },
+            "italic": {
+              "type": "boolean"
+            },
+            "underline": {
+              "type": "boolean"
+            },
+            "strikethrough": {
+              "type": "boolean"
+            }
+          },
+          "description": "Semantic token: function"
+        },
+        "function.async": {
+          "type": "object",
+          "properties": {
+            "foreground": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "background": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "fontStyle": {
+              "type": "string"
+            },
+            "bold": {
+              "type": "boolean"
+            },
+            "italic": {
+              "type": "boolean"
+            },
+            "underline": {
+              "type": "boolean"
+            },
+            "strikethrough": {
+              "type": "boolean"
+            }
+          },
+          "description": "Semantic token: function.async"
+        },
+        "function.declaration": {
+          "type": "object",
+          "properties": {
+            "foreground": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "background": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "fontStyle": {
+              "type": "string"
+            },
+            "bold": {
+              "type": "boolean"
+            },
+            "italic": {
+              "type": "boolean"
+            },
+            "underline": {
+              "type": "boolean"
+            },
+            "strikethrough": {
+              "type": "boolean"
+            }
+          },
+          "description": "Semantic token: function.declaration"
+        },
+        "function.defaultLibrary": {
+          "type": "object",
+          "properties": {
+            "foreground": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "background": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "fontStyle": {
+              "type": "string"
+            },
+            "bold": {
+              "type": "boolean"
+            },
+            "italic": {
+              "type": "boolean"
+            },
+            "underline": {
+              "type": "boolean"
+            },
+            "strikethrough": {
+              "type": "boolean"
+            }
+          },
+          "description": "Semantic token: function.defaultLibrary"
+        },
+        "interface": {
+          "type": "object",
+          "properties": {
+            "foreground": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "background": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "fontStyle": {
+              "type": "string"
+            },
+            "bold": {
+              "type": "boolean"
+            },
+            "italic": {
+              "type": "boolean"
+            },
+            "underline": {
+              "type": "boolean"
+            },
+            "strikethrough": {
+              "type": "boolean"
+            }
+          },
+          "description": "Semantic token: interface"
+        },
+        "keyword": {
+          "type": "object",
+          "properties": {
+            "foreground": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "background": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "fontStyle": {
+              "type": "string"
+            },
+            "bold": {
+              "type": "boolean"
+            },
+            "italic": {
+              "type": "boolean"
+            },
+            "underline": {
+              "type": "boolean"
+            },
+            "strikethrough": {
+              "type": "boolean"
+            }
+          },
+          "description": "Semantic token: keyword"
+        },
+        "label": {
+          "type": "object",
+          "properties": {
+            "foreground": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "background": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "fontStyle": {
+              "type": "string"
+            },
+            "bold": {
+              "type": "boolean"
+            },
+            "italic": {
+              "type": "boolean"
+            },
+            "underline": {
+              "type": "boolean"
+            },
+            "strikethrough": {
+              "type": "boolean"
+            }
+          },
+          "description": "Semantic token: label"
+        },
+        "lifetime": {
+          "type": "object",
+          "properties": {
+            "foreground": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "background": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "fontStyle": {
+              "type": "string"
+            },
+            "bold": {
+              "type": "boolean"
+            },
+            "italic": {
+              "type": "boolean"
+            },
+            "underline": {
+              "type": "boolean"
+            },
+            "strikethrough": {
+              "type": "boolean"
+            }
+          },
+          "description": "Semantic token: lifetime"
+        },
+        "macro": {
+          "type": "object",
+          "properties": {
+            "foreground": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "background": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "fontStyle": {
+              "type": "string"
+            },
+            "bold": {
+              "type": "boolean"
+            },
+            "italic": {
+              "type": "boolean"
+            },
+            "underline": {
+              "type": "boolean"
+            },
+            "strikethrough": {
+              "type": "boolean"
+            }
+          },
+          "description": "Semantic token: macro"
+        },
+        "method": {
+          "type": "object",
+          "properties": {
+            "foreground": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "background": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "fontStyle": {
+              "type": "string"
+            },
+            "bold": {
+              "type": "boolean"
+            },
+            "italic": {
+              "type": "boolean"
+            },
+            "underline": {
+              "type": "boolean"
+            },
+            "strikethrough": {
+              "type": "boolean"
+            }
+          },
+          "description": "Semantic token: method"
+        },
+        "method.async": {
+          "type": "object",
+          "properties": {
+            "foreground": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "background": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "fontStyle": {
+              "type": "string"
+            },
+            "bold": {
+              "type": "boolean"
+            },
+            "italic": {
+              "type": "boolean"
+            },
+            "underline": {
+              "type": "boolean"
+            },
+            "strikethrough": {
+              "type": "boolean"
+            }
+          },
+          "description": "Semantic token: method.async"
+        },
+        "method.declaration": {
+          "type": "object",
+          "properties": {
+            "foreground": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "background": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "fontStyle": {
+              "type": "string"
+            },
+            "bold": {
+              "type": "boolean"
+            },
+            "italic": {
+              "type": "boolean"
+            },
+            "underline": {
+              "type": "boolean"
+            },
+            "strikethrough": {
+              "type": "boolean"
+            }
+          },
+          "description": "Semantic token: method.declaration"
+        },
+        "method.defaultLibrary": {
+          "type": "object",
+          "properties": {
+            "foreground": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "background": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "fontStyle": {
+              "type": "string"
+            },
+            "bold": {
+              "type": "boolean"
+            },
+            "italic": {
+              "type": "boolean"
+            },
+            "underline": {
+              "type": "boolean"
+            },
+            "strikethrough": {
+              "type": "boolean"
+            }
+          },
+          "description": "Semantic token: method.defaultLibrary"
+        },
+        "modifier": {
+          "type": "object",
+          "properties": {
+            "foreground": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "background": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "fontStyle": {
+              "type": "string"
+            },
+            "bold": {
+              "type": "boolean"
+            },
+            "italic": {
+              "type": "boolean"
+            },
+            "underline": {
+              "type": "boolean"
+            },
+            "strikethrough": {
+              "type": "boolean"
+            }
+          },
+          "description": "Semantic token: modifier"
+        },
+        "namespace": {
+          "type": "object",
+          "properties": {
+            "foreground": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "background": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "fontStyle": {
+              "type": "string"
+            },
+            "bold": {
+              "type": "boolean"
+            },
+            "italic": {
+              "type": "boolean"
+            },
+            "underline": {
+              "type": "boolean"
+            },
+            "strikethrough": {
+              "type": "boolean"
+            }
+          },
+          "description": "Semantic token: namespace"
+        },
+        "number": {
+          "type": "object",
+          "properties": {
+            "foreground": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "background": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "fontStyle": {
+              "type": "string"
+            },
+            "bold": {
+              "type": "boolean"
+            },
+            "italic": {
+              "type": "boolean"
+            },
+            "underline": {
+              "type": "boolean"
+            },
+            "strikethrough": {
+              "type": "boolean"
+            }
+          },
+          "description": "Semantic token: number"
+        },
+        "operator": {
+          "type": "object",
+          "properties": {
+            "foreground": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "background": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "fontStyle": {
+              "type": "string"
+            },
+            "bold": {
+              "type": "boolean"
+            },
+            "italic": {
+              "type": "boolean"
+            },
+            "underline": {
+              "type": "boolean"
+            },
+            "strikethrough": {
+              "type": "boolean"
+            }
+          },
+          "description": "Semantic token: operator"
+        },
+        "parameter": {
+          "type": "object",
+          "properties": {
+            "foreground": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "background": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "fontStyle": {
+              "type": "string"
+            },
+            "bold": {
+              "type": "boolean"
+            },
+            "italic": {
+              "type": "boolean"
+            },
+            "underline": {
+              "type": "boolean"
+            },
+            "strikethrough": {
+              "type": "boolean"
+            }
+          },
+          "description": "Semantic token: parameter"
+        },
+        "property": {
+          "type": "object",
+          "properties": {
+            "foreground": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "background": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "fontStyle": {
+              "type": "string"
+            },
+            "bold": {
+              "type": "boolean"
+            },
+            "italic": {
+              "type": "boolean"
+            },
+            "underline": {
+              "type": "boolean"
+            },
+            "strikethrough": {
+              "type": "boolean"
+            }
+          },
+          "description": "Semantic token: property"
+        },
+        "property.readonly": {
+          "type": "object",
+          "properties": {
+            "foreground": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "background": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "fontStyle": {
+              "type": "string"
+            },
+            "bold": {
+              "type": "boolean"
+            },
+            "italic": {
+              "type": "boolean"
+            },
+            "underline": {
+              "type": "boolean"
+            },
+            "strikethrough": {
+              "type": "boolean"
+            }
+          },
+          "description": "Semantic token: property.readonly"
+        },
+        "property.static": {
+          "type": "object",
+          "properties": {
+            "foreground": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "background": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "fontStyle": {
+              "type": "string"
+            },
+            "bold": {
+              "type": "boolean"
+            },
+            "italic": {
+              "type": "boolean"
+            },
+            "underline": {
+              "type": "boolean"
+            },
+            "strikethrough": {
+              "type": "boolean"
+            }
+          },
+          "description": "Semantic token: property.static"
+        },
+        "regexp": {
+          "type": "object",
+          "properties": {
+            "foreground": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "background": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "fontStyle": {
+              "type": "string"
+            },
+            "bold": {
+              "type": "boolean"
+            },
+            "italic": {
+              "type": "boolean"
+            },
+            "underline": {
+              "type": "boolean"
+            },
+            "strikethrough": {
+              "type": "boolean"
+            }
+          },
+          "description": "Semantic token: regexp"
+        },
+        "selfKeyword": {
+          "type": "object",
+          "properties": {
+            "foreground": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "background": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "fontStyle": {
+              "type": "string"
+            },
+            "bold": {
+              "type": "boolean"
+            },
+            "italic": {
+              "type": "boolean"
+            },
+            "underline": {
+              "type": "boolean"
+            },
+            "strikethrough": {
+              "type": "boolean"
+            }
+          },
+          "description": "Semantic token: selfKeyword"
+        },
+        "selfTypeKeyword": {
+          "type": "object",
+          "properties": {
+            "foreground": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "background": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "fontStyle": {
+              "type": "string"
+            },
+            "bold": {
+              "type": "boolean"
+            },
+            "italic": {
+              "type": "boolean"
+            },
+            "underline": {
+              "type": "boolean"
+            },
+            "strikethrough": {
+              "type": "boolean"
+            }
+          },
+          "description": "Semantic token: selfTypeKeyword"
+        },
+        "string": {
+          "type": "object",
+          "properties": {
+            "foreground": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "background": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "fontStyle": {
+              "type": "string"
+            },
+            "bold": {
+              "type": "boolean"
+            },
+            "italic": {
+              "type": "boolean"
+            },
+            "underline": {
+              "type": "boolean"
+            },
+            "strikethrough": {
+              "type": "boolean"
+            }
+          },
+          "description": "Semantic token: string"
+        },
+        "string.escape": {
+          "type": "object",
+          "properties": {
+            "foreground": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "background": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "fontStyle": {
+              "type": "string"
+            },
+            "bold": {
+              "type": "boolean"
+            },
+            "italic": {
+              "type": "boolean"
+            },
+            "underline": {
+              "type": "boolean"
+            },
+            "strikethrough": {
+              "type": "boolean"
+            }
+          },
+          "description": "Semantic token: string.escape"
+        },
+        "struct": {
+          "type": "object",
+          "properties": {
+            "foreground": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "background": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "fontStyle": {
+              "type": "string"
+            },
+            "bold": {
+              "type": "boolean"
+            },
+            "italic": {
+              "type": "boolean"
+            },
+            "underline": {
+              "type": "boolean"
+            },
+            "strikethrough": {
+              "type": "boolean"
+            }
+          },
+          "description": "Semantic token: struct"
+        },
+        "struct.declaration": {
+          "type": "object",
+          "properties": {
+            "foreground": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "background": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "fontStyle": {
+              "type": "string"
+            },
+            "bold": {
+              "type": "boolean"
+            },
+            "italic": {
+              "type": "boolean"
+            },
+            "underline": {
+              "type": "boolean"
+            },
+            "strikethrough": {
+              "type": "boolean"
+            }
+          },
+          "description": "Semantic token: struct.declaration"
+        },
+        "type": {
+          "type": "object",
+          "properties": {
+            "foreground": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "background": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "fontStyle": {
+              "type": "string"
+            },
+            "bold": {
+              "type": "boolean"
+            },
+            "italic": {
+              "type": "boolean"
+            },
+            "underline": {
+              "type": "boolean"
+            },
+            "strikethrough": {
+              "type": "boolean"
+            }
+          },
+          "description": "Semantic token: type"
+        },
+        "type.declaration": {
+          "type": "object",
+          "properties": {
+            "foreground": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "background": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "fontStyle": {
+              "type": "string"
+            },
+            "bold": {
+              "type": "boolean"
+            },
+            "italic": {
+              "type": "boolean"
+            },
+            "underline": {
+              "type": "boolean"
+            },
+            "strikethrough": {
+              "type": "boolean"
+            }
+          },
+          "description": "Semantic token: type.declaration"
+        },
+        "typeParameter": {
+          "type": "object",
+          "properties": {
+            "foreground": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "background": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "fontStyle": {
+              "type": "string"
+            },
+            "bold": {
+              "type": "boolean"
+            },
+            "italic": {
+              "type": "boolean"
+            },
+            "underline": {
+              "type": "boolean"
+            },
+            "strikethrough": {
+              "type": "boolean"
+            }
+          },
+          "description": "Semantic token: typeParameter"
+        },
+        "variable": {
+          "type": "object",
+          "properties": {
+            "foreground": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "background": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "fontStyle": {
+              "type": "string"
+            },
+            "bold": {
+              "type": "boolean"
+            },
+            "italic": {
+              "type": "boolean"
+            },
+            "underline": {
+              "type": "boolean"
+            },
+            "strikethrough": {
+              "type": "boolean"
+            }
+          },
+          "description": "Semantic token: variable"
+        },
+        "variable.defaultLibrary": {
+          "type": "object",
+          "properties": {
+            "foreground": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "background": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "fontStyle": {
+              "type": "string"
+            },
+            "bold": {
+              "type": "boolean"
+            },
+            "italic": {
+              "type": "boolean"
+            },
+            "underline": {
+              "type": "boolean"
+            },
+            "strikethrough": {
+              "type": "boolean"
+            }
+          },
+          "description": "Semantic token: variable.defaultLibrary"
+        },
+        "variable.readonly": {
+          "type": "object",
+          "properties": {
+            "foreground": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "background": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "fontStyle": {
+              "type": "string"
+            },
+            "bold": {
+              "type": "boolean"
+            },
+            "italic": {
+              "type": "boolean"
+            },
+            "underline": {
+              "type": "boolean"
+            },
+            "strikethrough": {
+              "type": "boolean"
+            }
+          },
+          "description": "Semantic token: variable.readonly"
+        },
+        "variable.static": {
+          "type": "object",
+          "properties": {
+            "foreground": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "background": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+            },
+            "fontStyle": {
+              "type": "string"
+            },
+            "bold": {
+              "type": "boolean"
+            },
+            "italic": {
+              "type": "boolean"
+            },
+            "underline": {
+              "type": "boolean"
+            },
+            "strikethrough": {
+              "type": "boolean"
+            }
+          },
+          "description": "Semantic token: variable.static"
+        }
+      },
+      "additionalProperties": {
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "color-hex",
+            "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "foreground": {
+                "type": "string",
+                "format": "color-hex",
+                "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+              },
+              "background": {
+                "type": "string",
+                "format": "color-hex",
+                "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+              },
+              "fontStyle": {
+                "type": "string"
+              },
+              "bold": {
+                "type": "boolean"
+              },
+              "italic": {
+                "type": "boolean"
+              },
+              "underline": {
+                "type": "boolean"
+              },
+              "strikethrough": {
+                "type": "boolean"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "tokenColors": {
+      "type": "array",
+      "description": "TextMate-style rules.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "scope": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "settings": {
+            "type": "object",
+            "properties": {
+              "foreground": {
+                "type": "string",
+                "format": "color-hex",
+                "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+              },
+              "background": {
+                "type": "string",
+                "format": "color-hex",
+                "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+              },
+              "fontStyle": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
