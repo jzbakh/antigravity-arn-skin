@@ -1,0 +1,11 @@
+# Orphan badges branch — only the two JSON files in .github/badges/ are tracked.
+# This branch shares no history with main; the working tree on disk may carry
+# files left over from the main branch's checkout. Ignore them all so neither
+# the CLI nor GitHub Desktop offers them up as accidental staged changes.
+
+*
+!.gitignore
+!.github/
+.github/*
+!.github/badges/
+!.github/badges/*.json
