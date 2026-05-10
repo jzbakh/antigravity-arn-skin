@@ -66,7 +66,21 @@
 
 *Customize in real-time (400ms delay) via the IDE's native color picker:*
 
-⚡ **Quick Customization:** Edit only **12 key colors**, the extension automatically generates the ~250 derived UI colors!
+⚡ **Quick Customization:** Edit only **12 key colors and 5 smart toggles**, the extension automatically generates the ~250 derived UI colors!
+
+<div align="center">
+
+Each toggle accepts `YES`, `NO`, or `INHERIT` *(keep the theme's default behaviour)*.
+
+| Toggle | YES | NO |
+| :--- | :--- | :--- |
+| **Cursor Line Glow** | Highlights current line and cursor with an accent glow | Removes the line highlight entirely |
+| **Pure Black Mode** | Enables maximum-contrast surfaces | Softens the background contrast to reduce eye strain |
+| **Vivid Selection** | Enables accent-colored background for selected text | Uses a neutral grey selection, tuned for readability |
+| **Borderless Mode** | Hides all UI borders | Applies a subtle, text-tinted border |
+| **Active Tab Highlight** | Highlights the active tab with an accent colour | Keeps all tabs uniform |
+
+</div>
 
 🌈 **Advanced: UI Colors:** Granular control over every visual element (tabs, sidebar, activity bar, terminal...).
 
@@ -239,7 +253,21 @@ If you would like to financially contribute to the development and future update
 
 *Personnalisez en temps réel (délai de 400 ms) via le sélecteur de couleurs natif de l'IDE :*
 
-⚡ **Quick Customization (Personnalisation rapide) :** Éditez seulement **12 couleurs clés**, l'extension génère automatiquement les ~250 couleurs d'interface dérivées !
+⚡ **Quick Customization (Personnalisation rapide) :** Éditez seulement **12 couleurs clés et 5 réglages intelligents**, l'extension génère automatiquement les ~250 couleurs d'interface dérivées !
+
+<div align="center">
+
+Chaque réglage accepte `YES`, `NO` ou `INHERIT` *(conserve le comportement par défaut du thème)*.
+
+| Réglage | YES | NO |
+| :--- | :--- | :--- |
+| **Cursor Line Glow** *(Surbrillance de ligne)* | Illumine la ligne active et le curseur avec la couleur d'accentuation | Désactive l'effet de surbrillance sur la ligne |
+| **Pure Black Mode** *(Noir profond)* | Active les surfaces à contraste maximal | Adoucit le contraste du fond pour réduire la fatigue oculaire |
+| **Vivid Selection** *(Sélection vive)* | Utilise la couleur d'accentuation pour le fond de sélection | Utilise une sélection grise neutre, optimisée pour la lisibilité |
+| **Borderless Mode** *(Sans bordure)* | Masque toutes les bordures de l'interface | Applique une bordure discrète de la couleur du texte |
+| **Active Tab Highlight** *(Mise en évidence de l'onglet)* | Accentue visuellement l'onglet actif avec la couleur d'accentuation | Maintient un aspect uniforme pour tous les onglets |
+
+</div>
 
 🌈 **Advanced: UI Colors (Couleurs de l'interface) :** Contrôle granulaire de chaque élément visuel (onglets, barre latérale, barre d'activité, terminal…).
 
@@ -411,7 +439,21 @@ Si vous souhaitez contribuer financièrement au développement et aux futures mi
 
 *通过 IDE 原生颜色选择器实时自定义（400 毫秒延迟）：*
 
-⚡ **Quick Customization (快速自定义) :** 仅需编辑 **12 种关键颜色**，扩展程序会自动生成约 250 种派生的 UI 颜色！
+⚡ **Quick Customization (快速自定义) :** 仅需编辑 **12 种关键颜色和 5 个智能开关**，扩展程序会自动生成约 250 种派生的 UI 颜色！
+
+<div align="center">
+
+每个开关接受 `YES`、`NO` 或 `INHERIT`（保留主题的默认行为）。
+
+| 开关 | YES | NO |
+| :--- | :--- | :--- |
+| **Cursor Line Glow**（光标行发光） | 使用强调色高亮当前行与光标 | 完全移除当前行高亮 |
+| **Pure Black Mode**（极黑模式） | 启用最高对比度界面 | 柔化背景对比度以减少视觉疲劳 |
+| **Vivid Selection**（鲜明选择） | 为选中内容启用强调色背景 | 使用中性灰色作为选中背景，专为阅读调校 |
+| **Borderless Mode**（无边框模式） | 隐藏所有 UI 边框 | 应用与文本同色的细微边框 |
+| **Active Tab Highlight**（活动选项卡高亮） | 使用强调色高亮当前选项卡 | 保持所有选项卡视觉统一 |
+
+</div>
 
 🌈 **Advanced: UI Colors (高级：UI 颜色) :** 对每个视觉元素（选项卡、侧边栏、活动栏、终端等）进行细粒度控制。
 
@@ -583,7 +625,21 @@ Si vous souhaitez contribuer financièrement au développement et aux futures mi
 
 *Personaliza en tiempo real (retraso de 400 ms) a través del selector de colores nativo del IDE:*
 
-⚡ **Quick Customization (Personalización rápida):** Edita solo **12 colores clave**, ¡la extensión genera automáticamente los ~250 colores derivados de la UI!
+⚡ **Quick Customization (Personalización rápida):** Edita solo **12 colores clave y 5 interruptores inteligentes**, ¡la extensión genera automáticamente los ~250 colores derivados de la UI!
+
+<div align="center">
+
+Cada interruptor acepta `YES`, `NO` o `INHERIT` *(conserva el comportamiento por defecto del tema)*.
+
+| Interruptor | YES | NO |
+| :--- | :--- | :--- |
+| **Cursor Line Glow** *(Resplandor de línea)* | Ilumina la línea actual y el cursor con el color de acento | Elimina por completo el resaltado de la línea |
+| **Pure Black Mode** *(Modo negro puro)* | Habilita superficies de máximo contraste | Suaviza el contraste del fondo para reducir la fatiga visual |
+| **Vivid Selection** *(Selección vívida)* | Usa el color de acento para el fondo del texto seleccionado | Usa una selección en gris neutro, optimizada para la legibilidad |
+| **Borderless Mode** *(Modo minimalista (sin bordes))* | Oculta todos los bordes de la interfaz | Aplica un borde sutil del color del texto |
+| **Active Tab Highlight** *(Resaltado de pestaña activa)* | Resalta la pestaña activa con el color de acento | Mantiene todas las pestañas uniformes |
+
+</div>
 
 🌈 **Advanced: UI Colors (Colores de la interfaz):** Control granular de cada elemento visual (pestañas, barra lateral, barra de actividad, terminal…).
 
@@ -755,7 +811,21 @@ Si deseas contribuir financieramente al desarrollo y a las futuras actualizacion
 
 *التخصيص في الوقت الفعلي (بتأخير 400 مللي ثانية) عبر منتقي الألوان المدمج في بيئة التطوير (IDE):*
 
-⚡ **Quick Customization (تخصيص سريع):** قم بتعديل **12 لونًا رئيسيًا** فقط، وستقوم الإضافة تلقائيًا بإنشاء حوالي 250 لونًا مشتقًا لواجهة المستخدم (UI)!
+⚡ **Quick Customization (تخصيص سريع):** قم بتعديل **12 لونًا رئيسيًا و5 مفاتيح تحكم ذكية** فقط، وستقوم الإضافة تلقائيًا بإنشاء حوالي 250 لونًا مشتقًا لواجهة المستخدم (UI)!
+
+<div align="center">
+
+كل مفتاح يقبل القيم `YES` أو `NO` أو `INHERIT` *(الإبقاء على السلوك الافتراضي للسمة)*.
+
+| المفتاح | YES | NO |
+| :--- | :--- | :--- |
+| **Cursor Line Glow** *(توهج سطر المؤشر)* | يُضيء السطر النشط والمؤشر بلون التمييز | يُزيل تمييز السطر بالكامل |
+| **Pure Black Mode** *(الوضع الأسود الداكن)* | تفعيل الأسطح عالية التباين | يُخفف تباين الخلفية لتقليل إجهاد العين |
+| **Vivid Selection** *(تحديد بارز)* | يستخدم لون التمييز كخلفية للنص المحدد | يستخدم تحديدًا رماديًا محايدًا، مُهيأ للقراءة |
+| **Borderless Mode** *(الوضع بلا حدود)* | يخفي جميع حدود واجهة المستخدم | يُطبّق حدودًا دقيقة بلون النص |
+| **Active Tab Highlight** *(تمييز التبويب النشط)* | يُميّز التبويب النشط بلون التمييز | يُحافظ على توحيد جميع التبويبات |
+
+</div>
 
 🌈 **Advanced: UI Colors (ألوان واجهة المستخدم):** تحكم دقيق في كل عنصر مرئي (علامات التبويب، الشريط الجانبي، شريط النشاط، الطرفية...).
 
@@ -927,7 +997,21 @@ Si deseas contribuir financieramente al desarrollo y a las futuras actualizacion
 
 *ปรับแต่งแบบเรียลไทม์ (ความหน่วง 400 มิลลิวินาที) ผ่านเครื่องมือเลือกสีเริ่มต้นของ IDE:*
 
-⚡ **Quick Customization (ปรับแต่งอย่างรวดเร็ว):** แก้ไขเพียง **12 สีหลัก** ส่วนขยายจะสร้างสีอินเทอร์เฟซ (UI) ที่เกี่ยวข้องกว่า 250 สีให้โดยอัตโนมัติ!
+⚡ **Quick Customization (ปรับแต่งอย่างรวดเร็ว):** แก้ไขเพียง **12 สีหลัก และสวิตช์อัจฉริยะ 5 ตัว** ส่วนขยายจะสร้างสีอินเทอร์เฟซ (UI) ที่เกี่ยวข้องกว่า 250 สีให้โดยอัตโนมัติ!
+
+<div align="center">
+
+แต่ละสวิตช์รับค่า `YES`, `NO` หรือ `INHERIT` *(คงพฤติกรรมเริ่มต้นของธีมไว้)*
+
+| สวิตช์ | YES | NO |
+| :--- | :--- | :--- |
+| **Cursor Line Glow** *(เคอร์เซอร์เรืองแสง)* | ไฮไลต์บรรทัดปัจจุบันและเคอร์เซอร์ด้วยสีแอ็กเซนต์ | นำการไฮไลต์บรรทัดออกทั้งหมด |
+| **Pure Black Mode** *(โหมดดำสนิท)* | เปิดใช้งานหน้าตาแบบคอนทราสต์สูงสุด | ลดคอนทราสต์ของพื้นหลังเพื่อลดความล้าของดวงตา |
+| **Vivid Selection** *(การเลือกที่สดใส)* | ใช้สีแอ็กเซนต์เป็นพื้นหลังสำหรับข้อความที่เลือก | ใช้สีเทากลางสำหรับการเลือกข้อความ เน้นให้อ่านง่าย |
+| **Borderless Mode** *(โหมดไร้ขอบ)* | ซ่อนขอบ UI ทั้งหมด | เพิ่มขอบบางๆ โทนเดียวกับสีตัวอักษร |
+| **Active Tab Highlight** *(เน้นแท็บที่ใช้งาน)* | ไฮไลต์แท็บที่ใช้งานด้วยสีแอ็กเซนต์ | ให้ทุกแท็บดูกลมกลืนกัน |
+
+</div>
 
 🌈 **Advanced: UI Colors (สีอินเทอร์เฟซ):** ควบคุมทุกองค์ประกอบของภาพได้อย่างละเอียด (แท็บ แถบด้านข้าง แถบกิจกรรม เทอร์มินัล...)
 

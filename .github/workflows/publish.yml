@@ -1,0 +1,58 @@
+# Publish — on release: run unit tests, build the .vsix, push to VS Marketplace
+# + Open VSX. The .vsix asset on the GitHub Release is attached manually by the
+# maintainer before publishing (GitHub's immutable-releases setting blocks any
+# post-publish asset upload via API). Requires repo secrets VSCE_PUBLISH (Azure
+# DevOps PAT, scope "Marketplace > Manage") and OPEN_VSX (Open VSX access token).
+
+name: publish
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    name: Publish to Marketplace + Open VSX
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '20'
+
+      - name: Verify package.json version matches the release tag
+        if: github.event_name == 'release'
+        run: |
+          set -e
+          PKG_VERSION=$(node -p "require('./package.json').version")
+          TAG="${{ github.event.release.tag_name }}"
+          TAG_VERSION="${TAG#v}"
+          if [ "$PKG_VERSION" != "$TAG_VERSION" ]; then
+            echo "::error::Version mismatch — package.json says $PKG_VERSION, release tag is $TAG_VERSION."
+            exit 1
+          fi
+
+      # Releases can be cut from any tag, so we don't trust tests.yml alone.
+      - name: Run unit tests
+        working-directory: test
+        run: |
+          npm ci
+          npm run test:unit
+
+      - name: Build the .vsix bundle
+        run: npx --yes @vscode/vsce package -o antigravity-arn-skin.vsix
+
+      - name: Publish to VSCode Marketplace
+        env:
+          VSCE_PAT: ${{ secrets.VSCE_PUBLISH }}
+        run: npx --yes @vscode/vsce publish --packagePath antigravity-arn-skin.vsix
+
+      - name: Publish to Open VSX
+        env:
+          OVSX_PAT: ${{ secrets.OPEN_VSX }}
+        run: npx --yes ovsx publish antigravity-arn-skin.vsix -p "$OVSX_PAT"
