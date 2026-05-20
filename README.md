@@ -3,9 +3,9 @@
 # ARN-Skin - Explore 7 space-themed skins + customization to enhance your IDE.
 
 [![VS Marketplace](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/jzbakh/antigravity-arn-skin/badges/.github/badges/marketplace-version.json)](https://marketplace.visualstudio.com/items?itemName=jzbakh.antigravity-arn-skin)
-[![VS Marketplace Downloads](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/jzbakh/antigravity-arn-skin/badges/.github/badges/marketplace-installs.json)](https://marketplace.visualstudio.com/items?itemName=jzbakh.antigravity-arn-skin)
-[![Open VSX](https://img.shields.io/open-vsx/v/jzbakh/antigravity-arn-skin?label=Open%20VSX&color=blue)](https://open-vsx.org/extension/jzbakh/antigravity-arn-skin)
-[![Open VSX Downloads](https://img.shields.io/open-vsx/dt/jzbakh/antigravity-arn-skin?label=Downloads&color=success)](https://open-vsx.org/extension/jzbakh/antigravity-arn-skin)
+[![VS Marketplace Downloads](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/jzbakh/antigravity-arn-skin/badges/.github/badges/marketplace-downloads.json)](https://marketplace.visualstudio.com/items?itemName=jzbakh.antigravity-arn-skin)
+[![Open VSX](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/jzbakh/antigravity-arn-skin/badges/.github/badges/openvsx-version.json)](https://open-vsx.org/extension/jzbakh/antigravity-arn-skin)
+[![Open VSX Downloads](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/jzbakh/antigravity-arn-skin/badges/.github/badges/openvsx-downloads.json)](https://open-vsx.org/extension/jzbakh/antigravity-arn-skin)
 
 [![GitHub stars](https://img.shields.io/github/stars/jzbakh/antigravity-arn-skin?style=flat&color=gold)](https://github.com/jzbakh/antigravity-arn-skin)
 [![GitHub issues](https://img.shields.io/github/issues/jzbakh/antigravity-arn-skin)](https://github.com/jzbakh/antigravity-arn-skin/issues)

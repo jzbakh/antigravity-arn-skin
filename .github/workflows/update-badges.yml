@@ -26,7 +26,9 @@
 #
 # README usage
 #   [![Marketplace](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/jzbakh/antigravity-arn-skin/badges/.github/badges/marketplace-version.json)](https://marketplace.visualstudio.com/items?itemName=jzbakh.antigravity-arn-skin)
-#   [![Downloads](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/jzbakh/antigravity-arn-skin/badges/.github/badges/marketplace-installs.json)](https://marketplace.visualstudio.com/items?itemName=jzbakh.antigravity-arn-skin)
+#   [![Downloads](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/jzbakh/antigravity-arn-skin/badges/.github/badges/marketplace-downloads.json)](https://marketplace.visualstudio.com/items?itemName=jzbakh.antigravity-arn-skin)
+#   [![Open VSX](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/jzbakh/antigravity-arn-skin/badges/.github/badges/openvsx-version.json)](https://open-vsx.org/extension/jzbakh/antigravity-arn-skin)
+#   [![Open VSX Downloads](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/jzbakh/antigravity-arn-skin/badges/.github/badges/openvsx-downloads.json)](https://open-vsx.org/extension/jzbakh/antigravity-arn-skin)
 # =============================================================================
 
 name: update-badges
@@ -132,13 +134,69 @@ jobs:
           }
           EOF
 
-          cat > .github/badges/marketplace-installs.json <<EOF
+          cat > .github/badges/marketplace-downloads.json <<EOF
           {
             "schemaVersion": 1,
             "label": "Downloads",
             "message": "${DOWNLOADS_DISPLAY}",
             "color": "success",
             "namedLogo": "visualstudiocode"
+          }
+          EOF
+
+      - name: Fetch Open VSX stats
+        run: |
+          set -uo pipefail
+          # Open VSX often returns HTTP 429 (rate limit) — handle gracefully
+          # by keeping the existing cached badge values instead of failing.
+          HTTP_CODE=$(curl -sS -o /tmp/vsx.json -w "%{http_code}" \
+            "https://open-vsx.org/api/jzbakh/antigravity-arn-skin" || echo "000")
+
+          if [ "$HTTP_CODE" != "200" ]; then
+            echo "::warning::Open VSX returned HTTP $HTTP_CODE — keeping existing Open VSX badge values."
+            exit 0
+          fi
+
+          if ! jq -e . /tmp/vsx.json > /dev/null 2>&1; then
+            echo "::warning::Open VSX returned non-JSON payload — keeping existing Open VSX badge values."
+            exit 0
+          fi
+
+          VSX_VERSION=$(jq -r '.version // "unknown"' /tmp/vsx.json)
+          VSX_DOWNLOADS=$(jq -r '(.downloadCount // 0) | floor' /tmp/vsx.json)
+
+          echo "Open VSX version  : $VSX_VERSION"
+          echo "Open VSX downloads: $VSX_DOWNLOADS"
+
+          if [ "$VSX_VERSION" = "unknown" ] && [ "$VSX_DOWNLOADS" = "0" ]; then
+            echo "::warning::Open VSX returned no data for the extension. Keeping existing Open VSX badge values."
+            exit 0
+          fi
+
+          format_count() {
+            local n="$1"
+            if   [ "$n" -ge 1000000 ]; then awk -v n="$n" 'BEGIN { printf "%.1fM", n/1000000 }'
+            elif [ "$n" -ge 1000 ];    then awk -v n="$n" 'BEGIN { printf "%.1fk", n/1000 }'
+            else echo "$n"
+            fi
+          }
+          VSX_DOWNLOADS_DISPLAY=$(format_count "$VSX_DOWNLOADS")
+
+          cat > .github/badges/openvsx-version.json <<EOF
+          {
+            "schemaVersion": 1,
+            "label": "Open VSX",
+            "message": "v${VSX_VERSION}",
+            "color": "blue"
+          }
+          EOF
+
+          cat > .github/badges/openvsx-downloads.json <<EOF
+          {
+            "schemaVersion": 1,
+            "label": "Downloads",
+            "message": "${VSX_DOWNLOADS_DISPLAY}",
+            "color": "success"
           }
           EOF
 
@@ -151,6 +209,6 @@ jobs:
           if git diff --quiet --staged; then
             echo "Badges unchanged, nothing to commit."
           else
-            git commit -m "chore(badges): refresh VSCode Marketplace stats"
+            git commit -m "chore(badges): refresh badge stats"
             git push
           fi
