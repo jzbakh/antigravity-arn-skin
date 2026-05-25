@@ -89,5 +89,6 @@ First public release.
   macOS and Windows in CI, plus a weekly Insiders cron job.
 - GPL-3.0-or-later licensed.
 
+[1.0.2]: https://github.com/jzbakh/antigravity-arn-skin/releases/tag/v1.0.2
 [1.0.1]: https://github.com/jzbakh/antigravity-arn-skin/releases/tag/v1.0.1
 [1.0.0]: https://github.com/jzbakh/antigravity-arn-skin/releases/tag/v1.0.0
