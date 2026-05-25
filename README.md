@@ -25,7 +25,16 @@
 
 ---
 
---> 💬 [🇬🇧 English](#en) | [🇫🇷 Français](#fr) | [🇨🇳 中文](#cn) | [🇪🇸 Español](#es) | [🇸🇦 العربية](#ar) | [🇹🇭 ภาษาไทย](#th) <--
+<div align="center">
+  <h2>
+    💬 <a href="#en">🇬🇧 English</a> | 
+    <a href="#fr">🇫🇷 Français</a> | 
+    <a href="#cn">🇨🇳 中文</a> | 
+    <a href="#es">🇪🇸 Español</a> | 
+    <a href="#ar">🇸🇦 العربية</a> | 
+    <a href="#th">🇹🇭 ภาษาไทย</a>
+  </h2>
+</div>
 
 ---
 
@@ -103,6 +112,7 @@ Works on Antigravity IDE, VSCode, Cursor, Windsurf, VSCodium, and other forks (t
 
 1. Open the **Extensions** view (`Ctrl+Shift+X`).
 2. Search for `ARN-Skin`.
+> 💡 **Tip:** Filter search results by **Name** (and NOT by popularity, relevance, or download count) to find it easily.
 3. Click **Install** and enable the extension.
 
 </details>
@@ -290,6 +300,7 @@ Fonctionne sur Antigravity IDE, VSCode, Cursor, Windsurf, VSCodium et autres for
 
 1. Ouvrez la vue **Extensions** (`Ctrl+Shift+X`).
 2. Recherchez `ARN-Skin`.
+> 💡 **Astuce :** Filtrez les résultats de recherche par **Nom** (et PAS par popularité, pertinence ou nombre de téléchargements) pour la trouver facilement.
 3. Cliquez sur **Installer** et activez l'extension.
 
 </details>
@@ -395,7 +406,7 @@ Si vous souhaitez contribuer financièrement au développement et aux futures mi
 ---
 
 <p align="center">
-  <b>Made with 🩵 by <a href="https://github.com/jzbakh">jzbakh</a></b>
+  <b>Créé avec 🩵 par <a href="https://github.com/jzbakh">jzbakh</a></b>
 </p>
 
 ---
@@ -476,6 +487,7 @@ Si vous souhaitez contribuer financièrement au développement et aux futures mi
 
 1. 打开 **Extensions (扩展)** 视图 (`Ctrl+Shift+X`)。
 2. 搜索 `ARN-Skin`。
+> 💡 **提示：** 按**名称**（而**不是**按受欢迎程度、相关性或下载量）过滤搜索结果，以便轻松找到它。
 3. 点击 **Install (安装)** 并启用扩展。
 
 </details>
@@ -581,7 +593,7 @@ Si vous souhaitez contribuer financièrement au développement et aux futures mi
 ---
 
 <p align="center">
-  <b>Made with 🩵 by <a href="https://github.com/jzbakh">jzbakh</a></b>
+  <b>由 <a href="https://github.com/jzbakh">jzbakh</a> 用 🩵 制作</b>
 </p>
 
 ---
@@ -662,6 +674,7 @@ Funciona en Antigravity IDE, VSCode, Cursor, Windsurf, VSCodium y otros forks (q
 
 1. Abre la vista de **Extensiones** (`Ctrl+Shift+X`).
 2. Busca `ARN-Skin`.
+> 💡 **Consejo:** Filtra los resultados de búsqueda por **Nombre** (y NO por popularidad, relevancia o número de descargas) para encontrarla fácilmente.
 3. Haz clic en **Instalar** y activa la extensión.
 
 </details>
@@ -767,7 +780,7 @@ Si deseas contribuir financieramente al desarrollo y a las futuras actualizacion
 ---
 
 <p align="center">
-  <b>Made with 🩵 by <a href="https://github.com/jzbakh">jzbakh</a></b>
+  <b>Hecho con 🩵 por <a href="https://github.com/jzbakh">jzbakh</a></b>
 </p>
 
 ---
@@ -848,6 +861,7 @@ Si deseas contribuir financieramente al desarrollo y a las futuras actualizacion
 
 1. افتح عرض **الإضافات (Extensions)** (`Ctrl+Shift+X`).
 2. ابحث عن `ARN-Skin`.
+> 💡 **تلميح:** قم بتصفية نتائج البحث حسب **الاسم** (وليس حسب الشعبية أو الصلة أو عدد التنزيلات) للعثور عليها بسهولة.
 3. انقر على **تثبيت (Install)** وقم بتفعيل الإضافة.
 
 </details>
@@ -1034,6 +1048,7 @@ Si deseas contribuir financieramente al desarrollo y a las futuras actualizacion
 
 1. เปิดหน้ามุมมอง **ส่วนขยาย (Extensions)** (`Ctrl+Shift+X`)
 2. ค้นหา `ARN-Skin`
+> 💡 **เคล็ดลับ:** กรองผลการค้นหาด้วย **ชื่อ** (ไม่ใช่ตามความนิยม ความเกี่ยวข้อง หรือจำนวนการดาวน์โหลด) เพื่อให้ค้นพบได้ง่าย
 3. คลิก **ติดตั้ง (Install)** และเปิดใช้งานส่วนขยาย
 
 </details>
