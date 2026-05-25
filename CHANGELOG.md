@@ -5,6 +5,23 @@ All notable changes to ARN-Skin will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.2] — 2026-05-25
+
+### Changed
+
+- Dark themes: `meta.paragraph.markdown` brightened from `#8a9098` to
+  `#f3f4f6` for better contrast on markdown body text (Jupiter light
+  theme is unchanged).
+- README — install tip "filter search results by Name" added to the
+  VSIX section in all 6 languages. Language selector promoted to H2
+  for better navigation.
+
+### Added
+
+- `.github/dependabot.yml` — weekly automated dependency-update PRs
+  for the test harness (npm) and CI workflows (GitHub Actions), grouped
+  per ecosystem to keep notification volume low.
+
 ## [1.0.1] — 2026-05-10
 
 ### Added
