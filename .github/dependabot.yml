@@ -1,0 +1,55 @@
+# =============================================================================
+# Dependabot — weekly automated PRs to keep dependencies and CI actions fresh.
+#
+# Two ecosystems are tracked:
+#   • npm in /test — the test harness devDependencies (Mocha, c8, vscode-test).
+#     The extension itself has ZERO runtime dependencies, so /root has nothing
+#     for npm to scan.
+#   • github-actions at /  — keeps actions/checkout, setup-node, softprops, etc.
+#     fresh inside .github/workflows/*.yml.
+#
+# Updates are grouped per ecosystem so each weekly tick produces at most 2 PRs
+# (one per ecosystem) instead of one PR per package — keeps notification volume
+# manageable for a solo maintainer.
+# =============================================================================
+
+version: 2
+updates:
+
+  # ---------------------------------------------------------------------------
+  # Test harness — npm devDependencies
+  # ---------------------------------------------------------------------------
+  - package-ecosystem: "npm"
+    directory: "/test"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "08:00"
+      timezone: "Europe/Paris"
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "chore(deps)"
+      include: "scope"
+    groups:
+      test-deps:
+        patterns:
+          - "*"
+
+  # ---------------------------------------------------------------------------
+  # CI workflows — GitHub Actions versions
+  # ---------------------------------------------------------------------------
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "08:00"
+      timezone: "Europe/Paris"
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "ci(deps)"
+      include: "scope"
+    groups:
+      actions:
+        patterns:
+          - "*"
