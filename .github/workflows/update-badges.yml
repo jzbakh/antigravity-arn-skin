@@ -55,7 +55,7 @@ jobs:
       # itself lives on `main` (so the cron and workflow_dispatch triggers fire
       # from there), but every read/write happens on the `badges` branch which
       # is unprotected and dedicated to the badge JSON files.
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           ref: badges
 
