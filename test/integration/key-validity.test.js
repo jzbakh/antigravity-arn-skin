@@ -169,29 +169,117 @@ describe('Theme colour keys — valid against the installed VSCode bundle', func
     });
 });
 
-// =========================================================================
-// Theme colour values — transparency contract
-// =========================================================================
-// VSCode registers some colour tokens with `needsTransparency: true`. When
-// such a key is set to an opaque value (no alpha or alpha == FF) the
-// editor surfaces "This color must be transparent or it will obscure
-// content" warnings on every Advanced UI customisation. The tests below
-// extract that flag set from the installed VSCode bundle and assert no
-// theme ships an opaque value for any of them.
+// VSCode flags some colour keys with needsTransparency=true; opaque values
+// on them trigger an "obscures content" warning. Suite A asserts our themes
+// against the frozen list below (no bundle scan = can't break from minifier
+// changes). Suite B scans the bundle and fails on new keys not yet in the
+// list. Removals are ignored — keeping an extra key is harmless.
+
+// Frozen from VSCode 1.122.1 (2026-05-27). Append new keys when suite B
+// flags them.
+const TRANSPARENCY_REQUIRED = [
+    'chat.inputWorkingBorderColor1',
+    'chat.inputWorkingBorderColor2',
+    'chat.inputWorkingBorderColor3',
+    'chat.linesAddedForeground',
+    'chat.linesRemovedForeground',
+    'chat.requestBubbleBackground',
+    'chat.requestBubbleHoverBackground',
+    'chat.requestCodeBorder',
+    'chat.thinkingShimmer',
+    'commandCenter.debuggingBackground',
+    'diffEditor.insertedLineBackground',
+    'diffEditor.insertedTextBackground',
+    'diffEditor.removedLineBackground',
+    'diffEditor.removedTextBackground',
+    'editor.findMatchHighlightBackground',
+    'editor.findMatchHighlightForeground',
+    'editor.findRangeHighlightBackground',
+    'editor.findRangeHighlightBorder',
+    'editor.foldBackground',
+    'editor.hoverHighlightBackground',
+    'editor.inactiveSelectionBackground',
+    'editor.rangeHighlightBackground',
+    'editor.selectionHighlightBackground',
+    'editor.symbolHighlightBackground',
+    'editor.wordHighlightBackground',
+    'editor.wordHighlightStrongBackground',
+    'editor.wordHighlightTextBackground',
+    'editorError.background',
+    'editorInfo.background',
+    'editorOverviewRuler.findMatchForeground',
+    'editorOverviewRuler.rangeHighlightForeground',
+    'editorOverviewRuler.selectionHighlightForeground',
+    'editorOverviewRuler.wordHighlightForeground',
+    'editorOverviewRuler.wordHighlightStrongForeground',
+    'editorOverviewRuler.wordHighlightTextForeground',
+    'editorWarning.background',
+    'inlineEdit.modifiedBackground',
+    'inlineEdit.modifiedChangedLineBackground',
+    'inlineEdit.modifiedChangedTextBackground',
+    'inlineEdit.originalBackground',
+    'inlineEdit.originalChangedLineBackground',
+    'inlineEdit.originalChangedTextBackground',
+    'merge.commonContentBackground',
+    'merge.commonHeaderBackground',
+    'merge.currentContentBackground',
+    'merge.currentHeaderBackground',
+    'merge.incomingContentBackground',
+    'merge.incomingHeaderBackground',
+    'minimap.findMatchHighlight',
+    'minimap.selectionHighlight',
+    'minimap.selectionOccurrenceHighlight',
+    'terminal.dropBackground',
+    'terminal.findMatchBackground',
+    'terminal.findMatchHighlightBackground',
+];
+
+function isOpaque(val) {
+    if (typeof val !== 'string' || !val.startsWith('#')) return false;
+    const h = val.slice(1);
+    if (h.length === 3 || h.length === 6) return true;
+    if (h.length === 4) return h[3].toLowerCase() === 'f';
+    if (h.length === 8) return h.slice(6).toLowerCase() === 'ff';
+    return false;
+}
 
 describe('Theme colour values — transparency contract', function () {
+    for (const themeFile of THEMES) {
+        it(`${themeFile} has no opaque value on any transparency-required key`, () => {
+            const theme = parseJsonc(fs.readFileSync(path.join(REPO_ROOT, 'themes', themeFile), 'utf8'));
+            const colors = theme.colors || {};
+            const violations = [];
+            for (const key of TRANSPARENCY_REQUIRED) {
+                if (key in colors && isOpaque(colors[key])) {
+                    violations.push(`${key} = ${colors[key]}`);
+                }
+            }
+            assert.deepEqual(violations, [],
+                `${themeFile}: ${violations.length} value(s) opaque on a transparency-required key. Append an alpha channel (e.g. CC for ~80%, 99 for ~60%, 66 for ~40%):\n  ${violations.join('\n  ')}`);
+        });
+    }
+});
+
+// Drift detector: discover the minified `registerColor` via SENTINELS
+// (stable transparency keys) so we survive minifier renames, then diff the
+// bundle's full set against TRANSPARENCY_REQUIRED.
+describe('Theme colour values — transparency drift detector', function () {
     this.timeout(120000);
 
-    // Same scan strategy as the key-validity suite, but we look for
-    // `te(name, defaults, descriptionId, !0)` — the trailing `!0` is
-    // the minified `true` of needsTransparency.
-    function extractTransparencyKeys(rootDir) {
-        const keys = new Set();
-        const startRe = /\bte\("([a-zA-Z][a-zA-Z0-9._-]*)",/g;
+    const SENTINELS = new Set([
+        'editor.findMatchHighlightBackground',
+        'editor.wordHighlightBackground',
+        'editor.selectionHighlightBackground',
+    ]);
+
+    function extractFromBundle(rootDir) {
+        const callsByFname = new Map(); // minified fname -> Set<colorKey>
+        const startRe = /\b([a-zA-Z_$][a-zA-Z0-9_$]{0,3})\("([a-zA-Z][a-zA-Z0-9._-]*)",/g;
         function scanFile(buf) {
             let m;
             while ((m = startRe.exec(buf)) !== null) {
-                const name = m[1];
+                const fname = m[1];
+                const name = m[2];
                 const argsStart = m.index + m[0].length;
                 let depth = 1, p = argsStart, inStr = false, strCh = '', esc = false;
                 while (p < buf.length && depth > 0) {
@@ -210,7 +298,10 @@ describe('Theme colour values — transparency contract', function () {
                 }
                 if (depth !== 0) continue;
                 const tail = buf.slice(Math.max(argsStart, p - 4), p);
-                if (/,\s*!0\s*$/.test(tail)) keys.add(name);
+                if (!/,\s*!0\s*$/.test(tail)) continue;
+                let bucket = callsByFname.get(fname);
+                if (!bucket) { bucket = new Set(); callsByFname.set(fname, bucket); }
+                bucket.add(name);
             }
             startRe.lastIndex = 0;
         }
@@ -220,54 +311,33 @@ describe('Theme colour values — transparency contract', function () {
                     if (ent.name === 'node_modules' || ent.name.startsWith('.')) continue;
                     walk(path.join(dir, ent.name));
                 } else if (ent.isFile() && ent.name.endsWith('.js')) {
-                    try {
-                        scanFile(fs.readFileSync(path.join(dir, ent.name), 'utf8'));
-                    } catch { /* unreadable */ }
+                    try { scanFile(fs.readFileSync(path.join(dir, ent.name), 'utf8')); } catch { /* unreadable */ }
                 }
             }
         }
         walk(rootDir);
-        return keys;
+        // Highest-scoring bucket = registerColor.
+        let best = null, bestScore = 0;
+        for (const [fname, names] of callsByFname) {
+            let score = 0;
+            for (const s of SENTINELS) if (names.has(s)) score++;
+            if (score > bestScore) { bestScore = score; best = fname; }
+        }
+        return { keys: best ? callsByFname.get(best) : new Set(), score: bestScore };
     }
 
-    function isOpaque(val) {
-        if (typeof val !== 'string' || !val.startsWith('#')) return false;
-        const h = val.slice(1);
-        if (h.length === 3 || h.length === 6) return true;
-        if (h.length === 4) return h[3].toLowerCase() === 'f';
-        if (h.length === 8) return h.slice(6).toLowerCase() === 'ff';
-        return false;
-    }
-
-    let transparencyKeys = null;
-
-    before(function () {
-        if (!VSCODE_APP) {
-            this.skip();
-            return;
+    it('TRANSPARENCY_REQUIRED is in sync with the installed VSCode bundle', function () {
+        if (!VSCODE_APP) { this.skip(); return; } // bundle not downloaded
+        const { keys: bundleKeys, score } = extractFromBundle(VSCODE_APP);
+        if (score === 0) {
+            assert.fail(
+                'Drift detector blind: no sentinel matched any minified call. ' +
+                'Likely a VSCode registry restructure or sentinel rename — update SENTINELS.');
         }
-        transparencyKeys = extractTransparencyKeys(VSCODE_APP);
-        // Sanity: VSCode 1.117+ ships at least 30 such keys. If we got far
-        // fewer the regex broke and the suite would silently pass.
-        if (transparencyKeys.size < 30) {
-            throw new Error(
-                `transparency-key extractor returned only ${transparencyKeys.size} keys; ` +
-                'the bundle layout likely changed and the regex needs updating');
-        }
+        const declared = new Set(TRANSPARENCY_REQUIRED);
+        const additions = [...bundleKeys].filter(k => !declared.has(k)).sort();
+        assert.deepEqual(additions, [],
+            `VSCode has new transparency-required key(s) not in TRANSPARENCY_REQUIRED. ` +
+            `Add alpha (CC/99/66) where used in any theme, then append:\n  ${additions.join('\n  ')}`);
     });
-
-    for (const themeFile of THEMES) {
-        it(`${themeFile} has no opaque value on any transparency-required key`, () => {
-            const theme = parseJsonc(fs.readFileSync(path.join(REPO_ROOT, 'themes', themeFile), 'utf8'));
-            const colors = theme.colors || {};
-            const violations = [];
-            for (const key of transparencyKeys) {
-                if (key in colors && isOpaque(colors[key])) {
-                    violations.push(`${key} = ${colors[key]}`);
-                }
-            }
-            assert.deepEqual(violations, [],
-                `${themeFile}: ${violations.length} value(s) opaque on a transparency-required key. Append an alpha channel (e.g. CC for ~80%, 99 for ~60%, 66 for ~40%):\n  ${violations.join('\n  ')}`);
-        });
-    }
 });
