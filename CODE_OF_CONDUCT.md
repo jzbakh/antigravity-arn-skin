@@ -41,9 +41,9 @@ Conduct.
 ## Reporting
 
 To report abusive, harassing, or otherwise unacceptable behaviour
-privately, [open a private security advisory](https://github.com/jzbakh/antigravity-arn-skin/security/advisories/new)
+privately, [open a private security advisory](https://gitlab.com/jzbakh/arn-skin/-/security/advisories/new)
 on this repository. The advisory channel is end-to-end private — only the
-maintainer ([@jzbakh](https://github.com/jzbakh)) can read the submission.
+maintainer ([@jzbakh](https://gitlab.com/jzbakh)) can read the submission.
 All reports will be reviewed and investigated promptly and confidentially.
 
 ## Enforcement Guidelines

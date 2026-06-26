@@ -32,7 +32,7 @@ the maintainer needs (theme label, editor, OS, repro steps, screenshot).
 Before submitting, please:
 
 1. Make sure you are running the latest published version.
-2. Search the [existing issues](https://github.com/jzbakh/antigravity-arn-skin/issues)
+2. Search the [existing issues](https://gitlab.com/jzbakh/arn-skin/-/issues)
    to confirm the bug has not already been reported.
 3. Reproduce the problem with all other extensions disabled, so we can rule
    out interference.
@@ -70,7 +70,7 @@ discussion much easier.
 ## Development setup
 
 ```bash
-git clone https://github.com/jzbakh/antigravity-arn-skin.git
+git clone https://gitlab.com/jzbakh/arn-skin.git
 cd antigravity-arn-skin
 cd test && npm ci
 ```
@@ -116,7 +116,7 @@ A separate weekly cron job (Mondays 08:00 UTC) re-runs the integration
 suite against VSCode Insiders to catch regressions in upcoming editor
 releases before they ship.
 
-Pull requests are reviewed by the maintainer ([@jzbakh](https://github.com/jzbakh))
+Pull requests are reviewed by the maintainer ([@jzbakh](https://gitlab.com/jzbakh))
 once CI is green; the [CODEOWNERS](.github/CODEOWNERS) file requests that
 review automatically.
 
