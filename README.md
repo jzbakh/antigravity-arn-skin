@@ -2,22 +2,22 @@
 
 # ARN-Skin - Explore 7 space-themed skins + customization to enhance your IDE.
 
-[![VS Marketplace](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/jzbakh/antigravity-arn-skin/badges/.github/badges/marketplace-version.json)](https://marketplace.visualstudio.com/items?itemName=jzbakh.antigravity-arn-skin)
-[![VS Marketplace Downloads](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/jzbakh/antigravity-arn-skin/badges/.github/badges/marketplace-downloads.json)](https://marketplace.visualstudio.com/items?itemName=jzbakh.antigravity-arn-skin)
-[![Open VSX](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/jzbakh/antigravity-arn-skin/badges/.github/badges/openvsx-version.json)](https://open-vsx.org/extension/jzbakh/antigravity-arn-skin)
-[![Open VSX Downloads](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/jzbakh/antigravity-arn-skin/badges/.github/badges/openvsx-downloads.json)](https://open-vsx.org/extension/jzbakh/antigravity-arn-skin)
+[![VS Marketplace](https://img.shields.io/endpoint?url=https://gitlab.com/jzbakh/arn-skin/raw/badges/.github/badges/marketplace-version.json)](https://marketplace.visualstudio.com/items?itemName=jzbakh.antigravity-arn-skin)
+[![VS Marketplace Downloads](https://img.shields.io/endpoint?url=https://gitlab.com/jzbakh/arn-skin/raw/badges/.github/badges/marketplace-downloads.json)](https://marketplace.visualstudio.com/items?itemName=jzbakh.antigravity-arn-skin)
+[![Open VSX](https://img.shields.io/endpoint?url=https://gitlab.com/jzbakh/arn-skin/raw/badges/.github/badges/openvsx-version.json)](https://open-vsx.org/extension/jzbakh/antigravity-arn-skin)
+[![Open VSX Downloads](https://img.shields.io/endpoint?url=https://gitlab.com/jzbakh/arn-skin/raw/badges/.github/badges/openvsx-downloads.json)](https://open-vsx.org/extension/jzbakh/antigravity-arn-skin)
 
-[![GitHub stars](https://img.shields.io/github/stars/jzbakh/antigravity-arn-skin?style=flat&color=gold)](https://github.com/jzbakh/antigravity-arn-skin)
-[![GitHub issues](https://img.shields.io/github/issues/jzbakh/antigravity-arn-skin)](https://github.com/jzbakh/antigravity-arn-skin/issues)
-[![License](https://img.shields.io/github/license/jzbakh/antigravity-arn-skin)](https://github.com/jzbakh/antigravity-arn-skin)
+[![GitHub stars](https://img.shields.io/gitlab/stars/jzbakh/arn-skin?style=flat&color=gold)](https://gitlab.com/jzbakh/arn-skin)
+[![GitHub issues](https://img.shields.io/gitlab/issues/jzbakh/arn-skin)](https://gitlab.com/jzbakh/arn-skin/issues)
+[![License](https://img.shields.io/gitlab/license/jzbakh/arn-skin)](https://gitlab.com/jzbakh/arn-skin)
 
-[![Dependencies](https://img.shields.io/badge/dependencies-0-brightgreen.svg)](https://github.com/jzbakh/antigravity-arn-skin/blob/main/package.json)
-[![Telemetry](https://img.shields.io/badge/telemetry-none-success.svg)](https://github.com/jzbakh/antigravity-arn-skin/blob/main/extension.js)
-[![Spyware](https://img.shields.io/badge/spyware-0%25-success.svg)](https://github.com/jzbakh/antigravity-arn-skin/blob/main/extension.js)
+[![Dependencies](https://img.shields.io/badge/dependencies-0-brightgreen.svg)](https://gitlab.com/jzbakh/arn-skin/blob/main/package.json)
+[![Telemetry](https://img.shields.io/badge/telemetry-none-success.svg)](https://gitlab.com/jzbakh/arn-skin/blob/main/extension.js)
+[![Spyware](https://img.shields.io/badge/spyware-0%25-success.svg)](https://gitlab.com/jzbakh/arn-skin/blob/main/extension.js)
 
 <p align="center">
-  <a href="https://jzbakh.github.io/antigravity-arn-skin/html_presentation/">
-    <img src="https://raw.githubusercontent.com/jzbakh/antigravity-arn-skin/main/media/ARN-Skin_demo.png" alt="ARN-Skin Video">
+  <a href="https://jzbakh.gitlab.io/arn-skin/html_presentation/">
+    <img src="https://gitlab.com/jzbakh/arn-skin/raw/main/media/ARN-Skin_demo.png" alt="ARN-Skin Video">
   </a>
 </p>
 
@@ -52,18 +52,18 @@
 ---
 
 <div align="center">
-  <h4> <a href="https://jzbakh.github.io/antigravity-arn-skin/html_presentation/"> Visualize Markdown, Python, TypeScript, Rust, CSS, HTML, JSON, Shell, and SQL syntax </a></h4>
+  <h4> <a href="https://jzbakh.gitlab.io/arn-skin/html_presentation/"> Visualize Markdown, Python, TypeScript, Rust, CSS, HTML, JSON, Shell, and SQL syntax </a></h4>
 </div><br>
 
 | Theme | Style | Description |
 |:---|:---|:---|
-| [<img src="./media/spaceport.png" width="64" alt="Spaceport"> **Spaceport**](https://jzbakh.github.io/antigravity-arn-skin/html_presentation/index.html) | *Tungsten Grid* | Industrial charcoal gray with golden accents |
-| [<img src="./media/nebula.png" width="64" alt="Nebula"> **Nebula**](https://jzbakh.github.io/antigravity-arn-skin/html_presentation/index.html) | *Amethyst Void* | Violet, magenta, and cyan cosmos |
-| [<img src="./media/neptune.png" width="64" alt="Neptune"> **Neptune**](https://jzbakh.github.io/antigravity-arn-skin/html_presentation/index.html) | *Glacial Navy* | Teal ocean ice |
-| [<img src="./media/uranus.png" width="64" alt="Uranus"> **Uranus**](https://jzbakh.github.io/antigravity-arn-skin/html_presentation/index.html) | *Glacial Teal* | Teal and ultramarine blue variant |
-| [<img src="./media/io.png" width="64" alt="Io"> **Io**](https://jzbakh.github.io/antigravity-arn-skin/html_presentation/index.html) | *Acid Haze* | Neon lime green on deep black |
-| [<img src="./media/jupiter.png" width="64" alt="Jupiter"> **Jupiter**](https://jzbakh.github.io/antigravity-arn-skin/html_presentation/index.html) | *Amber Light* | Light parchment (the only light theme) |
-| [<img src="./media/mars.png" width="64" alt="Mars"> **Mars**](https://jzbakh.github.io/antigravity-arn-skin/html_presentation/index.html) | *Amber Storm* | Burnt orange on red earth |
+| [<img src="./media/spaceport.png" width="64" alt="Spaceport"> **Spaceport**](https://jzbakh.gitlab.io/arn-skin/html_presentation/index.html) | *Tungsten Grid* | Industrial charcoal gray with golden accents |
+| [<img src="./media/nebula.png" width="64" alt="Nebula"> **Nebula**](https://jzbakh.gitlab.io/arn-skin/html_presentation/index.html) | *Amethyst Void* | Violet, magenta, and cyan cosmos |
+| [<img src="./media/neptune.png" width="64" alt="Neptune"> **Neptune**](https://jzbakh.gitlab.io/arn-skin/html_presentation/index.html) | *Glacial Navy* | Teal ocean ice |
+| [<img src="./media/uranus.png" width="64" alt="Uranus"> **Uranus**](https://jzbakh.gitlab.io/arn-skin/html_presentation/index.html) | *Glacial Teal* | Teal and ultramarine blue variant |
+| [<img src="./media/io.png" width="64" alt="Io"> **Io**](https://jzbakh.gitlab.io/arn-skin/html_presentation/index.html) | *Acid Haze* | Neon lime green on deep black |
+| [<img src="./media/jupiter.png" width="64" alt="Jupiter"> **Jupiter**](https://jzbakh.gitlab.io/arn-skin/html_presentation/index.html) | *Amber Light* | Light parchment (the only light theme) |
+| [<img src="./media/mars.png" width="64" alt="Mars"> **Mars**](https://jzbakh.gitlab.io/arn-skin/html_presentation/index.html) | *Amber Storm* | Burnt orange on red earth |
 
 </div><br>
 
@@ -122,7 +122,7 @@ Works on Antigravity IDE, VSCode, Cursor, Windsurf, VSCodium, and other forks (t
 
 <br>
 
-1. Download the [`antigravity-arn-skin.vsix`](https://github.com/jzbakh/antigravity-arn-skin/releases/latest/download/antigravity-arn-skin.vsix) file.
+1. Download the [`antigravity-arn-skin.vsix`](https://gitlab.com/jzbakh/arn-skin/releases/latest/download/antigravity-arn-skin.vsix) file.
 2. In Antigravity IDE, open the Extensions view (`Ctrl+Shift+X`).
 3. Click the "..." menu (Views and More Actions) at the top of the sidebar.
 4. Select **Install from VSIX...**
@@ -155,15 +155,15 @@ Works on Antigravity IDE, VSCode, Cursor, Windsurf, VSCodium, and other forks (t
   <b>💫 Like this project? Leave a ⭐ on GitHub to support it!</b>
 </p>
 <p align="center">
-  <a href="https://github.com/jzbakh/antigravity-arn-skin">
-    <img src="https://img.shields.io/github/stars/jzbakh/antigravity-arn-skin?style=social" alt="Star on GitHub">
+  <a href="https://gitlab.com/jzbakh/arn-skin">
+    <img src="https://img.shields.io/gitlab/stars/jzbakh/arn-skin?style=social" alt="Star on GitHub">
   </a>
 </p>
 
 <br>
 
 <p align="center">
-  <a href="https://github.com/jzbakh/antigravity-arn-skin">
+  <a href="https://gitlab.com/jzbakh/arn-skin">
     <img src="https://api.star-history.com/svg?repos=jzbakh/antigravity-arn-skin&type=Date"  width="600" alt="Star History Chart">
   </a>
 </p>
@@ -219,7 +219,7 @@ If you would like to financially contribute to the development and future update
 ---
 
 <p align="center">
-  <b>Made with 🩵 by <a href="https://github.com/jzbakh">jzbakh</a></b>
+  <b>Made with 🩵 by <a href="https://gitlab.com/jzbakh">jzbakh</a></b>
 </p>
 
 ---
@@ -240,18 +240,18 @@ If you would like to financially contribute to the development and future update
 ---
 
 <div align="center">
-  <h4> <a href="https://jzbakh.github.io/antigravity-arn-skin/html_presentation/"> Visualisez les syntaxes Markdown, Python, Typescript, Rust, CSS, HTML, JSON, Shell et SQL </a></h4>
+  <h4> <a href="https://jzbakh.gitlab.io/arn-skin/html_presentation/"> Visualisez les syntaxes Markdown, Python, Typescript, Rust, CSS, HTML, JSON, Shell et SQL </a></h4>
 </div><br>
 
 | Thème | Style | Description |
 |:---|:---|:---|
-| [<img src="./media/spaceport.png" width="64" alt="Spaceport"> **Spaceport**](https://jzbakh.github.io/antigravity-arn-skin/html_presentation/index.html) | *Tungsten Grid* | Gris anthracite industriel aux accents dorés |
-| [<img src="./media/nebula.png" width="64" alt="Nebula"> **Nebula**](https://jzbakh.github.io/antigravity-arn-skin/html_presentation/index.html) | *Amethyst Void* | Cosmos violet, magenta et cyan |
-| [<img src="./media/neptune.png" width="64" alt="Neptune"> **Neptune**](https://jzbakh.github.io/antigravity-arn-skin/html_presentation/index.html) | *Glacial Navy* | Glace océanique bleu sarcelle (teal) |
-| [<img src="./media/uranus.png" width="64" alt="Uranus"> **Uranus**](https://jzbakh.github.io/antigravity-arn-skin/html_presentation/index.html) | *Glacial Teal* | Variante sarcelle et bleu outremer |
-| [<img src="./media/io.png" width="64" alt="Io"> **Io**](https://jzbakh.github.io/antigravity-arn-skin/html_presentation/index.html) | *Acid Haze* | Vert lime néon sur fond noir profond |
-| [<img src="./media/jupiter.png" width="64" alt="Jupiter"> **Jupiter**](https://jzbakh.github.io/antigravity-arn-skin/html_presentation/index.html) | *Amber Light* | Parchemin clair (le seul thème clair) |
-| [<img src="./media/mars.png" width="64" alt="Mars"> **Mars**](https://jzbakh.github.io/antigravity-arn-skin/html_presentation/index.html) | *Amber Storm* | Orange brûlé sur terres rouges |
+| [<img src="./media/spaceport.png" width="64" alt="Spaceport"> **Spaceport**](https://jzbakh.gitlab.io/arn-skin/html_presentation/index.html) | *Tungsten Grid* | Gris anthracite industriel aux accents dorés |
+| [<img src="./media/nebula.png" width="64" alt="Nebula"> **Nebula**](https://jzbakh.gitlab.io/arn-skin/html_presentation/index.html) | *Amethyst Void* | Cosmos violet, magenta et cyan |
+| [<img src="./media/neptune.png" width="64" alt="Neptune"> **Neptune**](https://jzbakh.gitlab.io/arn-skin/html_presentation/index.html) | *Glacial Navy* | Glace océanique bleu sarcelle (teal) |
+| [<img src="./media/uranus.png" width="64" alt="Uranus"> **Uranus**](https://jzbakh.gitlab.io/arn-skin/html_presentation/index.html) | *Glacial Teal* | Variante sarcelle et bleu outremer |
+| [<img src="./media/io.png" width="64" alt="Io"> **Io**](https://jzbakh.gitlab.io/arn-skin/html_presentation/index.html) | *Acid Haze* | Vert lime néon sur fond noir profond |
+| [<img src="./media/jupiter.png" width="64" alt="Jupiter"> **Jupiter**](https://jzbakh.gitlab.io/arn-skin/html_presentation/index.html) | *Amber Light* | Parchemin clair (le seul thème clair) |
+| [<img src="./media/mars.png" width="64" alt="Mars"> **Mars**](https://jzbakh.gitlab.io/arn-skin/html_presentation/index.html) | *Amber Storm* | Orange brûlé sur terres rouges |
 
 </div><br>
 
@@ -310,7 +310,7 @@ Fonctionne sur Antigravity IDE, VSCode, Cursor, Windsurf, VSCodium et autres for
 
 <br>
 
-1. Téléchargez le fichier [`antigravity-arn-skin.vsix`](https://github.com/jzbakh/antigravity-arn-skin/releases/latest/download/antigravity-arn-skin.vsix).
+1. Téléchargez le fichier [`antigravity-arn-skin.vsix`](https://gitlab.com/jzbakh/arn-skin/releases/latest/download/antigravity-arn-skin.vsix).
 2. Dans Antigravity IDE, ouvrez la vue des Extensions (`Ctrl+Shift+X`).
 3. Cliquez sur le menu "..." (Vues et plus d'actions) en haut de la barre latérale.
 4. Sélectionnez **Installer à partir d'un VSIX...**
@@ -343,15 +343,15 @@ Extension 100 % JavaScript natif — aucune étape de build. Le code est lisible
   <b>💫 Ce projet vous plaît ? Laissez une ⭐ sur GitHub pour soutenir le projet !</b>
 </p>
 <p align="center">
-  <a href="https://github.com/jzbakh/antigravity-arn-skin">
-    <img src="https://img.shields.io/github/stars/jzbakh/antigravity-arn-skin?style=social" alt="Star sur GitHub">
+  <a href="https://gitlab.com/jzbakh/arn-skin">
+    <img src="https://img.shields.io/gitlab/stars/jzbakh/arn-skin?style=social" alt="Star sur GitHub">
   </a>
 </p>
 
 <br>
 
 <p align="center">
-  <a href="https://github.com/jzbakh/antigravity-arn-skin">
+  <a href="https://gitlab.com/jzbakh/arn-skin">
     <img src="https://api.star-history.com/svg?repos=jzbakh/antigravity-arn-skin&type=Date"  width="600" alt="Star History Chart">
   </a>
 </p>
@@ -406,7 +406,7 @@ Si vous souhaitez contribuer financièrement au développement et aux futures mi
 ---
 
 <p align="center">
-  <b>Créé avec 🩵 par <a href="https://github.com/jzbakh">jzbakh</a></b>
+  <b>Créé avec 🩵 par <a href="https://gitlab.com/jzbakh">jzbakh</a></b>
 </p>
 
 ---
@@ -427,18 +427,18 @@ Si vous souhaitez contribuer financièrement au développement et aux futures mi
 ---
 
 <div align="center">
-  <h4> <a href="https://jzbakh.github.io/antigravity-arn-skin/html_presentation/"> 预览 Markdown, Python, TypeScript, Rust, CSS, HTML, JSON, Shell 和 SQL 语法</a></h4>
+  <h4> <a href="https://jzbakh.gitlab.io/arn-skin/html_presentation/"> 预览 Markdown, Python, TypeScript, Rust, CSS, HTML, JSON, Shell 和 SQL 语法</a></h4>
 </div><br>
 
 | 主题 | 风格 | 描述 |
 |:---|:---|:---|
-| [<img src="./media/spaceport.png" width="64" alt="Spaceport"> **Spaceport**](https://jzbakh.github.io/antigravity-arn-skin/html_presentation/index.html) | *Tungsten Grid* | 带有金色点缀的工业炭灰色 |
-| [<img src="./media/nebula.png" width="64" alt="Nebula"> **Nebula**](https://jzbakh.github.io/antigravity-arn-skin/html_presentation/index.html) | *Amethyst Void* | 紫色、洋红色与青色的宇宙 |
-| [<img src="./media/neptune.png" width="64" alt="Neptune"> **Neptune**](https://jzbakh.github.io/antigravity-arn-skin/html_presentation/index.html) | *Glacial Navy* | Teal色的海洋冰 |
-| [<img src="./media/uranus.png" width="64" alt="Uranus"> **Uranus**](https://jzbakh.github.io/antigravity-arn-skin/html_presentation/index.html) | *Glacial Teal* | Teal色与群青蓝变体 |
-| [<img src="./media/io.png" width="64" alt="Io"> **Io**](https://jzbakh.github.io/antigravity-arn-skin/html_presentation/index.html) | *Acid Haze* | 深邃黑色上的霓虹青柠绿 |
-| [<img src="./media/jupiter.png" width="64" alt="Jupiter"> **Jupiter**](https://jzbakh.github.io/antigravity-arn-skin/html_presentation/index.html) | *Amber Light* | 浅色羊皮纸（唯一的浅色主题） |
-| [<img src="./media/mars.png" width="64" alt="Mars"> **Mars**](https://jzbakh.github.io/antigravity-arn-skin/html_presentation/index.html) | *Amber Storm* | 红土地上的焦橙色 |
+| [<img src="./media/spaceport.png" width="64" alt="Spaceport"> **Spaceport**](https://jzbakh.gitlab.io/arn-skin/html_presentation/index.html) | *Tungsten Grid* | 带有金色点缀的工业炭灰色 |
+| [<img src="./media/nebula.png" width="64" alt="Nebula"> **Nebula**](https://jzbakh.gitlab.io/arn-skin/html_presentation/index.html) | *Amethyst Void* | 紫色、洋红色与青色的宇宙 |
+| [<img src="./media/neptune.png" width="64" alt="Neptune"> **Neptune**](https://jzbakh.gitlab.io/arn-skin/html_presentation/index.html) | *Glacial Navy* | Teal色的海洋冰 |
+| [<img src="./media/uranus.png" width="64" alt="Uranus"> **Uranus**](https://jzbakh.gitlab.io/arn-skin/html_presentation/index.html) | *Glacial Teal* | Teal色与群青蓝变体 |
+| [<img src="./media/io.png" width="64" alt="Io"> **Io**](https://jzbakh.gitlab.io/arn-skin/html_presentation/index.html) | *Acid Haze* | 深邃黑色上的霓虹青柠绿 |
+| [<img src="./media/jupiter.png" width="64" alt="Jupiter"> **Jupiter**](https://jzbakh.gitlab.io/arn-skin/html_presentation/index.html) | *Amber Light* | 浅色羊皮纸（唯一的浅色主题） |
+| [<img src="./media/mars.png" width="64" alt="Mars"> **Mars**](https://jzbakh.gitlab.io/arn-skin/html_presentation/index.html) | *Amber Storm* | 红土地上的焦橙色 |
 
 </div><br>
 
@@ -497,7 +497,7 @@ Si vous souhaitez contribuer financièrement au développement et aux futures mi
 
 <br>
 
-1. 下载 [`antigravity-arn-skin.vsix`](https://github.com/jzbakh/antigravity-arn-skin/releases/latest/download/antigravity-arn-skin.vsix) 文件。
+1. 下载 [`antigravity-arn-skin.vsix`](https://gitlab.com/jzbakh/arn-skin/releases/latest/download/antigravity-arn-skin.vsix) 文件。
 2. 在 Antigravity IDE 中，打开 Extensions (扩展) 视图 (`Ctrl+Shift+X`)。
 3. 点击侧边栏顶部的 "..." 菜单（视图和更多操作）。
 4. 选择 **Install from VSIX... (从 VSIX 安装...)**
@@ -530,15 +530,15 @@ Si vous souhaitez contribuer financièrement au développement et aux futures mi
   <b>💫 喜欢这个项目吗？在 GitHub 上点颗 ⭐ 以表支持！</b>
 </p>
 <p align="center">
-  <a href="https://github.com/jzbakh/antigravity-arn-skin">
-    <img src="https://img.shields.io/github/stars/jzbakh/antigravity-arn-skin?style=social" alt="Star on GitHub">
+  <a href="https://gitlab.com/jzbakh/arn-skin">
+    <img src="https://img.shields.io/gitlab/stars/jzbakh/arn-skin?style=social" alt="Star on GitHub">
   </a>
 </p>
 
 <br>
 
 <p align="center">
-  <a href="https://github.com/jzbakh/antigravity-arn-skin">
+  <a href="https://gitlab.com/jzbakh/arn-skin">
     <img src="https://api.star-history.com/svg?repos=jzbakh/antigravity-arn-skin&type=Date"  width="600" alt="Star History Chart">
   </a>
 </p>
@@ -593,7 +593,7 @@ Si vous souhaitez contribuer financièrement au développement et aux futures mi
 ---
 
 <p align="center">
-  <b>由 <a href="https://github.com/jzbakh">jzbakh</a> 用 🩵 制作</b>
+  <b>由 <a href="https://gitlab.com/jzbakh">jzbakh</a> 用 🩵 制作</b>
 </p>
 
 ---
@@ -614,18 +614,18 @@ Si vous souhaitez contribuer financièrement au développement et aux futures mi
 ---
 
 <div align="center">
-  <h4> <a href="https://jzbakh.github.io/antigravity-arn-skin/html_presentation/"> Visualiza las sintaxis Markdown, Python, TypeScript, Rust, CSS, HTML, JSON, Shell y SQL </a></h4>
+  <h4> <a href="https://jzbakh.gitlab.io/arn-skin/html_presentation/"> Visualiza las sintaxis Markdown, Python, TypeScript, Rust, CSS, HTML, JSON, Shell y SQL </a></h4>
 </div><br>
 
 | Tema | Estilo | Descripción |
 |:---|:---|:---|
-| [<img src="./media/spaceport.png" width="64" alt="Spaceport"> **Spaceport**](https://jzbakh.github.io/antigravity-arn-skin/html_presentation/index.html) | *Tungsten Grid* | Gris antracita industrial con acentos dorados |
-| [<img src="./media/nebula.png" width="64" alt="Nebula"> **Nebula**](https://jzbakh.github.io/antigravity-arn-skin/html_presentation/index.html) | *Amethyst Void* | Cosmos violeta, magenta y cian |
-| [<img src="./media/neptune.png" width="64" alt="Neptune"> **Neptune**](https://jzbakh.github.io/antigravity-arn-skin/html_presentation/index.html) | *Glacial Navy* | Hielo oceánico verde azulado (teal) |
-| [<img src="./media/uranus.png" width="64" alt="Uranus"> **Uranus**](https://jzbakh.github.io/antigravity-arn-skin/html_presentation/index.html) | *Glacial Teal* | Variante verde azulado y azul ultramar |
-| [<img src="./media/io.png" width="64" alt="Io"> **Io**](https://jzbakh.github.io/antigravity-arn-skin/html_presentation/index.html) | *Acid Haze* | Verde lima neón sobre fondo negro profundo |
-| [<img src="./media/jupiter.png" width="64" alt="Jupiter"> **Jupiter**](https://jzbakh.github.io/antigravity-arn-skin/html_presentation/index.html) | *Amber Light* | Pergamino claro (el único tema claro) |
-| [<img src="./media/mars.png" width="64" alt="Mars"> **Mars**](https://jzbakh.github.io/antigravity-arn-skin/html_presentation/index.html) | *Amber Storm* | Naranja quemado sobre tierras rojas |
+| [<img src="./media/spaceport.png" width="64" alt="Spaceport"> **Spaceport**](https://jzbakh.gitlab.io/arn-skin/html_presentation/index.html) | *Tungsten Grid* | Gris antracita industrial con acentos dorados |
+| [<img src="./media/nebula.png" width="64" alt="Nebula"> **Nebula**](https://jzbakh.gitlab.io/arn-skin/html_presentation/index.html) | *Amethyst Void* | Cosmos violeta, magenta y cian |
+| [<img src="./media/neptune.png" width="64" alt="Neptune"> **Neptune**](https://jzbakh.gitlab.io/arn-skin/html_presentation/index.html) | *Glacial Navy* | Hielo oceánico verde azulado (teal) |
+| [<img src="./media/uranus.png" width="64" alt="Uranus"> **Uranus**](https://jzbakh.gitlab.io/arn-skin/html_presentation/index.html) | *Glacial Teal* | Variante verde azulado y azul ultramar |
+| [<img src="./media/io.png" width="64" alt="Io"> **Io**](https://jzbakh.gitlab.io/arn-skin/html_presentation/index.html) | *Acid Haze* | Verde lima neón sobre fondo negro profundo |
+| [<img src="./media/jupiter.png" width="64" alt="Jupiter"> **Jupiter**](https://jzbakh.gitlab.io/arn-skin/html_presentation/index.html) | *Amber Light* | Pergamino claro (el único tema claro) |
+| [<img src="./media/mars.png" width="64" alt="Mars"> **Mars**](https://jzbakh.gitlab.io/arn-skin/html_presentation/index.html) | *Amber Storm* | Naranja quemado sobre tierras rojas |
 
 </div><br>
 
@@ -684,7 +684,7 @@ Funciona en Antigravity IDE, VSCode, Cursor, Windsurf, VSCodium y otros forks (q
 
 <br>
 
-1. Descarga el archivo [`antigravity-arn-skin.vsix`](https://github.com/jzbakh/antigravity-arn-skin/releases/latest/download/antigravity-arn-skin.vsix).
+1. Descarga el archivo [`antigravity-arn-skin.vsix`](https://gitlab.com/jzbakh/arn-skin/releases/latest/download/antigravity-arn-skin.vsix).
 2. En Antigravity IDE, abre la vista de Extensiones (`Ctrl+Shift+X`).
 3. Haz clic en el menú "..." (Vistas y más acciones) en la parte superior de la barra lateral.
 4. Selecciona **Instalar desde VSIX...**
@@ -717,15 +717,15 @@ Extensión 100 % JavaScript nativo — sin paso de build. El código es legible 
   <b>💫 ¿Te gusta este proyecto? ¡Deja una ⭐ en GitHub para apoyarlo!</b>
 </p>
 <p align="center">
-  <a href="https://github.com/jzbakh/antigravity-arn-skin">
-    <img src="https://img.shields.io/github/stars/jzbakh/antigravity-arn-skin?style=social" alt="Star en GitHub">
+  <a href="https://gitlab.com/jzbakh/arn-skin">
+    <img src="https://img.shields.io/gitlab/stars/jzbakh/arn-skin?style=social" alt="Star en GitHub">
   </a>
 </p>
 
 <br>
 
 <p align="center">
-  <a href="https://github.com/jzbakh/antigravity-arn-skin">
+  <a href="https://gitlab.com/jzbakh/arn-skin">
     <img src="https://api.star-history.com/svg?repos=jzbakh/antigravity-arn-skin&type=Date"  width="600" alt="Star History Chart">
   </a>
 </p>
@@ -780,7 +780,7 @@ Si deseas contribuir financieramente al desarrollo y a las futuras actualizacion
 ---
 
 <p align="center">
-  <b>Hecho con 🩵 por <a href="https://github.com/jzbakh">jzbakh</a></b>
+  <b>Hecho con 🩵 por <a href="https://gitlab.com/jzbakh">jzbakh</a></b>
 </p>
 
 ---
@@ -801,18 +801,18 @@ Si deseas contribuir financieramente al desarrollo y a las futuras actualizacion
 ---
 
 <div align="center">
-  <h4> <a href="https://jzbakh.github.io/antigravity-arn-skin/html_presentation/"> قم بمعاينة بناء الجملة (Syntax) لـ Markdown و Python و TypeScript و Rust و CSS و HTML و JSON و Shell و SQL </a></h4>
+  <h4> <a href="https://jzbakh.gitlab.io/arn-skin/html_presentation/"> قم بمعاينة بناء الجملة (Syntax) لـ Markdown و Python و TypeScript و Rust و CSS و HTML و JSON و Shell و SQL </a></h4>
 </div><br>
 
 | السمة | النمط | الوصف |
 |:---|:---|:---|
-| [**Spaceport** <img src="./media/spaceport.png" width="64" alt="Spaceport">](https://jzbakh.github.io/antigravity-arn-skin/html_presentation/index.html) | *Tungsten Grid* | رمادي فحمي صناعي مع لمسات ذهبية |
-| [**Nebula** <img src="./media/nebula.png" width="64" alt="Nebula">](https://jzbakh.github.io/antigravity-arn-skin/html_presentation/index.html) | *Amethyst Void* | كون بنفسجي، أرجواني، وسماوي |
-| [**Neptune** <img src="./media/neptune.png" width="64" alt="Neptune">](https://jzbakh.github.io/antigravity-arn-skin/html_presentation/index.html) | *Glacial Navy* | جليد محيطي أزرق مخضر (teal) |
-| [**Uranus** <img src="./media/uranus.png" width="64" alt="Uranus">](https://jzbakh.github.io/antigravity-arn-skin/html_presentation/index.html) | *Glacial Teal* | نسخة باللون الأزرق المخضر والأزرق اللازوردي |
-| [**Io** <img src="./media/io.png" width="64" alt="Io">](https://jzbakh.github.io/antigravity-arn-skin/html_presentation/index.html) | *Acid Haze* | أخضر ليموني نيون على خلفية سوداء عميقة |
-| [**Jupiter** <img src="./media/jupiter.png" width="64" alt="Jupiter">](https://jzbakh.github.io/antigravity-arn-skin/html_presentation/index.html) | *Amber Light* | ورق رقي فاتح (السمة الفاتحة الوحيدة) |
-| [**Mars** <img src="./media/mars.png" width="64" alt="Mars">](https://jzbakh.github.io/antigravity-arn-skin/html_presentation/index.html) | *Amber Storm* | برتقالي محروق على أراضٍ حمراء |
+| [**Spaceport** <img src="./media/spaceport.png" width="64" alt="Spaceport">](https://jzbakh.gitlab.io/arn-skin/html_presentation/index.html) | *Tungsten Grid* | رمادي فحمي صناعي مع لمسات ذهبية |
+| [**Nebula** <img src="./media/nebula.png" width="64" alt="Nebula">](https://jzbakh.gitlab.io/arn-skin/html_presentation/index.html) | *Amethyst Void* | كون بنفسجي، أرجواني، وسماوي |
+| [**Neptune** <img src="./media/neptune.png" width="64" alt="Neptune">](https://jzbakh.gitlab.io/arn-skin/html_presentation/index.html) | *Glacial Navy* | جليد محيطي أزرق مخضر (teal) |
+| [**Uranus** <img src="./media/uranus.png" width="64" alt="Uranus">](https://jzbakh.gitlab.io/arn-skin/html_presentation/index.html) | *Glacial Teal* | نسخة باللون الأزرق المخضر والأزرق اللازوردي |
+| [**Io** <img src="./media/io.png" width="64" alt="Io">](https://jzbakh.gitlab.io/arn-skin/html_presentation/index.html) | *Acid Haze* | أخضر ليموني نيون على خلفية سوداء عميقة |
+| [**Jupiter** <img src="./media/jupiter.png" width="64" alt="Jupiter">](https://jzbakh.gitlab.io/arn-skin/html_presentation/index.html) | *Amber Light* | ورق رقي فاتح (السمة الفاتحة الوحيدة) |
+| [**Mars** <img src="./media/mars.png" width="64" alt="Mars">](https://jzbakh.gitlab.io/arn-skin/html_presentation/index.html) | *Amber Storm* | برتقالي محروق على أراضٍ حمراء |
 
 </div><br>
 
@@ -871,7 +871,7 @@ Si deseas contribuir financieramente al desarrollo y a las futuras actualizacion
 
 <br>
 
-1. قم بتنزيل ملف [`antigravity-arn-skin.vsix`](https://github.com/jzbakh/antigravity-arn-skin/releases/latest/download/antigravity-arn-skin.vsix).
+1. قم بتنزيل ملف [`antigravity-arn-skin.vsix`](https://gitlab.com/jzbakh/arn-skin/releases/latest/download/antigravity-arn-skin.vsix).
 2. في بيئة تطوير Antigravity IDE، افتح عرض الإضافات (`Ctrl+Shift+X`).
 3. انقر على قائمة "..." (طرق العرض والمزيد من الإجراءات) في أعلى الشريط الجانبي.
 4. حدد **Install from VSIX...**
@@ -904,15 +904,15 @@ Si deseas contribuir financieramente al desarrollo y a las futuras actualizacion
   <b>💫 هل أعجبك هذا المشروع؟ اترك ⭐ على GitHub لدعمه!</b>
 </p>
 <p align="center">
-  <a href="https://github.com/jzbakh/antigravity-arn-skin">
-    <img src="https://img.shields.io/github/stars/jzbakh/antigravity-arn-skin?style=social" alt="نجمة على GitHub">
+  <a href="https://gitlab.com/jzbakh/arn-skin">
+    <img src="https://img.shields.io/gitlab/stars/jzbakh/arn-skin?style=social" alt="نجمة على GitHub">
   </a>
 </p>
 
 <br>
 
 <p align="center">
-  <a href="https://github.com/jzbakh/antigravity-arn-skin">
+  <a href="https://gitlab.com/jzbakh/arn-skin">
     <img src="https://api.star-history.com/svg?repos=jzbakh/antigravity-arn-skin&type=Date"  width="600" alt="مخطط سجل النجوم">
   </a>
 </p>
@@ -967,7 +967,7 @@ Si deseas contribuir financieramente al desarrollo y a las futuras actualizacion
 ---
 
 <p align="center">
-  <b>صُنع بـ 🩵 بواسطة <a href="https://github.com/jzbakh">jzbakh</a></b>
+  <b>صُنع بـ 🩵 بواسطة <a href="https://gitlab.com/jzbakh">jzbakh</a></b>
 </p>
 
 ---
@@ -988,18 +988,18 @@ Si deseas contribuir financieramente al desarrollo y a las futuras actualizacion
 ---
 
 <div align="center">
-  <h4> <a href="https://jzbakh.github.io/antigravity-arn-skin/html_presentation/"> แสดงตัวอย่าง Syntax ของ Markdown, Python, TypeScript, Rust, CSS, HTML, JSON, Shell และ SQL </a></h4>
+  <h4> <a href="https://jzbakh.gitlab.io/arn-skin/html_presentation/"> แสดงตัวอย่าง Syntax ของ Markdown, Python, TypeScript, Rust, CSS, HTML, JSON, Shell และ SQL </a></h4>
 </div><br>
 
 | ธีม | สไตล์ | คำอธิบาย |
 |:---|:---|:---|
-| [<img src="./media/spaceport.png" width="64" alt="Spaceport"> **Spaceport**](https://jzbakh.github.io/antigravity-arn-skin/html_presentation/index.html) | *Tungsten Grid* | สีเทาชาร์โคลแบบอินดัสเตรียลพร้อมลูกเล่นสีทอง |
-| [<img src="./media/nebula.png" width="64" alt="Nebula"> **Nebula**](https://jzbakh.github.io/antigravity-arn-skin/html_presentation/index.html) | *Amethyst Void* | ห้วงจักรวาลสีม่วง สีบานเย็น และสีฟ้าไซแอน |
-| [<img src="./media/neptune.png" width="64" alt="Neptune"> **Neptune**](https://jzbakh.github.io/antigravity-arn-skin/html_presentation/index.html) | *Glacial Navy* | สีน้ำแข็งในมหาสมุทรโทนเขียวอมฟ้า (teal) |
-| [<img src="./media/uranus.png" width="64" alt="Uranus"> **Uranus**](https://jzbakh.github.io/antigravity-arn-skin/html_presentation/index.html) | *Glacial Teal* | ธีมทางเลือกสีเขียวอมฟ้าและสีน้ำเงินอุลตรามารีน |
-| [<img src="./media/io.png" width="64" alt="Io"> **Io**](https://jzbakh.github.io/antigravity-arn-skin/html_presentation/index.html) | *Acid Haze* | สีเขียวมะนาวนีออนบนพื้นหลังสีดำสนิท |
-| [<img src="./media/jupiter.png" width="64" alt="Jupiter"> **Jupiter**](https://jzbakh.github.io/antigravity-arn-skin/html_presentation/index.html) | *Amber Light* | สีแผ่นกระดาษพาร์ชเมนต์สว่าง (ธีมสว่างเพียงหนึ่งเดียว) |
-| [<img src="./media/mars.png" width="64" alt="Mars"> **Mars**](https://jzbakh.github.io/antigravity-arn-skin/html_presentation/index.html) | *Amber Storm* | สีส้มอิฐบนพื้นดินสีแดง |
+| [<img src="./media/spaceport.png" width="64" alt="Spaceport"> **Spaceport**](https://jzbakh.gitlab.io/arn-skin/html_presentation/index.html) | *Tungsten Grid* | สีเทาชาร์โคลแบบอินดัสเตรียลพร้อมลูกเล่นสีทอง |
+| [<img src="./media/nebula.png" width="64" alt="Nebula"> **Nebula**](https://jzbakh.gitlab.io/arn-skin/html_presentation/index.html) | *Amethyst Void* | ห้วงจักรวาลสีม่วง สีบานเย็น และสีฟ้าไซแอน |
+| [<img src="./media/neptune.png" width="64" alt="Neptune"> **Neptune**](https://jzbakh.gitlab.io/arn-skin/html_presentation/index.html) | *Glacial Navy* | สีน้ำแข็งในมหาสมุทรโทนเขียวอมฟ้า (teal) |
+| [<img src="./media/uranus.png" width="64" alt="Uranus"> **Uranus**](https://jzbakh.gitlab.io/arn-skin/html_presentation/index.html) | *Glacial Teal* | ธีมทางเลือกสีเขียวอมฟ้าและสีน้ำเงินอุลตรามารีน |
+| [<img src="./media/io.png" width="64" alt="Io"> **Io**](https://jzbakh.gitlab.io/arn-skin/html_presentation/index.html) | *Acid Haze* | สีเขียวมะนาวนีออนบนพื้นหลังสีดำสนิท |
+| [<img src="./media/jupiter.png" width="64" alt="Jupiter"> **Jupiter**](https://jzbakh.gitlab.io/arn-skin/html_presentation/index.html) | *Amber Light* | สีแผ่นกระดาษพาร์ชเมนต์สว่าง (ธีมสว่างเพียงหนึ่งเดียว) |
+| [<img src="./media/mars.png" width="64" alt="Mars"> **Mars**](https://jzbakh.gitlab.io/arn-skin/html_presentation/index.html) | *Amber Storm* | สีส้มอิฐบนพื้นดินสีแดง |
 
 </div><br>
 
@@ -1058,7 +1058,7 @@ Si deseas contribuir financieramente al desarrollo y a las futuras actualizacion
 
 <br>
 
-1. ดาวน์โหลดไฟล์ [`antigravity-arn-skin.vsix`](https://github.com/jzbakh/antigravity-arn-skin/releases/latest/download/antigravity-arn-skin.vsix)
+1. ดาวน์โหลดไฟล์ [`antigravity-arn-skin.vsix`](https://gitlab.com/jzbakh/arn-skin/releases/latest/download/antigravity-arn-skin.vsix)
 2. ใน Antigravity IDE ให้เปิดหน้ามุมมองส่วนขยาย (`Ctrl+Shift+X`)
 3. คลิกที่เมนู "..." (Views and More Actions) ที่ด้านบนของแถบด้านข้าง
 4. เลือก **Install from VSIX...**
@@ -1091,15 +1091,15 @@ Si deseas contribuir financieramente al desarrollo y a las futuras actualizacion
   <b>💫 หากคุณชื่นชอบโครงการนี้ ฝากกด ⭐ บน GitHub เพื่อเป็นกำลังใจให้เรา!</b>
 </p>
 <p align="center">
-  <a href="https://github.com/jzbakh/antigravity-arn-skin">
-    <img src="https://img.shields.io/github/stars/jzbakh/antigravity-arn-skin?style=social" alt="กดดาวบน GitHub">
+  <a href="https://gitlab.com/jzbakh/arn-skin">
+    <img src="https://img.shields.io/gitlab/stars/jzbakh/arn-skin?style=social" alt="กดดาวบน GitHub">
   </a>
 </p>
 
 <br>
 
 <p align="center">
-  <a href="https://github.com/jzbakh/antigravity-arn-skin">
+  <a href="https://gitlab.com/jzbakh/arn-skin">
     <img src="https://api.star-history.com/svg?repos=jzbakh/antigravity-arn-skin&type=Date"  width="600" alt="แผนภูมิประวัติการกดดาว">
   </a>
 </p>
@@ -1154,7 +1154,7 @@ Si deseas contribuir financieramente al desarrollo y a las futuras actualizacion
 ---
 
 <p align="center">
-  <b>สร้างสรรค์ด้วย 🩵 โดย <a href="https://github.com/jzbakh">jzbakh</a></b>
+  <b>สร้างสรรค์ด้วย 🩵 โดย <a href="https://gitlab.com/jzbakh">jzbakh</a></b>
 </p>
 
 ---
