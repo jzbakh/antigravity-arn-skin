@@ -127,6 +127,7 @@ pages:
   script:
     - mkdir -p public
     - cp -r html_presentation public/
+    - cp -r media public/
   artifacts:
     paths:
       - public
