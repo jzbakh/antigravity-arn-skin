@@ -5,6 +5,14 @@ All notable changes to ARN-Skin will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.3] — 2026-06-26
+
+### Changed
+
+- Migrated project hosting and Pages infrastructure from GitHub to GitLab.
+- Updated all repository, issue, and presentation URLs across package manifests and documentation.
+- Fixed image alignment in the Arabic README translation table.
+
 ## [1.0.2] — 2026-05-25
 
 ### Changed
@@ -16,22 +24,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   VSIX section in all 6 languages. Language selector promoted to H2
   for better navigation.
 
-### Added
-
-- `.github/dependabot.yml` — weekly automated dependency-update PRs
-  for the test harness (npm) and CI workflows (GitHub Actions), grouped
-  per ecosystem to keep notification volume low.
-
 ## [1.0.1] — 2026-05-10
 
 ### Added
 
-- CI auto-publishes the `.vsix` to VS Marketplace + Open VSX on release,
-  with a tag/version pre-flight and unit-test gate. Requires `VSCE_PUBLISH`
-  and `OPEN_VSX` repo secrets.
-- Marketplace stats badges are now self-hosted on an orphan `badges`
-  branch, refreshed every 6h. Replaces the deprecated
-  `vsmarketplacebadges.dev` endpoints used at v1.0.0.
 - README — "five smart toggles" section in EN/FR/CN/ES/AR/TH.
 - `SECURITY.md` describing the GitHub Private Security Advisory flow.
 
@@ -85,10 +81,9 @@ First public release.
 ### Engineering
 
 - Zero runtime dependencies — single-file JavaScript extension.
-- 448 automated tests (328 unit + 120 integration) running on Linux,
-  macOS and Windows in CI, plus a weekly Insiders cron job.
 - GPL-3.0-or-later licensed.
 
-[1.0.2]: https://github.com/jzbakh/antigravity-arn-skin/releases/tag/v1.0.2
-[1.0.1]: https://github.com/jzbakh/antigravity-arn-skin/releases/tag/v1.0.1
-[1.0.0]: https://github.com/jzbakh/antigravity-arn-skin/releases/tag/v1.0.0
+[1.0.3]: https://gitlab.com/jzbakh/arn-skin/-/tags/v1.0.3
+[1.0.2]: https://gitlab.com/jzbakh/arn-skin/-/tags/v1.0.2
+[1.0.1]: https://gitlab.com/jzbakh/arn-skin/-/tags/v1.0.1
+[1.0.0]: https://gitlab.com/jzbakh/arn-skin/-/tags/v1.0.0
