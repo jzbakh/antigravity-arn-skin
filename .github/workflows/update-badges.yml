@@ -90,14 +90,14 @@ jobs:
             | (.versions // [])[0] // {}
             | (.version // "unknown")
           ')
-          # Read `downloadCount` (raw downloads) rather than `install` (unique
-          # installs). The shields.io label is "Downloads" so the value must
-          # match — Microsoft exposes both metrics on every extension.
+          # Read `install` (unique installs) instead of `downloadCount` to reflect
+          # the main metric displayed on the VS Marketplace page. The label
+          # remains "Downloads" for symmetry with Open VSX.
           DOWNLOADS=$(echo "$RESPONSE" | jq -r '
             (.results // [])[0] // {}
             | (.extensions // [])[0] // {}
             | (.statistics // [])
-            | map(select(.statisticName == "downloadCount"))
+            | map(select(.statisticName == "install"))
             | (first // {value: 0})
             | (.value // 0)
             | floor

@@ -101,7 +101,7 @@ update-badges:
     - |
       VERSION=$(echo "$RESPONSE" | jq -r '(.results // [])[0] // {} | (.extensions // [])[0] // {} | (.versions // [])[0] // {} | (.version // "unknown")')
     - |
-      DOWNLOADS=$(echo "$RESPONSE" | jq -r '(.results // [])[0] // {} | (.extensions // [])[0] // {} | (.statistics // []) | map(select(.statisticName == "downloadCount")) | (first // {value: 0}) | (.value // 0) | floor')
+      DOWNLOADS=$(echo "$RESPONSE" | jq -r '(.results // [])[0] // {} | (.extensions // [])[0] // {} | (.statistics // []) | map(select(.statisticName == "install")) | (first // {value: 0}) | (.value // 0) | floor')
     - |
       if [ "$VERSION" != "unknown" ]; then
         DOWNLOADS_DISPLAY=$(if [ "$DOWNLOADS" -ge 1000000 ]; then awk -v n="$DOWNLOADS" 'BEGIN { printf "%.1fM", n/1000000 }'; elif [ "$DOWNLOADS" -ge 1000 ]; then awk -v n="$DOWNLOADS" 'BEGIN { printf "%.1fk", n/1000 }'; else echo "$DOWNLOADS"; fi)
