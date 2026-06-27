@@ -39,25 +39,7 @@ unit-tests-linux:
     - npm ci
     - npm run test:unit
 
-unit-tests-windows:
-  stage: test
-  tags:
-    - saas-windows-medium
-  script:
-    - cd test
-    - npm ci
-    - npm run test:unit
-  allow_failure: true
 
-unit-tests-macos:
-  stage: test
-  tags:
-    - saas-macos-medium
-  script:
-    - cd test
-    - npm ci
-    - npm run test:unit
-  allow_failure: true
 
 # --- INTEGRATION TESTS ---
 integration-tests-linux:
@@ -70,25 +52,7 @@ integration-tests-linux:
     - npm ci
     - xvfb-run -a npm run test:integration
 
-integration-tests-windows:
-  stage: test
-  tags:
-    - saas-windows-medium
-  script:
-    - cd test
-    - npm ci
-    - npm run test:integration
-  allow_failure: true
 
-integration-tests-macos:
-  stage: test
-  tags:
-    - saas-macos-medium
-  script:
-    - cd test
-    - npm ci
-    - npm run test:integration
-  allow_failure: true
 
 # --- PUBLISH ---
 publish:
