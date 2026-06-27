@@ -8,7 +8,7 @@
 [![Open VSX Downloads](https://img.shields.io/endpoint?url=https://gitlab.com/jzbakh/arn-skin/raw/badges/.github/badges/openvsx-downloads.json)](https://open-vsx.org/extension/jzbakh/antigravity-arn-skin)
 
 [![GitHub stars](https://img.shields.io/gitlab/stars/jzbakh/arn-skin?style=flat&color=gold)](https://gitlab.com/jzbakh/arn-skin)
-[![GitHub issues](https://img.shields.io/gitlab/issues/jzbakh/arn-skin)](https://gitlab.com/jzbakh/arn-skin/issues)
+[![GitLab issues](https://img.shields.io/gitlab/issues/open/jzbakh/arn-skin)](https://gitlab.com/jzbakh/arn-skin/issues)
 [![License](https://img.shields.io/gitlab/license/jzbakh/arn-skin)](https://gitlab.com/jzbakh/arn-skin)
 
 [![Dependencies](https://img.shields.io/badge/dependencies-0-brightgreen.svg)](https://gitlab.com/jzbakh/arn-skin/blob/main/package.json)
@@ -806,13 +806,13 @@ Si deseas contribuir financieramente al desarrollo y a las futuras actualizacion
 
 | السمة | النمط | الوصف |
 |:---|:---|:---|
-| [**Spaceport** <img src="./media/spaceport.png" width="64" alt="Spaceport">](https://jzbakh.gitlab.io/arn-skin/html_presentation/index.html) | *Tungsten Grid* | رمادي فحمي صناعي مع لمسات ذهبية |
-| [**Nebula** <img src="./media/nebula.png" width="64" alt="Nebula">](https://jzbakh.gitlab.io/arn-skin/html_presentation/index.html) | *Amethyst Void* | كون بنفسجي، أرجواني، وسماوي |
-| [**Neptune** <img src="./media/neptune.png" width="64" alt="Neptune">](https://jzbakh.gitlab.io/arn-skin/html_presentation/index.html) | *Glacial Navy* | جليد محيطي أزرق مخضر (teal) |
-| [**Uranus** <img src="./media/uranus.png" width="64" alt="Uranus">](https://jzbakh.gitlab.io/arn-skin/html_presentation/index.html) | *Glacial Teal* | نسخة باللون الأزرق المخضر والأزرق اللازوردي |
-| [**Io** <img src="./media/io.png" width="64" alt="Io">](https://jzbakh.gitlab.io/arn-skin/html_presentation/index.html) | *Acid Haze* | أخضر ليموني نيون على خلفية سوداء عميقة |
-| [**Jupiter** <img src="./media/jupiter.png" width="64" alt="Jupiter">](https://jzbakh.gitlab.io/arn-skin/html_presentation/index.html) | *Amber Light* | ورق رقي فاتح (السمة الفاتحة الوحيدة) |
-| [**Mars** <img src="./media/mars.png" width="64" alt="Mars">](https://jzbakh.gitlab.io/arn-skin/html_presentation/index.html) | *Amber Storm* | برتقالي محروق على أراضٍ حمراء |
+| [<img src="./media/spaceport.png" width="64" alt="Spaceport"> **Spaceport**](https://jzbakh.gitlab.io/arn-skin/html_presentation/index.html) | *Tungsten Grid* | رمادي فحمي صناعي مع لمسات ذهبية |
+| [<img src="./media/nebula.png" width="64" alt="Nebula"> **Nebula**](https://jzbakh.gitlab.io/arn-skin/html_presentation/index.html) | *Amethyst Void* | كون بنفسجي، أرجواني، وسماوي |
+| [<img src="./media/neptune.png" width="64" alt="Neptune"> **Neptune**](https://jzbakh.gitlab.io/arn-skin/html_presentation/index.html) | *Glacial Navy* | جليد محيطي أزرق مخضر (teal) |
+| [<img src="./media/uranus.png" width="64" alt="Uranus"> **Uranus**](https://jzbakh.gitlab.io/arn-skin/html_presentation/index.html) | *Glacial Teal* | نسخة باللون الأزرق المخضر والأزرق اللازوردي |
+| [<img src="./media/io.png" width="64" alt="Io"> **Io**](https://jzbakh.gitlab.io/arn-skin/html_presentation/index.html) | *Acid Haze* | أخضر ليموني نيون على خلفية سوداء عميقة |
+| [<img src="./media/jupiter.png" width="64" alt="Jupiter"> **Jupiter**](https://jzbakh.gitlab.io/arn-skin/html_presentation/index.html) | *Amber Light* | ورق رقي فاتح (السمة الفاتحة الوحيدة) |
+| [<img src="./media/mars.png" width="64" alt="Mars"> **Mars**](https://jzbakh.gitlab.io/arn-skin/html_presentation/index.html) | *Amber Storm* | برتقالي محروق على أراضٍ حمراء |
 
 </div><br>
 
