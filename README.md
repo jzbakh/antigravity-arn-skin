@@ -2,10 +2,10 @@
 
 # ARN-Skin - Explore 7 space-themed skins + customization to enhance your IDE.
 
-[![VS Marketplace](https://img.shields.io/endpoint?url=https://gitlab.com/jzbakh/arn-skin/raw/badges/.github/badges/marketplace-version.json)](https://marketplace.visualstudio.com/items?itemName=jzbakh.antigravity-arn-skin)
-[![VS Marketplace Downloads](https://img.shields.io/endpoint?url=https://gitlab.com/jzbakh/arn-skin/raw/badges/.github/badges/marketplace-downloads.json)](https://marketplace.visualstudio.com/items?itemName=jzbakh.antigravity-arn-skin)
-[![Open VSX](https://img.shields.io/endpoint?url=https://gitlab.com/jzbakh/arn-skin/raw/badges/.github/badges/openvsx-version.json)](https://open-vsx.org/extension/jzbakh/antigravity-arn-skin)
-[![Open VSX Downloads](https://img.shields.io/endpoint?url=https://gitlab.com/jzbakh/arn-skin/raw/badges/.github/badges/openvsx-downloads.json)](https://open-vsx.org/extension/jzbakh/antigravity-arn-skin)
+[![VS Marketplace](https://img.shields.io/endpoint?url=https://gitlab.com/jzbakh/arn-skin/raw/badges-gitlab/.gitlab/badges/marketplace-version.json)](https://marketplace.visualstudio.com/items?itemName=jzbakh.antigravity-arn-skin)
+[![VS Marketplace Downloads](https://img.shields.io/endpoint?url=https://gitlab.com/jzbakh/arn-skin/raw/badges-gitlab/.gitlab/badges/marketplace-downloads.json)](https://marketplace.visualstudio.com/items?itemName=jzbakh.antigravity-arn-skin)
+[![Open VSX](https://img.shields.io/endpoint?url=https://gitlab.com/jzbakh/arn-skin/raw/badges-gitlab/.gitlab/badges/openvsx-version.json)](https://open-vsx.org/extension/jzbakh/antigravity-arn-skin)
+[![Open VSX Downloads](https://img.shields.io/endpoint?url=https://gitlab.com/jzbakh/arn-skin/raw/badges-gitlab/.gitlab/badges/openvsx-downloads.json)](https://open-vsx.org/extension/jzbakh/antigravity-arn-skin)
 
 [![GitHub stars](https://img.shields.io/gitlab/stars/jzbakh/arn-skin?style=flat&color=gold)](https://gitlab.com/jzbakh/arn-skin)
 [![GitLab issues](https://img.shields.io/gitlab/issues/open/jzbakh/arn-skin)](https://gitlab.com/jzbakh/arn-skin/issues)
