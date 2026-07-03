@@ -5,6 +5,12 @@ All notable changes to ARN-Skin will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.4] — 2026-07-03
+
+### Documentation
+
+- Updated README badges for the extension stores (Marketplace and Open VSX) to point to the new GitLab infrastructure.
+
 ## [1.0.3] — 2026-06-26
 
 ### Changed
@@ -83,6 +89,7 @@ First public release.
 - Zero runtime dependencies — single-file JavaScript extension.
 - GPL-3.0-or-later licensed.
 
+[1.0.4]: https://gitlab.com/jzbakh/arn-skin/-/tags/v1.0.4
 [1.0.3]: https://gitlab.com/jzbakh/arn-skin/-/tags/v1.0.3
 [1.0.2]: https://gitlab.com/jzbakh/arn-skin/-/tags/v1.0.2
 [1.0.1]: https://gitlab.com/jzbakh/arn-skin/-/tags/v1.0.1
