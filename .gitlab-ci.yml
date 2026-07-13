@@ -3,10 +3,7 @@ stages:
   - test
   - publish
 
-cache:
-  paths:
-    - test/node_modules/
-    - node_modules/
+
 
 validate:
   image: node:22
@@ -34,6 +31,9 @@ validate:
 unit-tests-linux:
   image: node:22
   stage: test
+  cache:
+    paths:
+      - test/node_modules/
   script:
     - cd test
     - npm ci
@@ -45,6 +45,9 @@ unit-tests-linux:
 integration-tests-linux:
   image: node:22
   stage: test
+  cache:
+    paths:
+      - test/node_modules/
   before_script:
     - apt-get update && apt-get install -y libx11-xcb1 libxcb-dri3-0 libxtst6 libnss3 libxss1 libasound2 libgbm1 libatk1.0-0 libatk-bridge2.0-0 libgtk-3-0 xauth xvfb
   script:
@@ -52,6 +55,21 @@ integration-tests-linux:
     - npm ci
     - xvfb-run -a npm run test:integration
 
+integration-tests-windows:
+  stage: test
+  tags:
+    - saas-windows-medium-amd64
+  variables:
+    GCM_CREDENTIAL_STORE: plaintext
+  cache: []
+  before_script:
+    - choco install nodejs-lts --no-progress -y
+    - $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
+  script:
+    - node --version
+    - cd test
+    - npm ci
+    - npm test
 
 
 # --- PUBLISH ---
@@ -62,13 +80,10 @@ publish:
     - validate
     - unit-tests-linux
     - integration-tests-linux
+    - integration-tests-windows
   only:
     - tags
   script:
-    - cd test
-    - npm ci
-    - npm run test:unit
-    - cd ..
     - |
       PKG_VERSION=$(node -p "require('./package.json').version")
       TAG_VERSION="${CI_COMMIT_TAG#v}"
@@ -79,6 +94,32 @@ publish:
     - npx --yes @vscode/vsce package -o antigravity-arn-skin.vsix
     - npx --yes @vscode/vsce publish --packagePath antigravity-arn-skin.vsix -p "$VSCE_PUBLISH"
     - npx --yes ovsx publish antigravity-arn-skin.vsix -p "$OPEN_VSX"
+  artifacts:
+    paths:
+      - antigravity-arn-skin.vsix
+    expire_in: never
+
+# --- GITLAB RELEASE ---
+gitlab-release:
+  image: registry.gitlab.com/gitlab-org/release-cli:latest
+  stage: publish
+  needs:
+    - publish
+  only:
+    - tags
+  script:
+    - TAG_VERSION="${CI_COMMIT_TAG#v}"
+    - echo "Extracting CHANGELOG for version $TAG_VERSION"
+    - echo "# What's new in v${TAG_VERSION} ?" > release_notes.md
+    - echo "" >> release_notes.md
+    - awk -v ver="[${TAG_VERSION}]" '/^## \[/ { if (p) exit; if (index($2, ver) == 1) { p=1; next } } p { print }' CHANGELOG.md >> release_notes.md
+    - |
+      release-cli create --name "Release $CI_COMMIT_TAG" \
+        --tag-name "$CI_COMMIT_TAG" \
+        --description "$(cat release_notes.md)" \
+        --assets-link "{\"name\":\"Extension Binary (.vsix)\",\"url\":\"${CI_PROJECT_URL}/-/jobs/artifacts/${CI_COMMIT_TAG}/raw/antigravity-arn-skin.vsix?job=publish\",\"filepath\":\"/antigravity-arn-skin.vsix\",\"link_type\":\"package\"}" \
+        --assets-link "{\"name\":\"Download on VS Marketplace\",\"url\":\"https://marketplace.visualstudio.com/items?itemName=jzbakh.antigravity-arn-skin\",\"link_type\":\"other\"}" \
+        --assets-link "{\"name\":\"Download on Open VSX\",\"url\":\"https://open-vsx.org/extension/jzbakh/antigravity-arn-skin\",\"link_type\":\"other\"}"
 
 # --- BADGES UPDATE (SCHEDULED) ---
 update-badges:
@@ -108,7 +149,7 @@ update-badges:
       if [ "$VERSION" != "unknown" ]; then
         DOWNLOADS_DISPLAY=$(if [ "$DOWNLOADS" -ge 1000000 ]; then awk -v n="$DOWNLOADS" 'BEGIN { printf "%.1fM", n/1000000 }'; elif [ "$DOWNLOADS" -ge 1000 ]; then awk -v n="$DOWNLOADS" 'BEGIN { printf "%.1fk", n/1000 }'; else echo "$DOWNLOADS"; fi)
         echo "{ \"schemaVersion\": 1, \"label\": \"VS Marketplace\", \"message\": \"v${VERSION}\", \"color\": \"blue\", \"namedLogo\": \"visualstudiocode\" }" > .gitlab/badges/marketplace-version.json
-        echo "{ \"schemaVersion\": 1, \"label\": \"Downloads\", \"message\": \"${DOWNLOADS_DISPLAY}\", \"color\": \"success\", \"namedLogo\": \"visualstudiocode\" }" > .gitlab/badges/marketplace-downloads.json
+        echo "{ \"schemaVersion\": 1, \"label\": \"VS Marketplace Downloads\", \"message\": \"${DOWNLOADS_DISPLAY}\", \"color\": \"blueviolet\", \"namedLogo\": \"visualstudiocode\" }" > .gitlab/badges/marketplace-downloads.json
       fi
     - |
       OVSX_RESPONSE=$(curl -sS "https://open-vsx.org/api/jzbakh/antigravity-arn-skin")
@@ -118,7 +159,7 @@ update-badges:
       if [ "$OVSX_VERSION" != "unknown" ] && [ "$OVSX_VERSION" != "null" ]; then
         OVSX_DL_DISP=$(if [ "$OVSX_DOWNLOADS" -ge 1000000 ]; then awk -v n="$OVSX_DOWNLOADS" 'BEGIN { printf "%.1fM", n/1000000 }'; elif [ "$OVSX_DOWNLOADS" -ge 1000 ]; then awk -v n="$OVSX_DOWNLOADS" 'BEGIN { printf "%.1fk", n/1000 }'; else echo "$OVSX_DOWNLOADS"; fi)
         echo "{ \"schemaVersion\": 1, \"label\": \"Open VSX\", \"message\": \"v${OVSX_VERSION}\", \"color\": \"blue\", \"namedLogo\": \"openvsx\" }" > .gitlab/badges/openvsx-version.json
-        echo "{ \"schemaVersion\": 1, \"label\": \"Downloads\", \"message\": \"${OVSX_DL_DISP}\", \"color\": \"success\", \"namedLogo\": \"openvsx\" }" > .gitlab/badges/openvsx-downloads.json
+        echo "{ \"schemaVersion\": 1, \"label\": \"Open VSX Downloads\", \"message\": \"${OVSX_DL_DISP}\", \"color\": \"blueviolet\", \"namedLogo\": \"openvsx\" }" > .gitlab/badges/openvsx-downloads.json
       fi
     - |
       git config --global user.name "gitlab-ci[bot]"
@@ -140,14 +181,16 @@ pages:
     - mkdir -p public
     - cp -r html_presentation public/
     - cp -r media public/
+    - echo '<meta http-equiv="refresh" content="0; url=html_presentation/index.html" />' > public/index.html
   artifacts:
     paths:
       - public
   rules:
     - if: $CI_COMMIT_BRANCH == "main"
 
-# --- SECURITE (SAST & SECRETS) ---
+# --- SECURITE (SAST, SECRETS & DEPENDENCIES) ---
 include:
   - template: Security/SAST.gitlab-ci.yml
   - template: Security/Secret-Detection.gitlab-ci.yml
+  - template: Security/Dependency-Scanning.gitlab-ci.yml
 
