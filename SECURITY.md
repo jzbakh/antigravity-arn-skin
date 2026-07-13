@@ -4,11 +4,11 @@
 
 If you believe you have discovered a security vulnerability in ARN-Skin,
 please report it **privately** through GitHub's built-in
-[private vulnerability reporting](https://gitlab.com/jzbakh/arn-skin/-/security/advisories/new)
+[private vulnerability reporting](https://gitlab.com/arn_inside/arn-skin/-/security/advisories/new)
 feature on this repository.
 
 Reports are end-to-end confidential — only the maintainer
-([@jzbakh](https://gitlab.com/jzbakh)) can read your submission. Do **not**
+([@jzbakh](https://gitlab.com/arn_inside)) can read your submission. Do **not**
 open a public issue, post in Discussions, or share details on social
 media until the vulnerability has been addressed and a patch is
 available.
@@ -54,5 +54,5 @@ project:
   manual installation outside the standard extension directories, etc.)*.
 
 For non-security bug reports, please use the
-[Bug report issue template](https://gitlab.com/jzbakh/arn-skin/-/issues/new?template=bug_report.md)
+[Bug report issue template](https://gitlab.com/arn_inside/arn-skin/-/issues/new?template=bug_report.md)
 instead.
