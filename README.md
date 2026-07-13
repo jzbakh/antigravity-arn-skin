@@ -15,7 +15,7 @@
 [![Spyware](https://img.shields.io/badge/spyware-0%25-success.svg)](https://gitlab.com/arn_inside/arn-skin/blob/main/extension.js)
 
 <p align="center">
-  <a href="https://arn-inside.gitlab.io/arn-skin/html_presentation/">
+  <a href="https://arn_inside.gitlab.io/arn-skin/">
     <img src="https://gitlab.com/arn_inside/arn-skin/raw/main/media/ARN-Skin_demo.png" alt="ARN-Skin Video">
   </a>
 </p>
@@ -51,18 +51,18 @@
 ---
 
 <div align="center">
-  <h4> <a href="https://arn-inside.gitlab.io/arn-skin/html_presentation/"> Visualize Markdown, Python, TypeScript, Rust, CSS, HTML, JSON, Shell, and SQL syntax </a></h4>
+  <h4> <a href="https://arn_inside.gitlab.io/arn-skin/"> Visualize Markdown, Python, TypeScript, Rust, CSS, HTML, JSON, Shell, and SQL syntax </a></h4>
 </div><br>
 
 | Theme | Style | Description |
 |:---|:---|:---|
-| [<img src="./media/spaceport.png" width="64" alt="Spaceport"> **Spaceport**](https://arn-inside.gitlab.io/arn-skin/html_presentation/index.html) | *Tungsten Grid* | Industrial charcoal gray with golden accents |
-| [<img src="./media/nebula.png" width="64" alt="Nebula"> **Nebula**](https://arn-inside.gitlab.io/arn-skin/html_presentation/index.html) | *Amethyst Void* | Violet, magenta, and cyan cosmos |
-| [<img src="./media/neptune.png" width="64" alt="Neptune"> **Neptune**](https://arn-inside.gitlab.io/arn-skin/html_presentation/index.html) | *Glacial Navy* | Teal ocean ice |
-| [<img src="./media/uranus.png" width="64" alt="Uranus"> **Uranus**](https://arn-inside.gitlab.io/arn-skin/html_presentation/index.html) | *Glacial Teal* | Teal and ultramarine blue variant |
-| [<img src="./media/io.png" width="64" alt="Io"> **Io**](https://arn-inside.gitlab.io/arn-skin/html_presentation/index.html) | *Acid Haze* | Neon lime green on deep black |
-| [<img src="./media/jupiter.png" width="64" alt="Jupiter"> **Jupiter**](https://arn-inside.gitlab.io/arn-skin/html_presentation/index.html) | *Amber Light* | Light parchment (the only light theme) |
-| [<img src="./media/mars.png" width="64" alt="Mars"> **Mars**](https://arn-inside.gitlab.io/arn-skin/html_presentation/index.html) | *Amber Storm* | Burnt orange on red earth |
+| [<img src="./media/spaceport.png" width="64" alt="Spaceport"> **Spaceport**](https://arn_inside.gitlab.io/arn-skin/) | *Tungsten Grid* | Industrial charcoal gray with golden accents |
+| [<img src="./media/nebula.png" width="64" alt="Nebula"> **Nebula**](https://arn_inside.gitlab.io/arn-skin/) | *Amethyst Void* | Violet, magenta, and cyan cosmos |
+| [<img src="./media/neptune.png" width="64" alt="Neptune"> **Neptune**](https://arn_inside.gitlab.io/arn-skin/) | *Glacial Navy* | Teal ocean ice |
+| [<img src="./media/uranus.png" width="64" alt="Uranus"> **Uranus**](https://arn_inside.gitlab.io/arn-skin/) | *Glacial Teal* | Teal and ultramarine blue variant |
+| [<img src="./media/io.png" width="64" alt="Io"> **Io**](https://arn_inside.gitlab.io/arn-skin/) | *Acid Haze* | Neon lime green on deep black |
+| [<img src="./media/jupiter.png" width="64" alt="Jupiter"> **Jupiter**](https://arn_inside.gitlab.io/arn-skin/) | *Amber Light* | Light parchment (the only light theme) |
+| [<img src="./media/mars.png" width="64" alt="Mars"> **Mars**](https://arn_inside.gitlab.io/arn-skin/) | *Amber Storm* | Burnt orange on red earth |
 
 </div><br>
 
@@ -150,12 +150,14 @@ Works on Antigravity IDE, VSCode, Cursor, Windsurf, VSCodium, and other forks (t
 
 <br>
 
+<div align="center">
+
 <p align="center">
-  <b>💫 Like this project? Leave a ⭐ on GitHub to support it!</b>
+  <b>💫 Like this project? Leave a ⭐ on Gitlab to support it!</b>
 </p>
 <p align="center">
   <a href="https://gitlab.com/arn_inside/arn-skin">
-    <img src="https://img.shields.io/gitlab/stars/arn_inside/arn-skin?style=social" alt="Star on GitHub">
+    <img src="https://img.shields.io/gitlab/stars/arn_inside/arn-skin?style=social" alt="Star on Gitlab">
   </a>
 </p>
 
@@ -166,6 +168,8 @@ Works on Antigravity IDE, VSCode, Cursor, Windsurf, VSCodium, and other forks (t
     <img src="https://api.star-history.com/svg?repos=jzbakh/antigravity-arn-skin&type=Date"  width="600" alt="Star History Chart">
   </a>
 </p>
+
+</div>
 
 ---
 
@@ -217,6 +221,7 @@ If you would like to financially contribute to the development and future update
 
 ---
 
+<div align="center">
 <p align="center">
   <b>Made with 🩵 by <a href="https://gitlab.com/arn_inside">jzbakh</a></b>
 </p>
@@ -225,7 +230,6 @@ If you would like to financially contribute to the development and future update
 
 <br>
 
-<div align="center">
 
 <a id="fr"></a>
 ## 🇫🇷 Français
@@ -239,18 +243,18 @@ If you would like to financially contribute to the development and future update
 ---
 
 <div align="center">
-  <h4> <a href="https://arn-inside.gitlab.io/arn-skin/html_presentation/"> Visualisez les syntaxes Markdown, Python, Typescript, Rust, CSS, HTML, JSON, Shell et SQL </a></h4>
+  <h4> <a href="https://arn_inside.gitlab.io/arn-skin/"> Visualisez les syntaxes Markdown, Python, Typescript, Rust, CSS, HTML, JSON, Shell et SQL </a></h4>
 </div><br>
 
 | Thème | Style | Description |
 |:---|:---|:---|
-| [<img src="./media/spaceport.png" width="64" alt="Spaceport"> **Spaceport**](https://arn-inside.gitlab.io/arn-skin/html_presentation/index.html) | *Tungsten Grid* | Gris anthracite industriel aux accents dorés |
-| [<img src="./media/nebula.png" width="64" alt="Nebula"> **Nebula**](https://arn-inside.gitlab.io/arn-skin/html_presentation/index.html) | *Amethyst Void* | Cosmos violet, magenta et cyan |
-| [<img src="./media/neptune.png" width="64" alt="Neptune"> **Neptune**](https://arn-inside.gitlab.io/arn-skin/html_presentation/index.html) | *Glacial Navy* | Glace océanique bleu sarcelle (teal) |
-| [<img src="./media/uranus.png" width="64" alt="Uranus"> **Uranus**](https://arn-inside.gitlab.io/arn-skin/html_presentation/index.html) | *Glacial Teal* | Variante sarcelle et bleu outremer |
-| [<img src="./media/io.png" width="64" alt="Io"> **Io**](https://arn-inside.gitlab.io/arn-skin/html_presentation/index.html) | *Acid Haze* | Vert lime néon sur fond noir profond |
-| [<img src="./media/jupiter.png" width="64" alt="Jupiter"> **Jupiter**](https://arn-inside.gitlab.io/arn-skin/html_presentation/index.html) | *Amber Light* | Parchemin clair (le seul thème clair) |
-| [<img src="./media/mars.png" width="64" alt="Mars"> **Mars**](https://arn-inside.gitlab.io/arn-skin/html_presentation/index.html) | *Amber Storm* | Orange brûlé sur terres rouges |
+| [<img src="./media/spaceport.png" width="64" alt="Spaceport"> **Spaceport**](https://arn_inside.gitlab.io/arn-skin/) | *Tungsten Grid* | Gris anthracite industriel aux accents dorés |
+| [<img src="./media/nebula.png" width="64" alt="Nebula"> **Nebula**](https://arn_inside.gitlab.io/arn-skin/) | *Amethyst Void* | Cosmos violet, magenta et cyan |
+| [<img src="./media/neptune.png" width="64" alt="Neptune"> **Neptune**](https://arn_inside.gitlab.io/arn-skin/) | *Glacial Navy* | Glace océanique bleu sarcelle (teal) |
+| [<img src="./media/uranus.png" width="64" alt="Uranus"> **Uranus**](https://arn_inside.gitlab.io/arn-skin/) | *Glacial Teal* | Variante sarcelle et bleu outremer |
+| [<img src="./media/io.png" width="64" alt="Io"> **Io**](https://arn_inside.gitlab.io/arn-skin/) | *Acid Haze* | Vert lime néon sur fond noir profond |
+| [<img src="./media/jupiter.png" width="64" alt="Jupiter"> **Jupiter**](https://arn_inside.gitlab.io/arn-skin/) | *Amber Light* | Parchemin clair (le seul thème clair) |
+| [<img src="./media/mars.png" width="64" alt="Mars"> **Mars**](https://arn_inside.gitlab.io/arn-skin/) | *Amber Storm* | Orange brûlé sur terres rouges |
 
 </div><br>
 
@@ -338,12 +342,14 @@ Extension 100 % JavaScript natif — aucune étape de build. Le code est lisible
 
 <br>
 
+<div align="center">
+
 <p align="center">
-  <b>💫 Ce projet vous plaît ? Laissez une ⭐ sur GitHub pour soutenir le projet !</b>
+  <b>💫 Vous aimez ce projet ? Laissez une ⭐ sur Gitlab pour le soutenir !</b>
 </p>
 <p align="center">
   <a href="https://gitlab.com/arn_inside/arn-skin">
-    <img src="https://img.shields.io/gitlab/stars/arn_inside/arn-skin?style=social" alt="Star sur GitHub">
+    <img src="https://img.shields.io/gitlab/stars/arn_inside/arn-skin?style=social" alt="Star sur Gitlab">
   </a>
 </p>
 
@@ -354,6 +360,8 @@ Extension 100 % JavaScript natif — aucune étape de build. Le code est lisible
     <img src="https://api.star-history.com/svg?repos=jzbakh/antigravity-arn-skin&type=Date"  width="600" alt="Star History Chart">
   </a>
 </p>
+
+</div>
 
 ---
 
@@ -404,6 +412,7 @@ Si vous souhaitez contribuer financièrement au développement et aux futures mi
 
 ---
 
+<div align="center">
 <p align="center">
   <b>Créé avec 🩵 par <a href="https://gitlab.com/arn_inside">jzbakh</a></b>
 </p>
@@ -412,7 +421,6 @@ Si vous souhaitez contribuer financièrement au développement et aux futures mi
 
 <br>
 
-<div align="center">
 
 <a id="cn"></a>
 ## 🇨🇳 中文
@@ -426,18 +434,18 @@ Si vous souhaitez contribuer financièrement au développement et aux futures mi
 ---
 
 <div align="center">
-  <h4> <a href="https://arn-inside.gitlab.io/arn-skin/html_presentation/"> 预览 Markdown, Python, TypeScript, Rust, CSS, HTML, JSON, Shell 和 SQL 语法</a></h4>
+  <h4> <a href="https://arn_inside.gitlab.io/arn-skin/"> 预览 Markdown, Python, TypeScript, Rust, CSS, HTML, JSON, Shell 和 SQL 语法</a></h4>
 </div><br>
 
 | 主题 | 风格 | 描述 |
 |:---|:---|:---|
-| [<img src="./media/spaceport.png" width="64" alt="Spaceport"> **Spaceport**](https://arn-inside.gitlab.io/arn-skin/html_presentation/index.html) | *Tungsten Grid* | 带有金色点缀的工业炭灰色 |
-| [<img src="./media/nebula.png" width="64" alt="Nebula"> **Nebula**](https://arn-inside.gitlab.io/arn-skin/html_presentation/index.html) | *Amethyst Void* | 紫色、洋红色与青色的宇宙 |
-| [<img src="./media/neptune.png" width="64" alt="Neptune"> **Neptune**](https://arn-inside.gitlab.io/arn-skin/html_presentation/index.html) | *Glacial Navy* | Teal色的海洋冰 |
-| [<img src="./media/uranus.png" width="64" alt="Uranus"> **Uranus**](https://arn-inside.gitlab.io/arn-skin/html_presentation/index.html) | *Glacial Teal* | Teal色与群青蓝变体 |
-| [<img src="./media/io.png" width="64" alt="Io"> **Io**](https://arn-inside.gitlab.io/arn-skin/html_presentation/index.html) | *Acid Haze* | 深邃黑色上的霓虹青柠绿 |
-| [<img src="./media/jupiter.png" width="64" alt="Jupiter"> **Jupiter**](https://arn-inside.gitlab.io/arn-skin/html_presentation/index.html) | *Amber Light* | 浅色羊皮纸（唯一的浅色主题） |
-| [<img src="./media/mars.png" width="64" alt="Mars"> **Mars**](https://arn-inside.gitlab.io/arn-skin/html_presentation/index.html) | *Amber Storm* | 红土地上的焦橙色 |
+| [<img src="./media/spaceport.png" width="64" alt="Spaceport"> **Spaceport**](https://arn_inside.gitlab.io/arn-skin/) | *Tungsten Grid* | 带有金色点缀的工业炭灰色 |
+| [<img src="./media/nebula.png" width="64" alt="Nebula"> **Nebula**](https://arn_inside.gitlab.io/arn-skin/) | *Amethyst Void* | 紫色、洋红色与青色的宇宙 |
+| [<img src="./media/neptune.png" width="64" alt="Neptune"> **Neptune**](https://arn_inside.gitlab.io/arn-skin/) | *Glacial Navy* | Teal色的海洋冰 |
+| [<img src="./media/uranus.png" width="64" alt="Uranus"> **Uranus**](https://arn_inside.gitlab.io/arn-skin/) | *Glacial Teal* | Teal色与群青蓝变体 |
+| [<img src="./media/io.png" width="64" alt="Io"> **Io**](https://arn_inside.gitlab.io/arn-skin/) | *Acid Haze* | 深邃黑色上的霓虹青柠绿 |
+| [<img src="./media/jupiter.png" width="64" alt="Jupiter"> **Jupiter**](https://arn_inside.gitlab.io/arn-skin/) | *Amber Light* | 浅色羊皮纸（唯一的浅色主题） |
+| [<img src="./media/mars.png" width="64" alt="Mars"> **Mars**](https://arn_inside.gitlab.io/arn-skin/) | *Amber Storm* | 红土地上的焦橙色 |
 
 </div><br>
 
@@ -525,12 +533,14 @@ Si vous souhaitez contribuer financièrement au développement et aux futures mi
 
 <br>
 
+<div align="center">
+
 <p align="center">
-  <b>💫 喜欢这个项目吗？在 GitHub 上点颗 ⭐ 以表支持！</b>
+  <b>💫 喜欢这个项目吗？在 Gitlab 上留下一颗 ⭐ 来支持它吧！</b>
 </p>
 <p align="center">
   <a href="https://gitlab.com/arn_inside/arn-skin">
-    <img src="https://img.shields.io/gitlab/stars/arn_inside/arn-skin?style=social" alt="Star on GitHub">
+    <img src="https://img.shields.io/gitlab/stars/arn_inside/arn-skin?style=social" alt="Star on Gitlab">
   </a>
 </p>
 
@@ -542,11 +552,13 @@ Si vous souhaitez contribuer financièrement au développement et aux futures mi
   </a>
 </p>
 
+</div>
+
 ---
 
 ### ☕ 资金支持
 
-如果您希望在资金上支持本项目的开发与未来的更新，您可以请我喝杯咖啡或使用加密货币进行捐赠。非常感谢！🫶
+如果您希望在资金上支持本项目的开发与未来的更新，您可以请我喝杯咖啡或使用加密货币进行捐赠。非常感谢！ 🫶
 
 <div align="center">
 
@@ -591,6 +603,7 @@ Si vous souhaitez contribuer financièrement au développement et aux futures mi
 
 ---
 
+<div align="center">
 <p align="center">
   <b>由 <a href="https://gitlab.com/arn_inside">jzbakh</a> 用 🩵 制作</b>
 </p>
@@ -599,7 +612,6 @@ Si vous souhaitez contribuer financièrement au développement et aux futures mi
 
 <br>
 
-<div align="center">
 
 <a id="es"></a>
 ## 🇪🇸 Español
@@ -613,18 +625,18 @@ Si vous souhaitez contribuer financièrement au développement et aux futures mi
 ---
 
 <div align="center">
-  <h4> <a href="https://arn-inside.gitlab.io/arn-skin/html_presentation/"> Visualiza las sintaxis Markdown, Python, TypeScript, Rust, CSS, HTML, JSON, Shell y SQL </a></h4>
+  <h4> <a href="https://arn_inside.gitlab.io/arn-skin/"> Visualiza las sintaxis Markdown, Python, TypeScript, Rust, CSS, HTML, JSON, Shell y SQL </a></h4>
 </div><br>
 
 | Tema | Estilo | Descripción |
 |:---|:---|:---|
-| [<img src="./media/spaceport.png" width="64" alt="Spaceport"> **Spaceport**](https://arn-inside.gitlab.io/arn-skin/html_presentation/index.html) | *Tungsten Grid* | Gris antracita industrial con acentos dorados |
-| [<img src="./media/nebula.png" width="64" alt="Nebula"> **Nebula**](https://arn-inside.gitlab.io/arn-skin/html_presentation/index.html) | *Amethyst Void* | Cosmos violeta, magenta y cian |
-| [<img src="./media/neptune.png" width="64" alt="Neptune"> **Neptune**](https://arn-inside.gitlab.io/arn-skin/html_presentation/index.html) | *Glacial Navy* | Hielo oceánico verde azulado (teal) |
-| [<img src="./media/uranus.png" width="64" alt="Uranus"> **Uranus**](https://arn-inside.gitlab.io/arn-skin/html_presentation/index.html) | *Glacial Teal* | Variante verde azulado y azul ultramar |
-| [<img src="./media/io.png" width="64" alt="Io"> **Io**](https://arn-inside.gitlab.io/arn-skin/html_presentation/index.html) | *Acid Haze* | Verde lima neón sobre fondo negro profundo |
-| [<img src="./media/jupiter.png" width="64" alt="Jupiter"> **Jupiter**](https://arn-inside.gitlab.io/arn-skin/html_presentation/index.html) | *Amber Light* | Pergamino claro (el único tema claro) |
-| [<img src="./media/mars.png" width="64" alt="Mars"> **Mars**](https://arn-inside.gitlab.io/arn-skin/html_presentation/index.html) | *Amber Storm* | Naranja quemado sobre tierras rojas |
+| [<img src="./media/spaceport.png" width="64" alt="Spaceport"> **Spaceport**](https://arn_inside.gitlab.io/arn-skin/) | *Tungsten Grid* | Gris antracita industrial con acentos dorados |
+| [<img src="./media/nebula.png" width="64" alt="Nebula"> **Nebula**](https://arn_inside.gitlab.io/arn-skin/) | *Amethyst Void* | Cosmos violeta, magenta y cian |
+| [<img src="./media/neptune.png" width="64" alt="Neptune"> **Neptune**](https://arn_inside.gitlab.io/arn-skin/) | *Glacial Navy* | Hielo oceánico verde azulado (teal) |
+| [<img src="./media/uranus.png" width="64" alt="Uranus"> **Uranus**](https://arn_inside.gitlab.io/arn-skin/) | *Glacial Teal* | Variante verde azulado y azul ultramar |
+| [<img src="./media/io.png" width="64" alt="Io"> **Io**](https://arn_inside.gitlab.io/arn-skin/) | *Acid Haze* | Verde lima neón sobre fondo negro profundo |
+| [<img src="./media/jupiter.png" width="64" alt="Jupiter"> **Jupiter**](https://arn_inside.gitlab.io/arn-skin/) | *Amber Light* | Pergamino claro (el único tema claro) |
+| [<img src="./media/mars.png" width="64" alt="Mars"> **Mars**](https://arn_inside.gitlab.io/arn-skin/) | *Amber Storm* | Naranja quemado sobre tierras rojas |
 
 </div><br>
 
@@ -712,12 +724,14 @@ Extensión 100 % JavaScript nativo — sin paso de build. El código es legible 
 
 <br>
 
+<div align="center">
+
 <p align="center">
-  <b>💫 ¿Te gusta este proyecto? ¡Deja una ⭐ en GitHub para apoyarlo!</b>
+  <b>💫 ¿Te gusta este proyecto? ¡Deja una ⭐ en Gitlab para apoyarlo!</b>
 </p>
 <p align="center">
   <a href="https://gitlab.com/arn_inside/arn-skin">
-    <img src="https://img.shields.io/gitlab/stars/arn_inside/arn-skin?style=social" alt="Star en GitHub">
+    <img src="https://img.shields.io/gitlab/stars/arn_inside/arn-skin?style=social" alt="Star en Gitlab">
   </a>
 </p>
 
@@ -728,6 +742,8 @@ Extensión 100 % JavaScript nativo — sin paso de build. El código es legible 
     <img src="https://api.star-history.com/svg?repos=jzbakh/antigravity-arn-skin&type=Date"  width="600" alt="Star History Chart">
   </a>
 </p>
+
+</div>
 
 ---
 
@@ -778,6 +794,7 @@ Si deseas contribuir financieramente al desarrollo y a las futuras actualizacion
 
 ---
 
+<div align="center">
 <p align="center">
   <b>Hecho con 🩵 por <a href="https://gitlab.com/arn_inside">jzbakh</a></b>
 </p>
@@ -786,7 +803,6 @@ Si deseas contribuir financieramente al desarrollo y a las futuras actualizacion
 
 <br>
 
-<div align="center">
 
 <a id="ar"></a>
 ## 🇸🇦 العربية
@@ -800,18 +816,18 @@ Si deseas contribuir financieramente al desarrollo y a las futuras actualizacion
 ---
 
 <div align="center">
-  <h4> <a href="https://arn-inside.gitlab.io/arn-skin/html_presentation/"> قم بمعاينة بناء الجملة (Syntax) لـ Markdown و Python و TypeScript و Rust و CSS و HTML و JSON و Shell و SQL </a></h4>
+  <h4> <a href="https://arn_inside.gitlab.io/arn-skin/"> قم بمعاينة بناء الجملة (Syntax) لـ Markdown و Python و TypeScript و Rust و CSS و HTML و JSON و Shell و SQL </a></h4>
 </div><br>
 
 | السمة | النمط | الوصف |
 |:---|:---|:---|
-| [<img src="./media/spaceport.png" width="64" alt="Spaceport"> **Spaceport**](https://arn-inside.gitlab.io/arn-skin/html_presentation/index.html) | *Tungsten Grid* | رمادي فحمي صناعي مع لمسات ذهبية |
-| [<img src="./media/nebula.png" width="64" alt="Nebula"> **Nebula**](https://arn-inside.gitlab.io/arn-skin/html_presentation/index.html) | *Amethyst Void* | كون بنفسجي، أرجواني، وسماوي |
-| [<img src="./media/neptune.png" width="64" alt="Neptune"> **Neptune**](https://arn-inside.gitlab.io/arn-skin/html_presentation/index.html) | *Glacial Navy* | جليد محيطي أزرق مخضر (teal) |
-| [<img src="./media/uranus.png" width="64" alt="Uranus"> **Uranus**](https://arn-inside.gitlab.io/arn-skin/html_presentation/index.html) | *Glacial Teal* | نسخة باللون الأزرق المخضر والأزرق اللازوردي |
-| [<img src="./media/io.png" width="64" alt="Io"> **Io**](https://arn-inside.gitlab.io/arn-skin/html_presentation/index.html) | *Acid Haze* | أخضر ليموني نيون على خلفية سوداء عميقة |
-| [<img src="./media/jupiter.png" width="64" alt="Jupiter"> **Jupiter**](https://arn-inside.gitlab.io/arn-skin/html_presentation/index.html) | *Amber Light* | ورق رقي فاتح (السمة الفاتحة الوحيدة) |
-| [<img src="./media/mars.png" width="64" alt="Mars"> **Mars**](https://arn-inside.gitlab.io/arn-skin/html_presentation/index.html) | *Amber Storm* | برتقالي محروق على أراضٍ حمراء |
+| [<img src="./media/spaceport.png" width="64" alt="Spaceport"> **Spaceport**](https://arn_inside.gitlab.io/arn-skin/) | *Tungsten Grid* | رمادي فحمي صناعي مع لمسات ذهبية |
+| [<img src="./media/nebula.png" width="64" alt="Nebula"> **Nebula**](https://arn_inside.gitlab.io/arn-skin/) | *Amethyst Void* | كون بنفسجي، أرجواني، وسماوي |
+| [<img src="./media/neptune.png" width="64" alt="Neptune"> **Neptune**](https://arn_inside.gitlab.io/arn-skin/) | *Glacial Navy* | جليد محيطي أزرق مخضر (teal) |
+| [<img src="./media/uranus.png" width="64" alt="Uranus"> **Uranus**](https://arn_inside.gitlab.io/arn-skin/) | *Glacial Teal* | نسخة باللون الأزرق المخضر والأزرق اللازوردي |
+| [<img src="./media/io.png" width="64" alt="Io"> **Io**](https://arn_inside.gitlab.io/arn-skin/) | *Acid Haze* | أخضر ليموني نيون على خلفية سوداء عميقة |
+| [<img src="./media/jupiter.png" width="64" alt="Jupiter"> **Jupiter**](https://arn_inside.gitlab.io/arn-skin/) | *Amber Light* | ورق رقي فاتح (السمة الفاتحة الوحيدة) |
+| [<img src="./media/mars.png" width="64" alt="Mars"> **Mars**](https://arn_inside.gitlab.io/arn-skin/) | *Amber Storm* | برتقالي محروق على أراضٍ حمراء |
 
 </div><br>
 
@@ -899,12 +915,14 @@ Si deseas contribuir financieramente al desarrollo y a las futuras actualizacion
 
 <br>
 
+<div align="center">
+
 <p align="center">
-  <b>💫 هل أعجبك هذا المشروع؟ اترك ⭐ على GitHub لدعمه!</b>
+  <b>💫 هل أعجبك هذا المشروع؟ اترك ⭐ على Gitlab لدعمه!</b>
 </p>
 <p align="center">
   <a href="https://gitlab.com/arn_inside/arn-skin">
-    <img src="https://img.shields.io/gitlab/stars/arn_inside/arn-skin?style=social" alt="نجمة على GitHub">
+    <img src="https://img.shields.io/gitlab/stars/arn_inside/arn-skin?style=social" alt="نجمة على Gitlab">
   </a>
 </p>
 
@@ -915,6 +933,8 @@ Si deseas contribuir financieramente al desarrollo y a las futuras actualizacion
     <img src="https://api.star-history.com/svg?repos=jzbakh/antigravity-arn-skin&type=Date"  width="600" alt="مخطط سجل النجوم">
   </a>
 </p>
+
+</div>
 
 ---
 
@@ -965,6 +985,7 @@ Si deseas contribuir financieramente al desarrollo y a las futuras actualizacion
 
 ---
 
+<div align="center">
 <p align="center">
   <b>صُنع بـ 🩵 بواسطة <a href="https://gitlab.com/arn_inside">jzbakh</a></b>
 </p>
@@ -973,7 +994,6 @@ Si deseas contribuir financieramente al desarrollo y a las futuras actualizacion
 
 <br>
 
-<div align="center">
 
 <a id="th"></a>
 ## 🇹🇭 ภาษาไทย
@@ -987,18 +1007,18 @@ Si deseas contribuir financieramente al desarrollo y a las futuras actualizacion
 ---
 
 <div align="center">
-  <h4> <a href="https://arn-inside.gitlab.io/arn-skin/html_presentation/"> แสดงตัวอย่าง Syntax ของ Markdown, Python, TypeScript, Rust, CSS, HTML, JSON, Shell และ SQL </a></h4>
+  <h4> <a href="https://arn_inside.gitlab.io/arn-skin/"> แสดงตัวอย่าง Syntax ของ Markdown, Python, TypeScript, Rust, CSS, HTML, JSON, Shell และ SQL </a></h4>
 </div><br>
 
 | ธีม | สไตล์ | คำอธิบาย |
 |:---|:---|:---|
-| [<img src="./media/spaceport.png" width="64" alt="Spaceport"> **Spaceport**](https://arn-inside.gitlab.io/arn-skin/html_presentation/index.html) | *Tungsten Grid* | สีเทาชาร์โคลแบบอินดัสเตรียลพร้อมลูกเล่นสีทอง |
-| [<img src="./media/nebula.png" width="64" alt="Nebula"> **Nebula**](https://arn-inside.gitlab.io/arn-skin/html_presentation/index.html) | *Amethyst Void* | ห้วงจักรวาลสีม่วง สีบานเย็น และสีฟ้าไซแอน |
-| [<img src="./media/neptune.png" width="64" alt="Neptune"> **Neptune**](https://arn-inside.gitlab.io/arn-skin/html_presentation/index.html) | *Glacial Navy* | สีน้ำแข็งในมหาสมุทรโทนเขียวอมฟ้า (teal) |
-| [<img src="./media/uranus.png" width="64" alt="Uranus"> **Uranus**](https://arn-inside.gitlab.io/arn-skin/html_presentation/index.html) | *Glacial Teal* | ธีมทางเลือกสีเขียวอมฟ้าและสีน้ำเงินอุลตรามารีน |
-| [<img src="./media/io.png" width="64" alt="Io"> **Io**](https://arn-inside.gitlab.io/arn-skin/html_presentation/index.html) | *Acid Haze* | สีเขียวมะนาวนีออนบนพื้นหลังสีดำสนิท |
-| [<img src="./media/jupiter.png" width="64" alt="Jupiter"> **Jupiter**](https://arn-inside.gitlab.io/arn-skin/html_presentation/index.html) | *Amber Light* | สีแผ่นกระดาษพาร์ชเมนต์สว่าง (ธีมสว่างเพียงหนึ่งเดียว) |
-| [<img src="./media/mars.png" width="64" alt="Mars"> **Mars**](https://arn-inside.gitlab.io/arn-skin/html_presentation/index.html) | *Amber Storm* | สีส้มอิฐบนพื้นดินสีแดง |
+| [<img src="./media/spaceport.png" width="64" alt="Spaceport"> **Spaceport**](https://arn_inside.gitlab.io/arn-skin/) | *Tungsten Grid* | สีเทาชาร์โคลแบบอินดัสเตรียลพร้อมลูกเล่นสีทอง |
+| [<img src="./media/nebula.png" width="64" alt="Nebula"> **Nebula**](https://arn_inside.gitlab.io/arn-skin/) | *Amethyst Void* | ห้วงจักรวาลสีม่วง สีบานเย็น และสีฟ้าไซแอน |
+| [<img src="./media/neptune.png" width="64" alt="Neptune"> **Neptune**](https://arn_inside.gitlab.io/arn-skin/) | *Glacial Navy* | สีน้ำแข็งในมหาสมุทรโทนเขียวอมฟ้า (teal) |
+| [<img src="./media/uranus.png" width="64" alt="Uranus"> **Uranus**](https://arn_inside.gitlab.io/arn-skin/) | *Glacial Teal* | ธีมทางเลือกสีเขียวอมฟ้าและสีน้ำเงินอุลตรามารีน |
+| [<img src="./media/io.png" width="64" alt="Io"> **Io**](https://arn_inside.gitlab.io/arn-skin/) | *Acid Haze* | สีเขียวมะนาวนีออนบนพื้นหลังสีดำสนิท |
+| [<img src="./media/jupiter.png" width="64" alt="Jupiter"> **Jupiter**](https://arn_inside.gitlab.io/arn-skin/) | *Amber Light* | สีแผ่นกระดาษพาร์ชเมนต์สว่าง (ธีมสว่างเพียงหนึ่งเดียว) |
+| [<img src="./media/mars.png" width="64" alt="Mars"> **Mars**](https://arn_inside.gitlab.io/arn-skin/) | *Amber Storm* | สีส้มอิฐบนพื้นดินสีแดง |
 
 </div><br>
 
@@ -1086,12 +1106,14 @@ Si deseas contribuir financieramente al desarrollo y a las futuras actualizacion
 
 <br>
 
+<div align="center">
+
 <p align="center">
-  <b>💫 หากคุณชื่นชอบโครงการนี้ ฝากกด ⭐ บน GitHub เพื่อเป็นกำลังใจให้เรา!</b>
+  <b>💫 ชอบโปรเจกต์นี้ไหม? ให้ ⭐ บน Gitlab เพื่อสนับสนุนโปรเจกต์นี้สิ!</b>
 </p>
 <p align="center">
   <a href="https://gitlab.com/arn_inside/arn-skin">
-    <img src="https://img.shields.io/gitlab/stars/arn_inside/arn-skin?style=social" alt="กดดาวบน GitHub">
+    <img src="https://img.shields.io/gitlab/stars/arn_inside/arn-skin?style=social" alt="กดดาวบน Gitlab">
   </a>
 </p>
 
@@ -1102,6 +1124,8 @@ Si deseas contribuir financieramente al desarrollo y a las futuras actualizacion
     <img src="https://api.star-history.com/svg?repos=jzbakh/antigravity-arn-skin&type=Date"  width="600" alt="แผนภูมิประวัติการกดดาว">
   </a>
 </p>
+
+</div>
 
 ---
 
@@ -1152,6 +1176,7 @@ Si deseas contribuir financieramente al desarrollo y a las futuras actualizacion
 
 ---
 
+<div align="center">
 <p align="center">
   <b>สร้างสรรค์ด้วย 🩵 โดย <a href="https://gitlab.com/arn_inside">jzbakh</a></b>
 </p>
