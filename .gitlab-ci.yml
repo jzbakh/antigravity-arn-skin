@@ -1,196 +1,38 @@
+# Routing only. Job definitions live in .gitlab/ci/, trigger definitions in
+# .gitlab/ci/rules.yml.
+
 stages:
   - validate
   - test
-  - publish
+  - package
+  - deploy
 
+default:
+  interruptible: true
 
+variables:
+  npm_config_cache: "$CI_PROJECT_DIR/.npm"
+  # A 500 from the git endpoint fails the job before the script even starts,
+  # which says nothing about this project. Retry the fetch instead.
+  GET_SOURCES_ATTEMPTS: "3"
+  ARTIFACT_DOWNLOAD_ATTEMPTS: "3"
 
-validate:
-  image: node:22
-  stage: validate
-  script:
-    - node -e "JSON.parse(require('fs').readFileSync('package.json','utf8'))"
-    - node scripts/check-themes-jsonc.js
-    - node -e "JSON.parse(require('fs').readFileSync('schemas/arn-advanced.schema.json','utf8'))"
-    - |
-      node -e "
-        const pkg = JSON.parse(require('fs').readFileSync('package.json','utf8'));
-        const required = ['name','displayName','description','version','publisher','engines','contributes','main','license'];
-        const missing = required.filter(k => !pkg[k]);
-        if (missing.length) {
-          console.error('package.json is missing required fields: ' + missing.join(', '));
-          process.exit(1);
-        }
-        if (!pkg.contributes.themes || pkg.contributes.themes.length !== 7) {
-          console.error('package.json must contribute exactly 7 themes (got ' + (pkg.contributes.themes||[]).length + ')');
-          process.exit(1);
-        }
-      "
-
-# --- UNIT TESTS ---
-unit-tests-linux:
-  image: node:22
-  stage: test
-  cache:
-    paths:
-      - test/node_modules/
-  script:
-    - cd test
-    - npm ci
-    - npm run test:unit
-
-
-
-# --- INTEGRATION TESTS ---
-integration-tests-linux:
-  image: node:22
-  stage: test
-  cache:
-    paths:
-      - test/node_modules/
-  before_script:
-    - apt-get update && apt-get install -y libx11-xcb1 libxcb-dri3-0 libxtst6 libnss3 libxss1 libasound2 libgbm1 libatk1.0-0 libatk-bridge2.0-0 libgtk-3-0 xauth xvfb
-  script:
-    - cd test
-    - npm ci
-    - xvfb-run -a npm run test:integration
-
-integration-tests-windows:
-  stage: test
-  tags:
-    - saas-windows-medium-amd64
-  variables:
-    GCM_CREDENTIAL_STORE: plaintext
-  cache: []
-  before_script:
-    - choco install nodejs-lts --no-progress -y
-    - $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
-  script:
-    - node --version
-    - cd test
-    - npm ci
-    - npm test
-
-
-# --- PUBLISH ---
-publish:
-  image: node:22
-  stage: publish
-  needs:
-    - validate
-    - unit-tests-linux
-    - integration-tests-linux
-    - integration-tests-windows
-  only:
-    - tags
-  script:
-    - |
-      PKG_VERSION=$(node -p "require('./package.json').version")
-      TAG_VERSION="${CI_COMMIT_TAG#v}"
-      if [ "$PKG_VERSION" != "$TAG_VERSION" ]; then
-        echo "Version mismatch — package.json says $PKG_VERSION, release tag is $TAG_VERSION."
-        exit 1
-      fi
-    - npx --yes @vscode/vsce package -o antigravity-arn-skin.vsix
-    - npx --yes @vscode/vsce publish --packagePath antigravity-arn-skin.vsix -p "$VSCE_PUBLISH"
-    - npx --yes ovsx publish antigravity-arn-skin.vsix -p "$OPEN_VSX"
-  artifacts:
-    paths:
-      - antigravity-arn-skin.vsix
-    expire_in: never
-
-# --- GITLAB RELEASE ---
-gitlab-release:
-  image: registry.gitlab.com/gitlab-org/release-cli:latest
-  stage: publish
-  needs:
-    - publish
-  only:
-    - tags
-  script:
-    - TAG_VERSION="${CI_COMMIT_TAG#v}"
-    - echo "Extracting CHANGELOG for version $TAG_VERSION"
-    - echo "# What's new in v${TAG_VERSION} ?" > release_notes.md
-    - echo "" >> release_notes.md
-    - awk -v ver="[${TAG_VERSION}]" '/^## \[/ { if (p) exit; if (index($2, ver) == 1) { p=1; next } } p { print }' CHANGELOG.md >> release_notes.md
-    - |
-      release-cli create --name "Release $CI_COMMIT_TAG" \
-        --tag-name "$CI_COMMIT_TAG" \
-        --description "$(cat release_notes.md)" \
-        --assets-link "{\"name\":\"Extension Binary (.vsix)\",\"url\":\"${CI_PROJECT_URL}/-/jobs/artifacts/${CI_COMMIT_TAG}/raw/antigravity-arn-skin.vsix?job=publish\",\"filepath\":\"/antigravity-arn-skin.vsix\",\"link_type\":\"package\"}" \
-        --assets-link "{\"name\":\"Download on VS Marketplace\",\"url\":\"https://marketplace.visualstudio.com/items?itemName=jzbakh.antigravity-arn-skin\",\"link_type\":\"other\"}" \
-        --assets-link "{\"name\":\"Download on Open VSX\",\"url\":\"https://open-vsx.org/extension/jzbakh/antigravity-arn-skin\",\"link_type\":\"other\"}"
-
-# --- BADGES UPDATE (SCHEDULED) ---
-update-badges:
-  image: node:22
-  stage: publish
+# A schedule must name its purpose, otherwise it silently inherits the whole
+# pipeline.
+#
+workflow:
   rules:
-    - if: '$CI_PIPELINE_SOURCE == "schedule"'
-    - if: '$CI_COMMIT_BRANCH == "main"'
-  before_script:
-    - apt-get update && apt-get install -y jq curl git
-  script:
-    - 'if [ -z "$GITLAB_TOKEN" ]; then echo "CRITICAL ERROR: GITLAB_TOKEN is empty." && exit 1; fi'
-    - 'git clone --branch badges-gitlab https://oauth2:${GITLAB_TOKEN}@gitlab.com/${CI_PROJECT_PATH}.git /tmp/badges_repo'
-    - cd /tmp/badges_repo
-    - mkdir -p .gitlab/badges
-    - |
-      RESPONSE=$(curl -sS -X POST \
-        -H "Content-Type: application/json" \
-        -H "Accept: application/json;api-version=3.0-preview.1" \
-        -d '{"flags":914,"filters":[{"criteria":[{"filterType":7,"value":"jzbakh.antigravity-arn-skin"}]}]}' \
-        "https://marketplace.visualstudio.com/_apis/public/gallery/extensionquery")
-    - |
-      VERSION=$(echo "$RESPONSE" | jq -r '(.results // [])[0] // {} | (.extensions // [])[0] // {} | (.versions // [])[0] // {} | (.version // "unknown")')
-    - |
-      DOWNLOADS=$(echo "$RESPONSE" | jq -r '(.results // [])[0] // {} | (.extensions // [])[0] // {} | (.statistics // []) | map(select(.statisticName == "install")) | (first // {value: 0}) | (.value // 0) | floor')
-    - |
-      if [ "$VERSION" != "unknown" ]; then
-        DOWNLOADS_DISPLAY=$(if [ "$DOWNLOADS" -ge 1000000 ]; then awk -v n="$DOWNLOADS" 'BEGIN { printf "%.1fM", n/1000000 }'; elif [ "$DOWNLOADS" -ge 1000 ]; then awk -v n="$DOWNLOADS" 'BEGIN { printf "%.1fk", n/1000 }'; else echo "$DOWNLOADS"; fi)
-        echo "{ \"schemaVersion\": 1, \"label\": \"VS Marketplace\", \"message\": \"v${VERSION}\", \"color\": \"blue\", \"namedLogo\": \"visualstudiocode\" }" > .gitlab/badges/marketplace-version.json
-        echo "{ \"schemaVersion\": 1, \"label\": \"VS Marketplace Downloads\", \"message\": \"${DOWNLOADS_DISPLAY}\", \"color\": \"blueviolet\", \"namedLogo\": \"visualstudiocode\" }" > .gitlab/badges/marketplace-downloads.json
-      fi
-    - |
-      OVSX_RESPONSE=$(curl -sS "https://open-vsx.org/api/jzbakh/antigravity-arn-skin")
-      OVSX_VERSION=$(echo "$OVSX_RESPONSE" | jq -r '.version // "unknown"')
-      OVSX_DOWNLOADS=$(echo "$OVSX_RESPONSE" | jq -r '.downloadCount // 0')
-    - |
-      if [ "$OVSX_VERSION" != "unknown" ] && [ "$OVSX_VERSION" != "null" ]; then
-        OVSX_DL_DISP=$(if [ "$OVSX_DOWNLOADS" -ge 1000000 ]; then awk -v n="$OVSX_DOWNLOADS" 'BEGIN { printf "%.1fM", n/1000000 }'; elif [ "$OVSX_DOWNLOADS" -ge 1000 ]; then awk -v n="$OVSX_DOWNLOADS" 'BEGIN { printf "%.1fk", n/1000 }'; else echo "$OVSX_DOWNLOADS"; fi)
-        echo "{ \"schemaVersion\": 1, \"label\": \"Open VSX\", \"message\": \"v${OVSX_VERSION}\", \"color\": \"blue\", \"namedLogo\": \"openvsx\" }" > .gitlab/badges/openvsx-version.json
-        echo "{ \"schemaVersion\": 1, \"label\": \"Open VSX Downloads\", \"message\": \"${OVSX_DL_DISP}\", \"color\": \"blueviolet\", \"namedLogo\": \"openvsx\" }" > .gitlab/badges/openvsx-downloads.json
-      fi
-    - |
-      git config --global user.name "gitlab-ci[bot]"
-      git config --global user.email "gitlab-ci[bot]@gitlab.com"
-      git add .gitlab/badges/
-      if git diff --quiet --staged; then
-        echo "Badges unchanged, nothing to commit."
-      else
-        git commit -m "chore(badges): refresh badge stats"
-        git push origin badges-gitlab
-      fi
+    - if: '$CI_PIPELINE_SOURCE == "schedule" && $PIPELINE == null'
+      when: never
+    - when: always
 
-# --- GITLAB PAGES (HTML PRESENTATION) ---
-pages:
-  image: node:22
-  stage: publish
-  needs: []
-  script:
-    - mkdir -p public
-    - cp -r html_presentation public/
-    - cp -r media public/
-    - echo '<meta http-equiv="refresh" content="0; url=html_presentation/index.html" />' > public/index.html
-  artifacts:
-    paths:
-      - public
-  rules:
-    - if: $CI_COMMIT_BRANCH == "main"
-
-# --- SECURITE (SAST, SECRETS & DEPENDENCIES) ---
 include:
+  - local: .gitlab/ci/rules.yml
+  - local: .gitlab/ci/validate.yml
+  - local: .gitlab/ci/test.yml
+  - local: .gitlab/ci/release.yml
+  - local: .gitlab/ci/badges.yml
+  - local: .gitlab/ci/pages.yml
   - template: Security/SAST.gitlab-ci.yml
   - template: Security/Secret-Detection.gitlab-ci.yml
   - template: Security/Dependency-Scanning.gitlab-ci.yml
-
