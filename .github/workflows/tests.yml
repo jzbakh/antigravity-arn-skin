@@ -42,30 +42,11 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      - name: Validate package.json is parseable JSON
-        run: node -e "JSON.parse(require('fs').readFileSync('package.json','utf8'))"
+      - name: Validate the manifest
+        run: node scripts/validate-manifest.js
 
       - name: Validate every theme JSONC file
         run: node scripts/check-themes-jsonc.js
-
-      - name: Validate the advanced-customization JSON Schema
-        run: node -e "JSON.parse(require('fs').readFileSync('schemas/arn-advanced.schema.json','utf8'))"
-
-      - name: Sanity-check the manifest's required fields
-        run: |
-          node -e "
-            const pkg = JSON.parse(require('fs').readFileSync('package.json','utf8'));
-            const required = ['name','displayName','description','version','publisher','engines','contributes','main','license'];
-            const missing = required.filter(k => !pkg[k]);
-            if (missing.length) {
-              console.error('package.json is missing required fields: ' + missing.join(', '));
-              process.exit(1);
-            }
-            if (!pkg.contributes.themes || pkg.contributes.themes.length !== 7) {
-              console.error('package.json must contribute exactly 7 themes (got ' + (pkg.contributes.themes||[]).length + ')');
-              process.exit(1);
-            }
-          "
 
   # ---------------------------------------------------------------------------
   # Stage 2 — pure-helper unit tests. No editor, no network, ~1s on every OS.
