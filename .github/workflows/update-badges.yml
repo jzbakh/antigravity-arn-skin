@@ -134,12 +134,14 @@ jobs:
           }
           EOF
 
+          # Same label/color as the GitLab badge job, so both sides emit
+          # identical JSON and the README can switch source URLs seamlessly.
           cat > .github/badges/marketplace-downloads.json <<EOF
           {
             "schemaVersion": 1,
-            "label": "Downloads",
+            "label": "VS Marketplace Downloads",
             "message": "${DOWNLOADS_DISPLAY}",
-            "color": "success",
+            "color": "blueviolet",
             "namedLogo": "visualstudiocode"
           }
           EOF
@@ -187,16 +189,18 @@ jobs:
             "schemaVersion": 1,
             "label": "Open VSX",
             "message": "v${VSX_VERSION}",
-            "color": "blue"
+            "color": "blue",
+            "namedLogo": "openvsx"
           }
           EOF
 
           cat > .github/badges/openvsx-downloads.json <<EOF
           {
             "schemaVersion": 1,
-            "label": "Downloads",
+            "label": "Open VSX Downloads",
             "message": "${VSX_DOWNLOADS_DISPLAY}",
-            "color": "success"
+            "color": "blueviolet",
+            "namedLogo": "openvsx"
           }
           EOF
 

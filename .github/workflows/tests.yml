@@ -1,16 +1,12 @@
-# =============================================================================
-# CI — runs on every push to main/master, every pull request, and on a weekly
-# schedule (Mondays 08:00 UTC) for the VSCode Insiders coverage.
+# CI — mirrors the GitLab pipeline modes (.gitlab/ci/rules.yml), which owns
+# releases. Each stage gates the next; if one fails the rest is skipped.
 #
-# Pipeline (each stage gates the next; if one fails the rest is skipped):
-#   1) validate           — fast structural checks (JSON, manifest, schemas)
-#   2) unit               — 328 pure-helper Mocha tests on Linux / macOS / Windows
-#   3) integration-stable — 116 vscode-test integration tests on the 3 OSes,
-#                           against the latest VSCode stable
-#   4) integration-insiders — same 116 tests against VSCode Insiders, but only
-#                             on the weekly cron and on workflow_dispatch
-#                             (keeps PR CI minutes reasonable)
-# =============================================================================
+#   1) validate           — structural checks (manifest, theme JSONC)
+#   2) unit               — pure-helper Mocha tests on Linux / macOS / Windows
+#   3) integration-stable — vscode-test suite on the 3 OSes, current stable
+#   4) integration-insiders — same suite on VSCode Insiders, monthly only
+#
+# Schedules: weekly runs the stable matrix, monthly adds Insiders.
 
 name: tests
 
@@ -21,6 +17,7 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '0 8 * * 1'
+    - cron: '0 8 1 * *'
 
 # Cancel an in-flight run for the same branch / PR when a newer commit
 # arrives — saves CI minutes during rapid iteration.
@@ -109,14 +106,13 @@ jobs:
         run: npm run test:integration
 
   # ---------------------------------------------------------------------------
-  # Stage 4 — integration tests against VSCode Insiders. Catches regressions
-  # in upcoming editor releases before they ship. Runs only on the weekly cron
-  # and on manual dispatch — not on every push or PR, to keep CI minutes
-  # reasonable.
+  # Stage 4 — integration tests against VSCode Insiders. Catches regressions in
+  # upcoming editor releases before they ship. Monthly cron and manual dispatch
+  # only, matching the GitLab `prerelease` schedule.
   # ---------------------------------------------------------------------------
   integration-insiders:
     name: Integration · insiders (${{ matrix.os }})
-    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    if: github.event.schedule == '0 8 1 * *' || github.event_name == 'workflow_dispatch'
     needs: unit
     runs-on: ${{ matrix.os }}
     strategy:
