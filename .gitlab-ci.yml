@@ -1,3 +1,13 @@
+# Declare inputs for schedule UI configuration.
+# Bridged to $PIPELINE to keep .gitlab/ci/rules.yml evaluation consistent.
+
+spec:
+  inputs:
+    PIPELINE:
+      description: "Pipeline mode: badges, stable, prerelease, pages, or empty for a regular run"
+      default: ""
+
+---
 # Routing only. Job definitions live in .gitlab/ci/, trigger definitions in
 # .gitlab/ci/rules.yml.
 
@@ -11,6 +21,7 @@ default:
   interruptible: true
 
 variables:
+  PIPELINE: $[[ inputs.PIPELINE ]]
   npm_config_cache: "$CI_PROJECT_DIR/.npm"
   # A 500 from the git endpoint fails the job before the script even starts,
   # which says nothing about this project. Retry the fetch instead.
@@ -18,11 +29,11 @@ variables:
   ARTIFACT_DOWNLOAD_ATTEMPTS: "3"
 
 # A schedule must name its purpose, otherwise it silently inherits the whole
-# pipeline.
-#
+# pipeline.  The guard checks both null (variable undefined) and empty string
+# (spec:inputs default) so a misconfigured schedule is still rejected.
 workflow:
   rules:
-    - if: '$CI_PIPELINE_SOURCE == "schedule" && $PIPELINE == null'
+    - if: '$CI_PIPELINE_SOURCE == "schedule" && ($PIPELINE == null || $PIPELINE == "")'
       when: never
     - when: always
 
