@@ -3,6 +3,8 @@
 .git/**
 .github
 .github/**
+.gitlab-ci.yml
+.gitlab/**
 html_presentation/**
 scripts/**
 test/**

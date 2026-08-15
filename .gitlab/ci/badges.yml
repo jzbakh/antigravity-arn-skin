@@ -1,0 +1,64 @@
+# Refreshes the shields.io endpoint JSONs consumed by the README badges.
+# Runs only in the `badges` pipeline mode, so a failing test never freezes the
+# published download counts — and the refresh never waits on a test runner.
+#
+# Both registries are read defensively: on an API error the existing values are
+# left untouched, so a marketplace outage degrades to a stale badge instead of
+# a broken one.
+
+update-badges:
+  extends: .on-badges
+  image: node:22
+  stage: deploy
+  needs: []
+  # Serialize across pipelines: two refreshes racing the push to badges-gitlab
+  # would reject the second one as non-fast-forward. Left interruptible so a
+  # superseded pipeline still auto-cancels; the next one refreshes anyway.
+  resource_group: badges
+  before_script:
+    - apt-get update && apt-get install -y jq curl git
+  script:
+    - 'if [ -z "$GITLAB_TOKEN" ]; then echo "CRITICAL ERROR: GITLAB_TOKEN is empty." && exit 1; fi'
+    - 'git clone --branch badges-gitlab https://oauth2:${GITLAB_TOKEN}@gitlab.com/${CI_PROJECT_PATH}.git /tmp/badges_repo'
+    - cd /tmp/badges_repo
+    - mkdir -p .gitlab/badges
+    - |
+      RESPONSE=$(curl -sS -X POST \
+        -H "Content-Type: application/json" \
+        -H "Accept: application/json;api-version=3.0-preview.1" \
+        -d '{"flags":914,"filters":[{"criteria":[{"filterType":7,"value":"jzbakh.antigravity-arn-skin"}]}]}' \
+        "https://marketplace.visualstudio.com/_apis/public/gallery/extensionquery")
+    - |
+      VERSION=$(echo "$RESPONSE" | jq -r '(.results // [])[0] // {} | (.extensions // [])[0] // {} | (.versions // [])[0] // {} | (.version // "unknown")')
+    - |
+      DOWNLOADS=$(echo "$RESPONSE" | jq -r '(.results // [])[0] // {} | (.extensions // [])[0] // {} | (.statistics // []) | map(select(.statisticName == "install")) | (first // {value: 0}) | (.value // 0) | floor')
+    - |
+      if [ "$VERSION" != "unknown" ]; then
+        DOWNLOADS_DISPLAY=$(if [ "$DOWNLOADS" -ge 1000000 ]; then awk -v n="$DOWNLOADS" 'BEGIN { printf "%.1fM", n/1000000 }'; elif [ "$DOWNLOADS" -ge 1000 ]; then awk -v n="$DOWNLOADS" 'BEGIN { printf "%.1fk", n/1000 }'; else echo "$DOWNLOADS"; fi)
+        echo "{ \"schemaVersion\": 1, \"label\": \"VS Marketplace\", \"message\": \"v${VERSION}\", \"color\": \"blue\", \"namedLogo\": \"visualstudiocode\" }" > .gitlab/badges/marketplace-version.json
+        echo "{ \"schemaVersion\": 1, \"label\": \"VS Marketplace Downloads\", \"message\": \"${DOWNLOADS_DISPLAY}\", \"color\": \"blueviolet\", \"namedLogo\": \"visualstudiocode\" }" > .gitlab/badges/marketplace-downloads.json
+      else
+        echo "VS Marketplace API returned no data — keeping the existing badge values."
+      fi
+    - |
+      OVSX_RESPONSE=$(curl -sS "https://open-vsx.org/api/jzbakh/antigravity-arn-skin")
+      OVSX_VERSION=$(echo "$OVSX_RESPONSE" | jq -r '.version // "unknown"')
+      OVSX_DOWNLOADS=$(echo "$OVSX_RESPONSE" | jq -r '(.downloadCount // 0) | floor')
+    - |
+      if [ "$OVSX_VERSION" != "unknown" ] && [ "$OVSX_VERSION" != "null" ]; then
+        OVSX_DL_DISP=$(if [ "$OVSX_DOWNLOADS" -ge 1000000 ]; then awk -v n="$OVSX_DOWNLOADS" 'BEGIN { printf "%.1fM", n/1000000 }'; elif [ "$OVSX_DOWNLOADS" -ge 1000 ]; then awk -v n="$OVSX_DOWNLOADS" 'BEGIN { printf "%.1fk", n/1000 }'; else echo "$OVSX_DOWNLOADS"; fi)
+        echo "{ \"schemaVersion\": 1, \"label\": \"Open VSX\", \"message\": \"v${OVSX_VERSION}\", \"color\": \"blue\", \"namedLogo\": \"openvsx\" }" > .gitlab/badges/openvsx-version.json
+        echo "{ \"schemaVersion\": 1, \"label\": \"Open VSX Downloads\", \"message\": \"${OVSX_DL_DISP}\", \"color\": \"blueviolet\", \"namedLogo\": \"openvsx\" }" > .gitlab/badges/openvsx-downloads.json
+      else
+        echo "Open VSX API returned no data — keeping the existing badge values."
+      fi
+    - |
+      git config --global user.name "gitlab-ci[bot]"
+      git config --global user.email "gitlab-ci[bot]@gitlab.com"
+      git add .gitlab/badges/
+      if git diff --quiet --staged; then
+        echo "Badges unchanged, nothing to commit."
+      else
+        git commit -m "chore(badges): refresh badge stats [skip ci]"
+        git push origin badges-gitlab
+      fi

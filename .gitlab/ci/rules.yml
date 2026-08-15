@@ -1,0 +1,60 @@
+# Trigger definitions. Every job in this project extends exactly one of these,
+# so the answer to "when does this run?" lives in a single file.
+#
+# `$PIPELINE` names a single-purpose pipeline and is set by pipeline schedules
+# or by a manual run. Ordinary branch and tag pipelines leave it empty.
+#
+#   (unset)     branch push, tag, or manual run
+#   badges      marketplace counters only
+#   stable      full cross-platform suite on current stable (weekly)
+#   prerelease  integration suite on VSCode Insiders (monthly)
+#   pages       presentation site deploy
+
+.on-any-commit:
+  rules:
+    - if: '$PIPELINE == "stable"'
+    - if: '$PIPELINE'
+      when: never
+    - when: on_success
+
+# Positive path list on purpose: a negative list would skip the tests on a
+# commit that touches both code and documentation.
+.on-code:
+  rules:
+    - if: '$PIPELINE == "stable"'
+    - if: '$PIPELINE'
+      when: never
+    - if: '$CI_COMMIT_TAG'
+    - changes:
+        - extension.js
+        - package.json
+        - themes/**/*
+        - schemas/**/*
+        - scripts/**/*
+        - test/**/*
+        - .gitlab-ci.yml
+        - .gitlab/ci/**/*
+
+.on-full-matrix:
+  rules:
+    - if: '$PIPELINE == "stable"'
+    - if: '$CI_COMMIT_TAG =~ /^v[0-9]+\.[0-9]+\.[0-9]+$/'
+
+# Also gates release tags: a regression in the next editor build must surface
+# before the version ships, not after.
+.on-prerelease:
+  rules:
+    - if: '$PIPELINE == "prerelease"'
+    - if: '$CI_COMMIT_TAG =~ /^v[0-9]+\.[0-9]+\.[0-9]+$/'
+
+.on-release:
+  rules:
+    - if: '$CI_COMMIT_TAG =~ /^v[0-9]+\.[0-9]+\.[0-9]+$/'
+
+.on-badges:
+  rules:
+    - if: '$PIPELINE == "badges"'
+
+.on-pages:
+  rules:
+    - if: '$PIPELINE == "pages"'

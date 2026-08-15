@@ -1,0 +1,15 @@
+# Explicit keyword: relying on the job NAME to trigger Pages is deprecated.
+pages:
+  extends: .on-pages
+  pages: true
+  image: node:22
+  stage: deploy
+  needs: []
+  script:
+    - mkdir -p public
+    - cp -r html_presentation public/
+    - cp -r media public/
+    - echo '<meta http-equiv="refresh" content="0; url=html_presentation/index.html" />' > public/index.html
+  artifacts:
+    paths:
+      - public

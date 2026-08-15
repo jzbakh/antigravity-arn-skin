@@ -1,0 +1,7 @@
+validate:
+  extends: .on-any-commit
+  image: node:22
+  stage: validate
+  script:
+    - node scripts/validate-manifest.js
+    - node scripts/check-themes-jsonc.js

@@ -1,0 +1,157 @@
+# `npm ci` wipes node_modules before installing, so the npm store is the only
+# thing worth caching. Key it on the lockfile.
+.linux-node:
+  image: node:22
+  stage: test
+  cache:
+    key:
+      prefix: npm-linux
+      files:
+        - test/package-lock.json
+    paths:
+      - .npm
+
+unit-tests-linux:
+  extends:
+    - .linux-node
+    - .on-code
+  script:
+    - cd test
+    - npm ci --prefer-offline
+    - npm run test:unit
+
+# A CI-only failure cannot be reproduced locally, so every integration job ships
+# the editor's own debug logs when it fails, on every platform and channel.
+# RUNNER_SCRIPT_TIMEOUT stops the script while the job still has time to upload
+# them: a job-level timeout kills that step too, and a stalled run would report
+# nothing at all. Console output stays readable.
+.vscode-logs:
+  variables:
+    RUNNER_SCRIPT_TIMEOUT: 30m
+    RUNNER_AFTER_SCRIPT_TIMEOUT: 3m
+  artifacts:
+    when: on_failure
+    paths:
+      - test/.vscode-test/user-data/logs
+    expire_in: 1 week
+
+.linux-vscode:
+  extends:
+    - .linux-node
+    - .vscode-logs
+  before_script:
+    - apt-get update && apt-get install -y gdb libx11-xcb1 libxcb-dri3-0 libxtst6 libnss3 libxss1 libasound2 libgbm1 libatk1.0-0 libatk-bridge2.0-0 libgtk-3-0 xauth xvfb
+  artifacts:
+    when: on_failure
+    paths:
+      - test/.vscode-test/user-data/logs
+      - linux-stack-*.txt
+    expire_in: 1 week
+  script:
+    - cd test
+    - npm ci --prefer-offline
+    - |
+      # A start that stalls before the editor's logger leaves nothing on disk,
+      # so capture the native state instead. Ten minutes is far past a healthy
+      # run: gdb suspends what it attaches to, and must never touch a live one.
+      ( sleep 600
+        ps -ef > "$CI_PROJECT_DIR/linux-stack-ps.txt" 2>&1 || true
+        for p in $(pgrep -f "$CI_PROJECT_DIR/test/.vscode-test" || true); do
+          { echo "=== pid $p ==="
+            cat "/proc/$p/status" 2>/dev/null
+            echo "wchan: $(cat /proc/$p/wchan 2>/dev/null)"
+            gdb -p "$p" -batch -ex "thread apply all bt" 2>&1
+          } > "$CI_PROJECT_DIR/linux-stack-$p.txt" || true
+        done
+      ) &
+      xvfb-run -a npm run test:integration
+
+.windows-vscode:
+  extends: .vscode-logs
+  stage: test
+  tags:
+    - saas-windows-medium-amd64
+  variables:
+    GCM_CREDENTIAL_STORE: plaintext
+  cache: []
+  before_script:
+    - choco install nodejs-lts --no-progress -y
+    - $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
+  artifacts:
+    when: on_failure
+    paths:
+      - test/.vscode-test/user-data/logs
+      - windows-stack-*.txt
+    expire_in: 1 week
+  script:
+    - node --version
+    - cd test
+    - npm ci
+    - |
+      # Same watchdog as Linux. Guarded: this job is green today and a broken
+      # probe must never be what turns it red.
+      try {
+        $null = Start-Job -ScriptBlock {
+          param($dir)
+          Start-Sleep -Seconds 600
+          Get-CimInstance Win32_Process |
+            Where-Object { $_.CommandLine -like '*vscode-test*' } |
+            Select-Object ProcessId, ParentProcessId, CommandLine |
+            Format-List | Out-File -Encoding utf8 (Join-Path $dir 'windows-stack-ps.txt')
+        } -ArgumentList $env:CI_PROJECT_DIR
+      } catch {
+        Write-Host "watchdog unavailable: $_"
+      }
+      npm test
+
+# Hosted macOS runners run headless: "Any workloads that require UI interactions
+# are not supported" (GitLab docs), and both machine sizes behave the same. A
+# stack sample confirmed it — the editor starts, every process idles in its run
+# loop, and no renderer is ever created because AppKit never delivers
+# applicationDidFinishLaunching outside an Aqua session. macOS therefore runs
+# the suite that needs no editor here; its integration suite runs in the GitHub
+# workflow, on runners that do hold a console session.
+#
+# To bring that suite back here, register a self-hosted runner: GitLab Runner is
+# a user-mode LaunchAgent holding a UI session (requires automatic login). Then
+# add an integration job carrying that runner's tag and list it in package.needs.
+unit-tests-macos:
+  extends: .on-full-matrix
+  stage: test
+  # Pinned: Node 22 is this image's default, matching the node:22 Linux jobs.
+  image: macos-15-xcode-16
+  tags:
+    - saas-macos-medium-m1
+  variables:
+    HOMEBREW_NO_AUTO_UPDATE: "1"
+  timeout: 20m
+  cache: []
+  script:
+    - node --version
+    - cd test
+    - npm ci
+    - npm run test:unit
+
+integration-tests-linux:
+  extends:
+    - .linux-vscode
+    - .on-code
+
+integration-tests-windows:
+  extends:
+    - .windows-vscode
+    - .on-full-matrix
+
+integration-tests-insiders-linux:
+  extends:
+    - .linux-vscode
+    - .on-prerelease
+  variables:
+    VSCODE_VERSION: insiders
+
+integration-tests-insiders-windows:
+  extends:
+    - .windows-vscode
+    - .on-prerelease
+  variables:
+    VSCODE_VERSION: insiders
