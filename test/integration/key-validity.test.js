@@ -14,6 +14,7 @@
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
+const vscode = require('vscode');
 const { __testing } = require('../../extension');
 const { parseJsonc, generateQuickTheme } = __testing;
 
@@ -24,25 +25,14 @@ const THEMES = ['arn-spaceport.json', 'arn-nebula.json', 'arn-neptune.json',
 // 3rd-party extension keys we deliberately ship support for.
 const THIRD_PARTY_PREFIXES = ['errorLens.', 'gitlens.'];
 
-// Locate the bundled VSCode under test/.vscode-test/. The folder name
-// includes the version (e.g. vscode-win32-x64-archive-1.118.1) and a hash
-// directory inside, so we discover both at runtime instead of hardcoding.
+// The suite runs inside the editor it validates, so ask it where it lives
+// rather than guessing: the download cache holds several builds, and its
+// layout differs per platform (Windows nests the app under a commit hash,
+// Linux does not, macOS buries it in the bundle). Guessing skipped this whole
+// file on Linux and macOS, and pinned Windows to whichever build came first.
 function findVSCodeAppDir() {
-    const root = path.join(REPO_ROOT, 'test', '.vscode-test');
-    if (!fs.existsSync(root)) return null;
-
-    const versions = fs.readdirSync(root)
-        .filter(n => n.startsWith('vscode-'))
-        .map(n => path.join(root, n))
-        .filter(p => fs.statSync(p).isDirectory());
-
-    for (const verDir of versions) {
-        for (const ent of fs.readdirSync(verDir, { withFileTypes: true })) {
-            if (!ent.isDirectory()) continue;
-            const candidate = path.join(verDir, ent.name, 'resources', 'app');
-            if (fs.existsSync(path.join(candidate, 'out'))) return candidate;
-        }
-    }
+    const appRoot = vscode.env.appRoot;
+    if (appRoot && fs.existsSync(path.join(appRoot, 'out'))) return appRoot;
     return null;
 }
 
