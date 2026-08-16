@@ -10,8 +10,8 @@
     "test:integration": "vscode-test"
   },
   "devDependencies": {
-    "@vscode/test-cli": "^0.0.12",
-    "@vscode/test-electron": "^2.4.1",
+    "@vscode/test-cli": "^0.0.15",
+    "@vscode/test-electron": "^3.1.0",
     "mocha": "^11.7.6",
     "c8": "^11.0.0"
   },
