@@ -178,6 +178,8 @@ describe('Theme colour keys — valid against the installed VSCode bundle', func
 // Frozen from VSCode 1.122.1 (2026-05-27). Append new keys when suite B
 // flags them.
 const TRANSPARENCY_REQUIRED = [
+    'chat.findMatchBackground',
+    'chat.findMatchHighlightBackground',
     'chat.inputWorkingBorderColor1',
     'chat.inputWorkingBorderColor2',
     'chat.inputWorkingBorderColor3',
@@ -187,6 +189,9 @@ const TRANSPARENCY_REQUIRED = [
     'chat.requestBubbleHoverBackground',
     'chat.requestCodeBorder',
     'chat.thinkingShimmer',
+    'chat.voiceGlowBaseColor',
+    'chat.voiceListeningGlow',
+    'chat.voiceSpeakingGlow',
     'commandCenter.debuggingBackground',
     'diffEditor.insertedLineBackground',
     'diffEditor.insertedTextBackground',
