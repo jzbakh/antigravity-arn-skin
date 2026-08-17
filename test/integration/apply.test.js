@@ -792,7 +792,7 @@ describe('closeCustomisationFilesForTheme', function () {
         // Brief pause so VSCode releases its file-watcher handles before we rm
         // the tmpdir on Windows (avoids EBUSY when the watcher is still alive).
         await new Promise(r => setTimeout(r, 300));
-        try { await fs.promises.rm(tmpDir, { recursive: true, force: true }); } catch {}
+        try { await fs.promises.rm(tmpDir, { recursive: true, force: true }); } catch { /* best effort */ }
     });
 
     const openBasenames = () => vscode.window.tabGroups.all
@@ -909,7 +909,7 @@ describe('closeOtherCustomisationFilesForTheme', function () {
     afterEach(async () => {
         await vscode.commands.executeCommand('workbench.action.closeAllEditors');
         await new Promise(r => setTimeout(r, 300));
-        try { await fs.promises.rm(tmpDir, { recursive: true, force: true }); } catch {}
+        try { await fs.promises.rm(tmpDir, { recursive: true, force: true }); } catch { /* best effort */ }
     });
 
     const openBasenames = () => vscode.window.tabGroups.all
@@ -1037,7 +1037,7 @@ describe('resetTheme — closes customisation tabs (contract guard)', function (
         // Brief pause so VSCode releases its file-watcher handles before we rm
         // the tmpdir on Windows (avoids EBUSY when the watcher is still alive).
         await new Promise(r => setTimeout(r, 300));
-        try { await fs.promises.rm(tmpDir, { recursive: true, force: true }); } catch {}
+        try { await fs.promises.rm(tmpDir, { recursive: true, force: true }); } catch { /* best effort */ }
     });
 
     it('closes the 3 customisation tabs when reset is invoked', async () => {

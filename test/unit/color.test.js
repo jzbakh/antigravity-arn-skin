@@ -48,7 +48,7 @@ describe('colorUtils.rgbToHex', () => {
 
 describe('colorUtils.rgbToHsl / hslToRgb', () => {
     it('white has lightness 1', () => {
-        const { h, s, l } = colorUtils.rgbToHsl(255, 255, 255);
+        const { s, l } = colorUtils.rgbToHsl(255, 255, 255);
         assert.equal(l, 1);
         assert.equal(s, 0);
     });

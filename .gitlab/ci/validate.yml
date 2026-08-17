@@ -5,3 +5,21 @@ validate:
   script:
     - node scripts/validate-manifest.js
     - node scripts/check-themes-jsonc.js
+
+# Lint gates the test stage: a syntax or dead-code slip should stop the pipeline
+# in seconds rather than after a cross-platform matrix.
+lint:
+  extends: .on-any-commit
+  image: node:22
+  stage: validate
+  cache:
+    key:
+      prefix: npm-linux
+      files:
+        - test/package-lock.json
+    paths:
+      - .npm
+  script:
+    - cd test
+    - npm ci --prefer-offline
+    - npm run lint

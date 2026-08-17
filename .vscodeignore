@@ -5,6 +5,7 @@
 .github/**
 .gitlab-ci.yml
 .gitlab/**
+eslint.config.js
 html_presentation/**
 scripts/**
 test/**

@@ -117,7 +117,9 @@ function parseJsonc(text) {
             return JSON.parse(clean.replace(/,(?=\s*[}\]])/g, ''));
         } catch (secondErr) {
             // Both attempts failed — surface a clear, actionable error.
-            throw new Error(`JSONC parse failed: ${secondErr.message} (initial error: ${firstErr.message})`);
+            throw new Error(
+                `JSONC parse failed: ${secondErr.message} (initial error: ${firstErr.message})`,
+                { cause: secondErr });
         }
     }
 }
@@ -1665,7 +1667,7 @@ function activate(context) {
                 if (mode === 'quick') await applyQuick(context, text);
                 else if (mode === 'advanced-ui') await applyAdvancedUI(context, text);
                 else if (mode === 'advanced-syntax') await applyAdvancedSyntax(context, text);
-            } catch (err) {
+            } catch {
                 // File missing (Reset deleted it) or unreadable — nothing
                 // to realign. Stay silent.
             } finally {

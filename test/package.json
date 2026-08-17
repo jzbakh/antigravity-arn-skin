@@ -4,6 +4,7 @@
   "private": true,
   "description": "Test harness for arn-skin (isolated from extension manifest — these devDependencies never ship to end users).",
   "scripts": {
+    "lint": "cd .. && eslint .",
     "test": "npm run test:unit && npm run test:integration",
     "test:unit": "mocha",
     "test:unit:coverage": "cd .. && c8 --include extension.js --reporter=json --report-dir test/coverage-unit mocha --require ./test/unit/vscode-stub.js \"test/unit/**/*.test.js\"",
@@ -12,10 +13,13 @@
     "coverage": "npm run test:unit:coverage && npm run test:integration:coverage && node ../scripts/merge-coverage.js"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "@vscode/test-cli": "^0.0.15",
     "@vscode/test-electron": "^3.1.0",
-    "mocha": "^11.7.6",
-    "c8": "^11.0.0"
+    "c8": "^11.0.0",
+    "eslint": "^10.8.1",
+    "globals": "^17.11.0",
+    "mocha": "^11.7.6"
   },
   "overrides": {
     "serialize-javascript": "^7.0.5"
