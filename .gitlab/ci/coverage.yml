@@ -1,0 +1,31 @@
+# Unions the two profiles produced in the test stage. Reported from here rather
+# than from either job because neither number alone describes the extension:
+# unit covers the pure helpers, integration covers activate() and the commands.
+coverage:
+  extends: .on-code
+  image: node:22
+  stage: report
+  needs:
+    - unit-tests-linux
+    - integration-tests-linux
+  cache:
+    key:
+      prefix: npm-linux
+      files:
+        - test/package-lock.json
+    paths:
+      - .npm
+  script:
+    - cd test
+    - npm ci --prefer-offline
+    - node ../scripts/merge-coverage.js
+  coverage: '/All files[^|]*\|[^|]*\s+([\d.]+)/'
+  artifacts:
+    when: always
+    paths:
+      - test/coverage/lcov-report
+    reports:
+      coverage_report:
+        coverage_format: cobertura
+        path: test/coverage/cobertura-coverage.xml
+    expire_in: 1 week

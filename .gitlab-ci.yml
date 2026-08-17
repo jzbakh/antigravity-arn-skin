@@ -14,6 +14,7 @@ spec:
 stages:
   - validate
   - test
+  - report
   - package
   - deploy
 
@@ -41,6 +42,7 @@ include:
   - local: .gitlab/ci/rules.yml
   - local: .gitlab/ci/validate.yml
   - local: .gitlab/ci/test.yml
+  - local: .gitlab/ci/coverage.yml
   - local: .gitlab/ci/release.yml
   - local: .gitlab/ci/badges.yml
   - local: .gitlab/ci/pages.yml

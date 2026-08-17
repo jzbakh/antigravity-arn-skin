@@ -6,8 +6,10 @@
   "scripts": {
     "test": "npm run test:unit && npm run test:integration",
     "test:unit": "mocha",
-    "test:unit:coverage": "c8 --reporter=text --reporter=lcov mocha",
-    "test:integration": "vscode-test"
+    "test:unit:coverage": "cd .. && c8 --include extension.js --reporter=json --report-dir test/coverage-unit mocha --require ./test/unit/vscode-stub.js \"test/unit/**/*.test.js\"",
+    "test:integration": "vscode-test",
+    "test:integration:coverage": "vscode-test --coverage --coverage-reporter json --coverage-output ./coverage-int",
+    "coverage": "npm run test:unit:coverage && npm run test:integration:coverage && node ../scripts/merge-coverage.js"
   },
   "devDependencies": {
     "@vscode/test-cli": "^0.0.15",

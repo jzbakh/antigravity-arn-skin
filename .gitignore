@@ -5,6 +5,8 @@
 test/node_modules/
 test/.vscode-test/
 test/coverage/
+test/coverage-unit/
+test/coverage-int/
 test/.nyc_output/
 
 # Local visual-test fixtures opened to eyeball syntax highlighting against

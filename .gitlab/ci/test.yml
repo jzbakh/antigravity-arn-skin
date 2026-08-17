@@ -11,6 +11,10 @@
     paths:
       - .npm
 
+# Both suites are measured, because neither sees the whole extension on its own:
+# the unit run covers the pure helpers in-process, the integration run drives
+# activate() and the command handlers inside a real editor. Each publishes its
+# raw profile; the coverage job unions them into the figure GitLab reports.
 unit-tests-linux:
   extends:
     - .linux-node
@@ -18,7 +22,11 @@ unit-tests-linux:
   script:
     - cd test
     - npm ci --prefer-offline
-    - npm run test:unit
+    - npm run test:unit:coverage
+  artifacts:
+    paths:
+      - test/coverage-unit/coverage-final.json
+    expire_in: 1 day
 
 # A CI-only failure cannot be reproduced locally, so every integration job ships
 # the editor's own debug logs when it fails, on every platform and channel.
@@ -41,12 +49,15 @@ unit-tests-linux:
     - .vscode-logs
   before_script:
     - apt-get update && apt-get install -y gdb libx11-xcb1 libxcb-dri3-0 libxtst6 libnss3 libxss1 libasound2 libgbm1 libatk1.0-0 libatk-bridge2.0-0 libgtk-3-0 xauth xvfb
+  # `always` rather than `on_failure`: this job also carries the integration
+  # half of the coverage profile, which only exists when the run succeeds.
   artifacts:
-    when: on_failure
+    when: always
     paths:
       - test/.vscode-test/user-data/logs
       - linux-stack-*.txt
-    expire_in: 1 week
+      - test/coverage-int/coverage-final.json
+    expire_in: 1 day
   script:
     - cd test
     - npm ci --prefer-offline
@@ -64,7 +75,7 @@ unit-tests-linux:
           } > "$CI_PROJECT_DIR/linux-stack-$p.txt" || true
         done
       ) &
-      xvfb-run -a npm run test:integration
+      xvfb-run -a npm run test:integration:coverage
 
 .windows-vscode:
   extends: .vscode-logs
