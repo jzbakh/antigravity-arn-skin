@@ -36,6 +36,13 @@ workflow:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "schedule" && ($PIPELINE == null || $PIPELINE == "")'
       when: never
+    # Scans only on commits and the weekly stable run. Compare explicitly:
+    # inside &&, an empty $PIPELINE is truthy.
+    - if: '$PIPELINE != "" && $PIPELINE != "stable"'
+      variables:
+        SAST_DISABLED: "true"
+        SECRET_DETECTION_DISABLED: "true"
+        DEPENDENCY_SCANNING_DISABLED: "true"
     - when: always
 
 include:

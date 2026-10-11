@@ -1,5 +1,6 @@
-# Trigger definitions. Every job in this project extends exactly one of these,
-# so the answer to "when does this run?" lives in a single file.
+# Trigger definitions. Every job in .gitlab/ci/ extends exactly one of these,
+# so the answer to "when does this run?" lives in a single file. The security
+# templates keep their own rules; .gitlab-ci.yml switches them off per mode.
 #
 # `$PIPELINE` names a single-purpose pipeline and is set by pipeline schedules
 # or by a manual run. Ordinary branch and tag pipelines leave it empty.
