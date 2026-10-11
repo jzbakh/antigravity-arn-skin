@@ -85,8 +85,9 @@ unit-tests-linux:
   variables:
     GCM_CREDENTIAL_STORE: plaintext
   cache: []
+  # nodejs-lts follows the newest LTS: pin 22, like the Linux and macOS images.
   before_script:
-    - choco install nodejs-lts --no-progress -y
+    - choco install nodejs-lts --version=22.23.5 --no-progress -y
     - $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
   artifacts:
     when: on_failure
