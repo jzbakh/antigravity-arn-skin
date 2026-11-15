@@ -18,8 +18,8 @@ update-badges:
   before_script:
     - apt-get update && apt-get install -y jq curl git
   script:
-    - 'if [ -z "$GITLAB_TOKEN" ]; then echo "CRITICAL ERROR: GITLAB_TOKEN is empty." && exit 1; fi'
-    - 'git clone --branch badges-gitlab https://oauth2:${GITLAB_TOKEN}@gitlab.com/${CI_PROJECT_PATH}.git /tmp/badges_repo'
+    - 'if [ -z "$BADGES_TOKEN" ]; then echo "CRITICAL ERROR: BADGES_TOKEN is empty." && exit 1; fi'
+    - 'git clone --branch badges-gitlab https://oauth2:${BADGES_TOKEN}@gitlab.com/${CI_PROJECT_PATH}.git /tmp/badges_repo'
     - cd /tmp/badges_repo
     - mkdir -p .gitlab/badges
     - |
