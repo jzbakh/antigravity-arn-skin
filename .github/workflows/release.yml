@@ -1,0 +1,60 @@
+name: release
+
+on:
+  push:
+    tags: ['v*.*.*']
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing release tag, such as v1.0.5
+        required: true
+      dry-run:
+        description: Check the published VSIX and print the notes without creating the release
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-${{ inputs.tag || github.ref_name }}
+
+jobs:
+  github-release:
+    name: GitHub release
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: write
+    env:
+      TAG: ${{ inputs.tag || github.ref_name }}
+      DRY_RUN: ${{ inputs.dry-run == true }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v7
+
+      # GitLab publishes to the stores; this job releases the exact file Open VSX serves.
+      - name: Wait for the version on Open VSX
+        run: |
+          [[ "$TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]] || { echo "::error::$TAG is not a release tag"; exit 1; }
+          url="https://open-vsx.org/api/jzbakh/antigravity-arn-skin/${TAG#v}"
+          for attempt in $(seq 1 55); do
+            if curl -sf "$url" -o openvsx.json; then exit 0; fi
+            echo "Waiting for ${TAG#v} on Open VSX ($attempt/55)"
+            sleep 60
+          done
+          echo "::error::${TAG#v} never appeared on Open VSX"
+          exit 1
+
+      - name: Download the published VSIX and check its digest
+        run: |
+          curl -sfL "$(jq -r .files.download openvsx.json)" -o arn-skin.vsix
+          digest=$(curl -sfL "$(jq -r .files.sha256 openvsx.json)" | cut -d' ' -f1)
+          echo "$digest  arn-skin.vsix" | sha256sum -c -
+
+      - name: Write the release notes
+        run: sh scripts/release-notes.sh "${TAG#v}" | tee release-notes.md
+
+      - name: Create the release
+        if: env.DRY_RUN != 'true'
+        run: gh release create "$TAG" arn-skin.vsix --verify-tag --title "$TAG" --notes-file release-notes.md
