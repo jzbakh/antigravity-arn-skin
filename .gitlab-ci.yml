@@ -16,6 +16,8 @@ stages:
   - test
   - report
   - package
+  - publish
+  - release
   - deploy
 
 default:

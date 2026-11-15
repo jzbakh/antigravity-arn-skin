@@ -1,12 +1,17 @@
-# Packaging is split from publishing so a failure on one registry can be
-# retried without rebuilding — and without replaying an already-accepted
-# upload to the other registry.
+# One VSIX per tag, published by one job per store: retry a failed store alone.
+
+.release-node:
+  image: node:22
+  interruptible: false
+  variables:
+    VSCE: "@vscode/vsce@4.0.0"
+    OVSX: "ovsx@1.2.0"
 
 package:
-  extends: .on-release
-  image: node:22
+  extends:
+    - .release-node
+    - .on-release
   stage: package
-  interruptible: false
   needs:
     - validate
     - unit-tests-linux
@@ -16,47 +21,46 @@ package:
     - integration-tests-insiders-linux
     - integration-tests-insiders-windows
   script:
+    - VERSION=$(node -p "require('./package.json').version")
     - |
-      PKG_VERSION=$(node -p "require('./package.json').version")
-      TAG_VERSION="${CI_COMMIT_TAG#v}"
-      if [ "$PKG_VERSION" != "$TAG_VERSION" ]; then
-        echo "Version mismatch — package.json says $PKG_VERSION, release tag is $TAG_VERSION."
+      if [ "$CI_COMMIT_TAG" != "v$VERSION" ]; then
+        echo "Tag $CI_COMMIT_TAG does not match package.json version $VERSION."
         exit 1
       fi
-    - npx --yes @vscode/vsce package -o arn-skin.vsix
+    - npx --yes "$VSCE" package -o arn-skin.vsix
+    - sha256sum arn-skin.vsix
   artifacts:
     paths:
       - arn-skin.vsix
     expire_in: never
 
-publish-marketplace:
-  extends: .on-release
-  image: node:22
-  stage: deploy
-  interruptible: false
+.publish:
+  extends:
+    - .release-node
+    - .on-release
+  stage: publish
+  resource_group: release
   needs:
     - package
-  script:
-    - npx --yes @vscode/vsce publish --packagePath arn-skin.vsix -p "$VSCE_PUBLISH"
 
-publish-openvsx:
-  extends: .on-release
-  image: node:22
-  stage: deploy
-  interruptible: false
-  needs:
-    - package
+publish:vs-marketplace:
+  extends: .publish
   script:
-    - npx --yes ovsx publish arn-skin.vsix -p "$OPEN_VSX"
+    - npx --yes "$VSCE" publish --packagePath arn-skin.vsix --skip-duplicate -p "$VSCE_PUBLISH"
+
+publish:open-vsx:
+  extends: .publish
+  script:
+    - npx --yes "$OVSX" publish --packagePath arn-skin.vsix --skip-duplicate -p "$OPEN_VSX"
 
 gitlab-release:
   extends: .on-release
   image: registry.gitlab.com/gitlab-org/release-cli:latest
-  stage: deploy
+  stage: release
   interruptible: false
   needs:
-    - publish-marketplace
-    - publish-openvsx
+    - publish:vs-marketplace
+    - publish:open-vsx
   script:
     - TAG_VERSION="${CI_COMMIT_TAG#v}"
     - echo "# What's new in v${TAG_VERSION} ?" > release_notes.md
