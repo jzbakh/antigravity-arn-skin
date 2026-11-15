@@ -40,7 +40,7 @@ module.exports = [
         },
     },
     {
-        files: ['test/.vscode-test.mjs', 'eslint.config.js'],
+        files: ['test/.vscode-test.mjs', 'eslint.config.js', 'scripts/**/*.mjs'],
         languageOptions: {
             ecmaVersion: 2023,
             sourceType: 'module',

@@ -5,11 +5,13 @@
 # `$PIPELINE` names a single-purpose pipeline and is set by pipeline schedules
 # or by a manual run. Ordinary branch and tag pipelines leave it empty.
 #
-#   (unset)     branch push, tag, or manual run
-#   badges      marketplace counters only
-#   stable      full cross-platform suite on current stable (weekly)
-#   prerelease  integration suite on VSCode Insiders (monthly)
-#   pages       presentation site deploy
+#   (unset)           branch push, tag, or manual run
+#   badges            marketplace counters only
+#   stable            full cross-platform suite on current stable (weekly)
+#   prerelease        integration suite on VSCode Insiders (monthly)
+#   pages             presentation site deploy
+#   release-dry-run   package and print the release, publish nothing
+#   release-backfill  GitLab release of an existing $TAG from its published VSIX
 
 .on-any-commit:
   rules:
@@ -50,7 +52,24 @@
 
 .on-release:
   rules:
+    - if: '$PIPELINE'
+      when: never
     - if: '$CI_COMMIT_TAG =~ /^v[0-9]+\.[0-9]+\.[0-9]+$/'
+
+.on-release-build:
+  rules:
+    - if: '$PIPELINE == "release-dry-run"'
+    - if: '$PIPELINE'
+      when: never
+    - if: '$CI_COMMIT_TAG =~ /^v[0-9]+\.[0-9]+\.[0-9]+$/'
+
+.on-release-dry-run:
+  rules:
+    - if: '$PIPELINE == "release-dry-run"'
+
+.on-release-backfill:
+  rules:
+    - if: '$PIPELINE == "release-backfill" && $TAG =~ /^v[0-9]+\.[0-9]+\.[0-9]+$/'
 
 .on-badges:
   rules:

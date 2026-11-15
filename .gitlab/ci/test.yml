@@ -128,7 +128,8 @@ unit-tests-linux:
 #
 # To bring that suite back here, register a self-hosted runner: GitLab Runner is
 # a user-mode LaunchAgent holding a UI session (requires automatic login). Then
-# add an integration job carrying that runner's tag and list it in package.needs.
+# add an integration job carrying that runner's tag and list it in package.needs
+# like the other gates.
 unit-tests-macos:
   extends: .on-full-matrix
   stage: test

@@ -15,30 +15,38 @@
 package:
   extends:
     - .release-node
-    - .on-release
+    - .on-release-build
   stage: package
-  # Gates only: no test artifact may reach the package.
+  # Gates only: no test artifact may reach the package. Optional for the dry run.
   needs:
     - job: validate
+      optional: true
       artifacts: false
     - job: lint
+      optional: true
       artifacts: false
     - job: unit-tests-linux
+      optional: true
       artifacts: false
     - job: unit-tests-macos
+      optional: true
       artifacts: false
     - job: integration-tests-linux
+      optional: true
       artifacts: false
     - job: integration-tests-windows
+      optional: true
       artifacts: false
     - job: integration-tests-insiders-linux
+      optional: true
       artifacts: false
     - job: integration-tests-insiders-windows
+      optional: true
       artifacts: false
   script:
     - VERSION=$(node -p "require('./package.json').version")
     - |
-      if [ "$CI_COMMIT_TAG" != "v$VERSION" ]; then
+      if [ -n "$CI_COMMIT_TAG" ] && [ "$CI_COMMIT_TAG" != "v$VERSION" ]; then
         echo "Tag $CI_COMMIT_TAG does not match package.json version $VERSION."
         exit 1
       fi
@@ -48,6 +56,7 @@ package:
     # After packaging, so neither file lands in the VSIX.
     - sh scripts/release-notes.sh "$VERSION" > release-notes.md
     - echo "PACKAGE_JOB_ID=$CI_JOB_ID" > release.env
+    - echo "VERSION=$VERSION" >> release.env
   artifacts:
     paths:
       - arn-skin.vsix
@@ -60,7 +69,7 @@ package:
 verify-tokens:
   extends:
     - .release-node
-    - .on-release
+    - .on-release-build
   stage: package
   needs: []
   script:
@@ -116,3 +125,52 @@ release:gitlab:
         - name: Open VSX
           url: https://open-vsx.org/extension/jzbakh/antigravity-arn-skin
           link_type: other
+
+release:dry-run:
+  extends:
+    - .release-glab
+    - .on-release-dry-run
+  needs:
+    - package
+    - verify-tokens
+  script:
+    - cat release-notes.md
+    - sha256sum arn-skin.vsix
+    - echo "Dry run of v$VERSION complete; nothing was published."
+
+backfill:fetch:
+  extends:
+    - .release-node
+    - .on-release-backfill
+  stage: package
+  needs: []
+  script:
+    - node scripts/fetch-published-vsix.mjs "$TAG"
+  artifacts:
+    paths:
+      - arn-skin.vsix
+    reports:
+      dotenv: release.env
+    expire_in: never
+
+# The release keyword takes no variable released_at, hence the CLI.
+release:backfill:
+  extends:
+    - .release-glab
+    - .on-release-backfill
+  needs:
+    - backfill:fetch
+  variables:
+    GLAB_ENABLE_CI_AUTOLOGIN: "true"
+  script:
+    - sh scripts/release-notes.sh "${TAG#v}" > release-notes.md
+    - |
+      glab release create "$TAG" --no-update \
+        --name "$TAG" \
+        --notes-file release-notes.md \
+        --released-at "$RELEASED_AT" \
+        --assets-links "[
+          {\"name\": \"arn-skin.vsix\", \"url\": \"$CI_PROJECT_URL/-/jobs/$FETCH_JOB_ID/artifacts/raw/arn-skin.vsix\", \"direct_asset_path\": \"/arn-skin.vsix\", \"link_type\": \"package\"},
+          {\"name\": \"Visual Studio Marketplace\", \"url\": \"https://marketplace.visualstudio.com/items?itemName=jzbakh.antigravity-arn-skin\", \"link_type\": \"other\"},
+          {\"name\": \"Open VSX\", \"url\": \"https://open-vsx.org/extension/jzbakh/antigravity-arn-skin\", \"link_type\": \"other\"}
+        ]"
