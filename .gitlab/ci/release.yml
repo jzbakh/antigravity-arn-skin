@@ -34,6 +34,19 @@ package:
       - arn-skin.vsix
     expire_in: never
 
+# An empty token makes vsce prompt; protected variables need a protected ref.
+verify-tokens:
+  extends:
+    - .release-node
+    - .on-release
+  stage: package
+  needs: []
+  script:
+    - '[ -n "$VSCE_PUBLISH" ] || { echo "VSCE_PUBLISH is not available on this ref."; exit 1; }'
+    - '[ -n "$OPEN_VSX" ] || { echo "OPEN_VSX is not available on this ref."; exit 1; }'
+    - npx --yes "$VSCE" verify-pat jzbakh -p "$VSCE_PUBLISH"
+    - npx --yes "$OVSX" verify-pat jzbakh -p "$OPEN_VSX"
+
 .publish:
   extends:
     - .release-node
@@ -42,6 +55,7 @@ package:
   resource_group: release
   needs:
     - package
+    - verify-tokens
 
 publish:vs-marketplace:
   extends: .publish
