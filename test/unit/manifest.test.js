@@ -153,7 +153,8 @@ describe('package.json — contributes.commands', () => {
         const src = readExtensionSource();
         for (const cmd of pkg.contributes.commands) {
             assert.ok(cmd.command, 'command entry missing command id');
-            const re = new RegExp(`registerCommand\\s*\\(\\s*['"]${cmd.command.replace(/\./g, '\\.')}['"]`);
+            const id = cmd.command.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            const re = new RegExp(`registerCommand\\s*\\(\\s*['"]${id}['"]`);
             assert.ok(re.test(src),
                 `command "${cmd.command}" declared in package.json but never registered via vscode.commands.registerCommand in extension.js`);
         }
