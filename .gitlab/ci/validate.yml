@@ -12,6 +12,8 @@ lint:
   extends: .on-any-commit
   image: node:22
   stage: validate
+  variables:
+    npm_config_cache: "$CI_PROJECT_DIR/.npm"
   cache:
     key:
       prefix: npm-linux

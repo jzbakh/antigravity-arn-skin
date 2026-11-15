@@ -8,6 +8,8 @@ coverage:
   needs:
     - unit-tests-linux
     - integration-tests-linux
+  variables:
+    npm_config_cache: "$CI_PROJECT_DIR/.npm"
   cache:
     key:
       prefix: npm-linux

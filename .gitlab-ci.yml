@@ -23,7 +23,6 @@ default:
 
 variables:
   PIPELINE: $[[ inputs.PIPELINE ]]
-  npm_config_cache: "$CI_PROJECT_DIR/.npm"
   # A 500 from the git endpoint fails the job before the script even starts,
   # which says nothing about this project. Retry the fetch instead.
   GET_SOURCES_ATTEMPTS: "3"
