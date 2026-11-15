@@ -17,14 +17,24 @@ package:
     - .release-node
     - .on-release
   stage: package
+  # Gates only: no test artifact may reach the package.
   needs:
-    - validate
-    - unit-tests-linux
-    - unit-tests-macos
-    - integration-tests-linux
-    - integration-tests-windows
-    - integration-tests-insiders-linux
-    - integration-tests-insiders-windows
+    - job: validate
+      artifacts: false
+    - job: lint
+      artifacts: false
+    - job: unit-tests-linux
+      artifacts: false
+    - job: unit-tests-macos
+      artifacts: false
+    - job: integration-tests-linux
+      artifacts: false
+    - job: integration-tests-windows
+      artifacts: false
+    - job: integration-tests-insiders-linux
+      artifacts: false
+    - job: integration-tests-insiders-windows
+      artifacts: false
   script:
     - VERSION=$(node -p "require('./package.json').version")
     - |
@@ -32,6 +42,7 @@ package:
         echo "Tag $CI_COMMIT_TAG does not match package.json version $VERSION."
         exit 1
       fi
+    - npx --yes "$VSCE" ls | LC_ALL=C sort | diff -u scripts/vsix-files.txt -
     - npx --yes "$VSCE" package -o arn-skin.vsix
     - sha256sum arn-skin.vsix
     # After packaging, so neither file lands in the VSIX.
