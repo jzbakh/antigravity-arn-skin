@@ -7,6 +7,11 @@
     VSCE: "@vscode/vsce@4.0.0"
     OVSX: "ovsx@1.2.0"
 
+.release-glab:
+  image: registry.gitlab.com/gitlab-org/cli:v1.120.0
+  stage: release
+  interruptible: false
+
 package:
   extends:
     - .release-node
@@ -29,9 +34,15 @@ package:
       fi
     - npx --yes "$VSCE" package -o arn-skin.vsix
     - sha256sum arn-skin.vsix
+    # After packaging, so neither file lands in the VSIX.
+    - sh scripts/release-notes.sh "$VERSION" > release-notes.md
+    - echo "PACKAGE_JOB_ID=$CI_JOB_ID" > release.env
   artifacts:
     paths:
       - arn-skin.vsix
+      - release-notes.md
+    reports:
+      dotenv: release.env
     expire_in: never
 
 # An empty token makes vsce prompt; protected variables need a protected ref.
@@ -67,23 +78,30 @@ publish:open-vsx:
   script:
     - npx --yes "$OVSX" publish --packagePath arn-skin.vsix --skip-duplicate -p "$OPEN_VSX"
 
-gitlab-release:
-  extends: .on-release
-  image: registry.gitlab.com/gitlab-org/release-cli:latest
-  stage: release
-  interruptible: false
+# By job id: the link keeps the VSIX the stores received.
+release:gitlab:
+  extends:
+    - .release-glab
+    - .on-release
   needs:
+    - package
     - publish:vs-marketplace
     - publish:open-vsx
   script:
-    - TAG_VERSION="${CI_COMMIT_TAG#v}"
-    - echo "# What's new in v${TAG_VERSION} ?" > release_notes.md
-    - echo "" >> release_notes.md
-    - awk -v ver="[${TAG_VERSION}]" '/^## \[/ { if (p) exit; if (index($2, ver) == 1) { p=1; next } } p { print }' CHANGELOG.md >> release_notes.md
-    - |
-      release-cli create --name "Release $CI_COMMIT_TAG" \
-        --tag-name "$CI_COMMIT_TAG" \
-        --description "$(cat release_notes.md)" \
-        --assets-link "{\"name\":\"Extension Binary (.vsix)\",\"url\":\"${CI_PROJECT_URL}/-/jobs/artifacts/${CI_COMMIT_TAG}/raw/arn-skin.vsix?job=package\",\"filepath\":\"/arn-skin.vsix\",\"link_type\":\"package\"}" \
-        --assets-link "{\"name\":\"Download on VS Marketplace\",\"url\":\"https://marketplace.visualstudio.com/items?itemName=jzbakh.antigravity-arn-skin\",\"link_type\":\"other\"}" \
-        --assets-link "{\"name\":\"Download on Open VSX\",\"url\":\"https://open-vsx.org/extension/jzbakh/antigravity-arn-skin\",\"link_type\":\"other\"}"
+    - echo "Releasing $CI_COMMIT_TAG with the VSIX of job $PACKAGE_JOB_ID."
+  release:
+    tag_name: $CI_COMMIT_TAG
+    name: $CI_COMMIT_TAG
+    description: ./release-notes.md
+    assets:
+      links:
+        - name: arn-skin.vsix
+          url: $CI_PROJECT_URL/-/jobs/$PACKAGE_JOB_ID/artifacts/raw/arn-skin.vsix
+          filepath: /arn-skin.vsix
+          link_type: package
+        - name: Visual Studio Marketplace
+          url: https://marketplace.visualstudio.com/items?itemName=jzbakh.antigravity-arn-skin
+          link_type: other
+        - name: Open VSX
+          url: https://open-vsx.org/extension/jzbakh/antigravity-arn-skin
+          link_type: other
