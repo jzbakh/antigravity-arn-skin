@@ -16,7 +16,7 @@
 
 <p align="center">
   <a href="https://arn_inside.gitlab.io/arn-skin/">
-    <img src="https://gitlab.com/arn_inside/arn-skin/raw/main/media/ARN-Skin_demo.png" alt="ARN-Skin Video">
+    <img src="./media/ARN-Skin_demo.png" alt="ARN-Skin Video">
   </a>
 </p>
 
