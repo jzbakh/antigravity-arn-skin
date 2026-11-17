@@ -22,6 +22,9 @@
     "mocha": "^11.7.6"
   },
   "overrides": {
-    "serialize-javascript": "^7.0.5"
+    "diff": "^8.0.3",
+    "glob": "^14.0.3",
+    "minimatch": "^11.0.1",
+    "serialize-javascript": "^7.1.3"
   }
 }
